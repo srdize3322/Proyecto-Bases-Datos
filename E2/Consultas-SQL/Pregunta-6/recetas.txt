@@ -1,0 +1,10 @@
+Output format is unaligned.
+Receta Médica Electrónica
+Paciente: Juan Fuentes Valenzuela
+RUN: 216440-K
+Edad: 
+Diagnóstico: Oncología Médica
+ANFEBUTAMONA 150 MG CM REC. ACCION PROL. 1 comprimido una vez al día.
+Fecha: 16/04/2025
+Médico: Juan Rojas Fuentes
+RUN Médico: 954073-3

@@ -1,0 +1,11 @@
+Output format is unaligned.
+Orden de Examen
+Paciente: María Pérez Fuentes
+RUN: 199280-5
+Edad: 
+Litiasis renal
+Cultivo para micobacterias (incluye bacilo de Koch)
+Magnesio en sangre
+Fecha: 31/05/2025
+Médico: Paula Rojas Díaz
+RUN Médico: 782965-5

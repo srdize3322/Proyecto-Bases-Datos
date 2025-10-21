@@ -1,0 +1,42 @@
+    seccion    | periodo | atenciones_no_efectuadas 
+---------------+---------+--------------------------
+ mensual_total | 2024-01 |                       58
+ mensual_total | 2024-02 |                       54
+ mensual_total | 2024-03 |                       42
+ mensual_total | 2024-04 |                       52
+ mensual_total | 2024-05 |                       51
+ mensual_total | 2024-06 |                       41
+ mensual_total | 2024-07 |                       54
+ mensual_total | 2024-08 |                       54
+ mensual_total | 2024-09 |                       59
+ mensual_total | 2024-10 |                       63
+ mensual_total | 2024-11 |                       42
+ mensual_total | 2024-12 |                       51
+ mensual_total | 2025-01 |                       51
+ mensual_total | 2025-02 |                       53
+ mensual_total | 2025-03 |                       55
+ mensual_total | 2025-04 |                       36
+ mensual_total | 2025-05 |                       56
+ mensual_total | 2025-06 |                       49
+ mensual_total | 2025-07 |                       52
+ mensual_total | 2025-08 |                       39
+(20 rows)
+
+       seccion        | id_persona |   RUN    |  Nombres  |      Apellidos      | avg_per_mes 
+----------------------+------------+----------+-----------+---------------------+-------------
+ top_medicos_promedio |        618 | 194542-4 | María     | Soto Valenzuela     |        1.83
+ top_medicos_promedio |       2254 | 335936-0 | Ana       | Fuentes Muñoz       |        1.83
+ top_medicos_promedio |       1940 | 100222-8 | Laura     | Rodríguez Rodríguez |        1.75
+ top_medicos_promedio |       2881 | 830907-8 | Juan José | Fuentes             |        1.75
+ top_medicos_promedio |       1481 | 310621-7 | Marta     | Morales Rojas       |        1.67
+(5 rows)
+
+        seccion         | id_persona |   RUN    |   Nombres    |      Apellidos       | avg_per_mes 
+------------------------+------------+----------+--------------+----------------------+-------------
+ top_pacientes_promedio |        978 | 445002-7 | Miguel Pedro | Contreras Valenzuela |        2.00
+ top_pacientes_promedio |       1584 | 604723-8 | Laura        | Fuentes Torres       |        2.00
+ top_pacientes_promedio |       1832 | 576990-6 | Sofía Ana    | Rojas Pérez          |        2.00
+ top_pacientes_promedio |       2808 | 568061-1 | Sofía        | Rodríguez Rojas      |        2.00
+ top_pacientes_promedio |       2891 | 116327-2 | Javier       | Espinoza Fuentes     |        2.00
+(5 rows)
+

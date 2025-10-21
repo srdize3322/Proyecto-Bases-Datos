@@ -1,0 +1,11 @@
+               Medicamento                | veces_recetado 
+------------------------------------------+----------------
+ RUXOLITINIB 15 MG CM/CM REC              |             13
+ CODEINA FOSFATO PVO FARMACOPEA FRA50A60G |             11
+ PALIPERIDONA 50MG SUSP INY.LIB.PROL      |             11
+ CALCIO/VITAMINA D 450A600 MG/400UI CM/CP |             10
+ CIPROFLOXACIN 200MG/100ML SOL INY FAM/BO |             10
+ GLUCAGON 1 MG LIOF SOL INYECT FAM        |             10
+ SITAGLIPTINA/METFORMINA 50/850MG CM REC  |             10
+(7 rows)
+

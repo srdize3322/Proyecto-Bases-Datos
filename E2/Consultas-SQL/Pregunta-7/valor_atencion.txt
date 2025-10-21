@@ -1,0 +1,5 @@
+ id_atencion |   fecha    |      paciente       | run_paciente |      medico      | run_medico |  diagnostico   | valor_atencion | valor_ordenes | valor_medicamentos | valor_total 
+-------------+------------+---------------------+--------------+------------------+------------+----------------+----------------+---------------+--------------------+-------------
+         144 | 31/05/2025 | María Pérez Fuentes | 199280-5     | Paula Rojas Díaz | 782965-5   | Litiasis renal |              0 |       3599550 |                  0 |     3599550
+(1 row)
+

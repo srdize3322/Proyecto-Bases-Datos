@@ -1,0 +1,244 @@
+ periodo |       institucion       | numero_atenciones | ingresos  
+---------+-------------------------+-------------------+-----------
+ 2024-01 | Colmena de avispas S.A. |                16 | 121364770
+ 2024-01 | Cruz de Malta S.A.      |                15 |  49318540
+ 2024-01 | Cruz pal cielo Ltda.    |                14 |  30922050
+ 2024-01 | especial S.A.           |                21 |  96250450
+ 2024-01 | FONASA                  |                20 |  25917370
+ 2024-01 | Fundación e imperio     |                12 |  58144570
+ 2024-01 | Medibanc S.A.           |                20 | 123181850
+ 2024-01 | Menos vida S.A.         |                18 |  81867400
+ 2024-01 | Particular              |                11 |  45113230
+ 2024-01 | Salud Ltda.             |                16 |  76352180
+ 2024-01 | sinsalud S.A.           |                20 | 116706990
+ 2024-01 | Vida uno S.A.           |                23 | 148704430
+ 2024-02 | Colmena de avispas S.A. |                22 |  94678070
+ 2024-02 | Cruz de Malta S.A.      |                14 |  76871410
+ 2024-02 | Cruz pal cielo Ltda.    |                15 |  84309240
+ 2024-02 | especial S.A.           |                19 | 410398540
+ 2024-02 | FONASA                  |                20 |  68581020
+ 2024-02 | Fundación e imperio     |                14 | 262506030
+ 2024-02 | Medibanc S.A.           |                13 |  48265600
+ 2024-02 | Menos vida S.A.         |                18 |  88739830
+ 2024-02 | Particular              |                21 | 279370260
+ 2024-02 | Salud Ltda.             |                15 |  80045360
+ 2024-02 | sinsalud S.A.           |                12 | 253159370
+ 2024-02 | Vida uno S.A.           |                14 |  99081060
+ 2024-03 | Colmena de avispas S.A. |                22 |  85954620
+ 2024-03 | Cruz de Malta S.A.      |                14 | 126370530
+ 2024-03 | Cruz pal cielo Ltda.    |                13 | 276945840
+ 2024-03 | especial S.A.           |                16 | 105968580
+ 2024-03 | FONASA                  |                17 |  34070410
+ 2024-03 | Fundación e imperio     |                15 | 159009680
+ 2024-03 | Medibanc S.A.           |                13 |  45514290
+ 2024-03 | Menos vida S.A.         |                12 |  88329200
+ 2024-03 | Particular              |                17 |  63387560
+ 2024-03 | Salud Ltda.             |                22 | 119532000
+ 2024-03 | sinsalud S.A.           |                21 | 101214810
+ 2024-03 | Vida uno S.A.           |                21 | 434612320
+ 2024-04 | Colmena de avispas S.A. |                15 | 111960000
+ 2024-04 | Cruz de Malta S.A.      |                14 |  74762180
+ 2024-04 | Cruz pal cielo Ltda.    |                10 |  55340820
+ 2024-04 | especial S.A.           |                12 | 164739680
+ 2024-04 | FONASA                  |                 7 |  14934410
+ 2024-04 | Fundación e imperio     |                17 |  69936290
+ 2024-04 | Medibanc S.A.           |                11 |  43224790
+ 2024-04 | Menos vida S.A.         |                14 |  58274220
+ 2024-04 | Particular              |                17 |  54660580
+ 2024-04 | Salud Ltda.             |                20 |  56818660
+ 2024-04 | sinsalud S.A.           |                20 | 291304500
+ 2024-04 | Vida uno S.A.           |                21 |  59979060
+ 2024-05 | Colmena de avispas S.A. |                20 |  72941870
+ 2024-05 | Cruz de Malta S.A.      |                19 |  66124560
+ 2024-05 | Cruz pal cielo Ltda.    |                13 | 238508480
+ 2024-05 | especial S.A.           |                21 |  83462350
+ 2024-05 | FONASA                  |                18 |  56851020
+ 2024-05 | Fundación e imperio     |                14 | 123362960
+ 2024-05 | Medibanc S.A.           |                10 |  22752940
+ 2024-05 | Menos vida S.A.         |                10 | 147995130
+ 2024-05 | Particular              |                16 |  90272830
+ 2024-05 | Salud Ltda.             |                22 | 227426180
+ 2024-05 | sinsalud S.A.           |                10 |  29853320
+ 2024-05 | Vida uno S.A.           |                13 | 129330330
+ 2024-06 | Colmena de avispas S.A. |                15 |  99507630
+ 2024-06 | Cruz de Malta S.A.      |                18 |  73042970
+ 2024-06 | Cruz pal cielo Ltda.    |                15 |  67127520
+ 2024-06 | especial S.A.           |                17 |  75148170
+ 2024-06 | FONASA                  |                19 |  29055720
+ 2024-06 | Fundación e imperio     |                19 |  71101880
+ 2024-06 | Medibanc S.A.           |                12 |  82522520
+ 2024-06 | Menos vida S.A.         |                16 | 388554810
+ 2024-06 | Particular              |                10 |  52204490
+ 2024-06 | Salud Ltda.             |                20 |  68387060
+ 2024-06 | sinsalud S.A.           |                17 |  97089160
+ 2024-06 | Vida uno S.A.           |                18 |  68614150
+ 2024-07 | Colmena de avispas S.A. |                19 |  68412710
+ 2024-07 | Cruz de Malta S.A.      |                14 | 110951120
+ 2024-07 | Cruz pal cielo Ltda.    |                19 |  45296010
+ 2024-07 | especial S.A.           |                16 |  48968930
+ 2024-07 | FONASA                  |                12 |   7815100
+ 2024-07 | Fundación e imperio     |                14 |  41196760
+ 2024-07 | Medibanc S.A.           |                21 | 127922590
+ 2024-07 | Menos vida S.A.         |                18 | 138427440
+ 2024-07 | Particular              |                24 | 479191640
+ 2024-07 | Salud Ltda.             |                11 |  53015660
+ 2024-07 | sinsalud S.A.           |                18 |  82022160
+ 2024-07 | Vida uno S.A.           |                21 | 143139560
+ 2024-08 | Colmena de avispas S.A. |                13 |  43078390
+ 2024-08 | Cruz de Malta S.A.      |                10 | 360206940
+ 2024-08 | Cruz pal cielo Ltda.    |                14 |  46527700
+ 2024-08 | especial S.A.           |                15 | 126244180
+ 2024-08 | FONASA                  |                19 |  13766330
+ 2024-08 | Fundación e imperio     |                13 | 113056530
+ 2024-08 | Medibanc S.A.           |                14 |  72309390
+ 2024-08 | Menos vida S.A.         |                22 | 105808730
+ 2024-08 | Particular              |                14 | 202150850
+ 2024-08 | Salud Ltda.             |                18 | 124421050
+ 2024-08 | sinsalud S.A.           |                14 | 125056490
+ 2024-08 | Vida uno S.A.           |                19 | 131794360
+ 2024-09 | Colmena de avispas S.A. |                15 |  94597970
+ 2024-09 | Cruz de Malta S.A.      |                10 |  42016090
+ 2024-09 | Cruz pal cielo Ltda.    |                21 |  48404740
+ 2024-09 | especial S.A.           |                11 |  27438580
+ 2024-09 | FONASA                  |                13 |   6818360
+ 2024-09 | Fundación e imperio     |                11 |  23614080
+ 2024-09 | Medibanc S.A.           |                16 |  58275010
+ 2024-09 | Menos vida S.A.         |                17 |  55607110
+ 2024-09 | Particular              |                13 |  69424610
+ 2024-09 | Salud Ltda.             |                20 | 109237950
+ 2024-09 | sinsalud S.A.           |                17 | 163631880
+ 2024-09 | Vida uno S.A.           |                19 | 123093290
+ 2024-10 | Colmena de avispas S.A. |                17 |  83384420
+ 2024-10 | Cruz de Malta S.A.      |                13 | 227184270
+ 2024-10 | Cruz pal cielo Ltda.    |                15 |  61539270
+ 2024-10 | especial S.A.           |                17 | 324067850
+ 2024-10 | FONASA                  |                13 |  17093580
+ 2024-10 | Fundación e imperio     |                22 | 265516980
+ 2024-10 | Medibanc S.A.           |                11 | 107149210
+ 2024-10 | Menos vida S.A.         |                24 | 167298000
+ 2024-10 | Particular              |                17 | 115953730
+ 2024-10 | Salud Ltda.             |                20 | 121795380
+ 2024-10 | sinsalud S.A.           |                19 | 394644260
+ 2024-10 | Vida uno S.A.           |                12 |  51117740
+ 2024-11 | Colmena de avispas S.A. |                21 | 116991410
+ 2024-11 | Cruz de Malta S.A.      |                11 |  37675690
+ 2024-11 | Cruz pal cielo Ltda.    |                13 |  75847260
+ 2024-11 | especial S.A.           |                14 |  76691940
+ 2024-11 | FONASA                  |                16 |  22525430
+ 2024-11 | Fundación e imperio     |                23 |  97999580
+ 2024-11 | Medibanc S.A.           |                12 | 382683680
+ 2024-11 | Menos vida S.A.         |                17 |  74332150
+ 2024-11 | Particular              |                26 | 132588680
+ 2024-11 | Salud Ltda.             |                21 | 161723290
+ 2024-11 | sinsalud S.A.           |                16 |  74590990
+ 2024-11 | Vida uno S.A.           |                18 |  58065880
+ 2024-12 | Colmena de avispas S.A. |                15 |  67961560
+ 2024-12 | Cruz de Malta S.A.      |                13 | 165100010
+ 2024-12 | Cruz pal cielo Ltda.    |                14 |  32268410
+ 2024-12 | especial S.A.           |                21 | 345867770
+ 2024-12 | FONASA                  |                20 |  21281130
+ 2024-12 | Fundación e imperio     |                11 |  74054950
+ 2024-12 | Medibanc S.A.           |                17 |  65846290
+ 2024-12 | Menos vida S.A.         |                16 |  48107980
+ 2024-12 | Particular              |                16 | 105747970
+ 2024-12 | Salud Ltda.             |                11 |  44618910
+ 2024-12 | sinsalud S.A.           |                13 | 168088810
+ 2024-12 | Vida uno S.A.           |                15 | 237790090
+ 2025-01 | Colmena de avispas S.A. |                23 | 338344960
+ 2025-01 | Cruz de Malta S.A.      |                21 | 122718510
+ 2025-01 | Cruz pal cielo Ltda.    |                 8 |  20324860
+ 2025-01 | especial S.A.           |                18 |  79742610
+ 2025-01 | FONASA                  |                17 |  14082830
+ 2025-01 | Fundación e imperio     |                17 | 122623190
+ 2025-01 | Medibanc S.A.           |                16 |  69058420
+ 2025-01 | Menos vida S.A.         |                15 | 108696390
+ 2025-01 | Particular              |                18 | 120424070
+ 2025-01 | Salud Ltda.             |                16 |  81265250
+ 2025-01 | sinsalud S.A.           |                20 | 103119160
+ 2025-01 | Vida uno S.A.           |                16 |  56530440
+ 2025-02 | Colmena de avispas S.A. |                30 | 172165240
+ 2025-02 | Cruz de Malta S.A.      |                14 |  55680070
+ 2025-02 | Cruz pal cielo Ltda.    |                 7 |  33539960
+ 2025-02 | especial S.A.           |                14 |  95758940
+ 2025-02 | FONASA                  |                10 |   4975540
+ 2025-02 | Fundación e imperio     |                14 |  68902620
+ 2025-02 | Medibanc S.A.           |                16 |  64117060
+ 2025-02 | Menos vida S.A.         |                17 |  67427930
+ 2025-02 | Particular              |                15 |  46062180
+ 2025-02 | Salud Ltda.             |                13 |  64141850
+ 2025-02 | sinsalud S.A.           |                13 |  62293130
+ 2025-02 | Vida uno S.A.           |                17 |  57896940
+ 2025-03 | Colmena de avispas S.A. |                17 |  73456150
+ 2025-03 | Cruz de Malta S.A.      |                 9 |  43144280
+ 2025-03 | Cruz pal cielo Ltda.    |                18 | 104223750
+ 2025-03 | especial S.A.           |                16 |  77256870
+ 2025-03 | FONASA                  |                13 |  50018210
+ 2025-03 | Fundación e imperio     |                17 | 335767550
+ 2025-03 | Medibanc S.A.           |                13 | 124654670
+ 2025-03 | Menos vida S.A.         |                19 |  96521300
+ 2025-03 | Particular              |                15 | 266341140
+ 2025-03 | Salud Ltda.             |                21 |  88402260
+ 2025-03 | sinsalud S.A.           |                22 |  98988270
+ 2025-03 | Vida uno S.A.           |                18 |  71055160
+ 2025-04 | Colmena de avispas S.A. |                13 |  91227550
+ 2025-04 | Cruz de Malta S.A.      |                15 |  79288250
+ 2025-04 | Cruz pal cielo Ltda.    |                20 | 165975230
+ 2025-04 | especial S.A.           |                12 |  48888200
+ 2025-04 | FONASA                  |                18 |  23437860
+ 2025-04 | Fundación e imperio     |                18 | 187602630
+ 2025-04 | Medibanc S.A.           |                16 |  41104550
+ 2025-04 | Menos vida S.A.         |                15 |  70696740
+ 2025-04 | Particular              |                15 | 107263440
+ 2025-04 | Salud Ltda.             |                15 |  59442780
+ 2025-04 | sinsalud S.A.           |                17 |  56209310
+ 2025-04 | Vida uno S.A.           |                17 |  82100040
+ 2025-05 | Colmena de avispas S.A. |                22 | 127287830
+ 2025-05 | Cruz de Malta S.A.      |                16 | 115527110
+ 2025-05 | Cruz pal cielo Ltda.    |                15 |  95689370
+ 2025-05 | especial S.A.           |                13 | 228876220
+ 2025-05 | FONASA                  |                14 |  12879890
+ 2025-05 | Fundación e imperio     |                17 |  86510340
+ 2025-05 | Medibanc S.A.           |                15 | 101364780
+ 2025-05 | Menos vida S.A.         |                18 | 107956150
+ 2025-05 | Particular              |                11 |  34935050
+ 2025-05 | Salud Ltda.             |                16 | 396938360
+ 2025-05 | sinsalud S.A.           |                17 |  82349890
+ 2025-05 | Vida uno S.A.           |                11 | 195347800
+ 2025-06 | Colmena de avispas S.A. |                15 |  71270780
+ 2025-06 | Cruz de Malta S.A.      |                20 | 187915810
+ 2025-06 | Cruz pal cielo Ltda.    |                12 | 140560250
+ 2025-06 | especial S.A.           |                16 | 114405880
+ 2025-06 | FONASA                  |                11 |  12234440
+ 2025-06 | Fundación e imperio     |                12 |  57923330
+ 2025-06 | Medibanc S.A.           |                16 | 330691880
+ 2025-06 | Menos vida S.A.         |                18 |  85563910
+ 2025-06 | Particular              |                22 |  94452290
+ 2025-06 | Salud Ltda.             |                16 |  70585400
+ 2025-06 | sinsalud S.A.           |                14 |  63835010
+ 2025-06 | Vida uno S.A.           |                21 | 121872280
+ 2025-07 | Colmena de avispas S.A. |                15 |  59525450
+ 2025-07 | Cruz de Malta S.A.      |                13 |  44207310
+ 2025-07 | Cruz pal cielo Ltda.    |                 8 | 160805950
+ 2025-07 | especial S.A.           |                17 |  89842810
+ 2025-07 | FONASA                  |                24 |  25092900
+ 2025-07 | Fundación e imperio     |                24 |  87019570
+ 2025-07 | Medibanc S.A.           |                 8 |  13250910
+ 2025-07 | Menos vida S.A.         |                23 | 115901800
+ 2025-07 | Particular              |                17 |  65944460
+ 2025-07 | Salud Ltda.             |                17 | 140917200
+ 2025-07 | sinsalud S.A.           |                12 | 103589640
+ 2025-07 | Vida uno S.A.           |                20 | 114289840
+ 2025-08 | Colmena de avispas S.A. |                11 |  53988610
+ 2025-08 | Cruz de Malta S.A.      |                10 | 105597910
+ 2025-08 | Cruz pal cielo Ltda.    |                10 |  32925510
+ 2025-08 | especial S.A.           |                12 |  37298280
+ 2025-08 | FONASA                  |                23 |  18290510
+ 2025-08 | Fundación e imperio     |                18 | 116160490
+ 2025-08 | Medibanc S.A.           |                18 |  86236770
+ 2025-08 | Menos vida S.A.         |                18 |  86036030
+ 2025-08 | Particular              |                21 |  80252700
+ 2025-08 | Salud Ltda.             |                17 |  67716280
+ 2025-08 | sinsalud S.A.           |                11 |  84728760
+ 2025-08 | Vida uno S.A.           |                16 |  67366330
+(240 rows)
+

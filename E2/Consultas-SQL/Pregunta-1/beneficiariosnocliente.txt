@@ -1,0 +1,394 @@
+ id_titular |   RUN    |     Nombres      |       Apellidos       |       institucion       
+------------+----------+------------------+-----------------------+-------------------------
+       1739 | 689864-5 | Marta            | Araya                 | Colmena de avispas S.A.
+       2809 | 665079-1 | Paula            | Araya Araya           | Colmena de avispas S.A.
+       1121 | 862633-2 | Luis             | Araya Hernández       | Colmena de avispas S.A.
+       2744 | 326463-7 | Juan Paula       | Contreras             | Colmena de avispas S.A.
+        275 | 297534-3 | Lucía            | Contreras Silva       | Colmena de avispas S.A.
+       2397 | 988889-6 | Antonio          | Contreras Valenzuela  | Colmena de avispas S.A.
+       2446 | 299731-2 | Carmen           | Díaz Díaz             | Colmena de avispas S.A.
+       1191 | 665622-6 | Paula            | Espinoza              | Colmena de avispas S.A.
+       1276 | 663033-2 | Juan             | Espinoza Rodríguez    | Colmena de avispas S.A.
+        270 | 101228-2 | Isabel           | Flores                | Colmena de avispas S.A.
+        651 | 625035-1 | Sofía            | Flores                | Colmena de avispas S.A.
+       2254 | 335936-0 | Ana              | Fuentes Muñoz         | Colmena de avispas S.A.
+        436 | 350786-6 | Sofía            | González              | Colmena de avispas S.A.
+       2863 | 966786-5 | Laura            | González Sepúlveda    | Colmena de avispas S.A.
+       1532 | 654272-7 | Laura            | Hernández             | Colmena de avispas S.A.
+       1407 | 160875-4 | Lucía            | López                 | Colmena de avispas S.A.
+       2770 | 936343-2 | Lucía            | López                 | Colmena de avispas S.A.
+       1149 | 251892-9 | Andrés           | Martínez Contreras    | Colmena de avispas S.A.
+       1500 | 417982-K | Isabel           | Martínez Torres       | Colmena de avispas S.A.
+        352 | 143049-1 | Juan             | Morales               | Colmena de avispas S.A.
+        775 | 168944-4 | Andrés Carmen    | Morales Morales       | Colmena de avispas S.A.
+         82 | 139801-6 | Paula            | Muñoz Díaz            | Colmena de avispas S.A.
+       1495 | 535491-9 | Pedro Laura      | Pérez Espinoza        | Colmena de avispas S.A.
+       2163 | 443122-7 | Isabel           | Pérez Rodríguez       | Colmena de avispas S.A.
+         88 | 252741-3 | María            | Rodríguez             | Colmena de avispas S.A.
+        807 | 828657-4 | Paula            | Rojas                 | Colmena de avispas S.A.
+        244 | 998873-4 | Luis             | Rojas Contreras       | Colmena de avispas S.A.
+       1659 | 181094-4 | Juan             | Rojas Flores          | Colmena de avispas S.A.
+        278 | 734330-2 | Pedro            | Rojas Soto            | Colmena de avispas S.A.
+        469 | 858495-8 | María            | Rojas Torres          | Colmena de avispas S.A.
+        501 | 659922-2 | Francisco Diego  | Sepúlveda             | Colmena de avispas S.A.
+       1395 | 528668-9 | Paula Sofía      | Sepúlveda             | Colmena de avispas S.A.
+        214 | 662432-4 | Carmen           | Sepúlveda Silva       | Colmena de avispas S.A.
+       2535 | 977220-0 | Miguel Marta     | Torres                | Colmena de avispas S.A.
+        210 | 245728-8 | Juan Javier      | Torres Díaz           | Colmena de avispas S.A.
+        167 | 237637-7 | Andrés           | Valenzuela            | Colmena de avispas S.A.
+       1304 | 530227-7 | Luis Pedro       | Valenzuela            | Colmena de avispas S.A.
+       1629 | 530519-5 | Javier           | Araya                 | Cruz de Malta S.A.
+        970 | 541053-3 | Ana              | Araya Hernández       | Cruz de Malta S.A.
+       2991 | 866572-9 | Isabel           | Araya López           | Cruz de Malta S.A.
+       1783 | 390990-5 | Andrés           | Araya Sepúlveda       | Cruz de Malta S.A.
+       1217 | 104155-K | Lucía            | Contreras             | Cruz de Malta S.A.
+       1173 | 938912-1 | Pedro            | Contreras Araya       | Cruz de Malta S.A.
+       1533 | 561152-0 | Javier           | Díaz Espinoza         | Cruz de Malta S.A.
+       2560 | 628964-9 | Paula Lucía      | Díaz Soto             | Cruz de Malta S.A.
+        438 | 393748-8 | Carmen           | Flores                | Cruz de Malta S.A.
+        783 | 961628-4 | José             | Flores Espinoza       | Cruz de Malta S.A.
+       1378 | 421289-4 | Luis             | Flores Rojas          | Cruz de Malta S.A.
+        526 | 248362-9 | Pedro            | González              | Cruz de Malta S.A.
+       1494 | 811545-1 | Pedro Sofía      | González              | Cruz de Malta S.A.
+        674 | 178240-1 | Carmen Andrés    | González Valenzuela   | Cruz de Malta S.A.
+       2269 | 351239-8 | Andrés           | Hernández Araya       | Cruz de Malta S.A.
+       1216 | 701552-6 | Ana              | Hernández López       | Cruz de Malta S.A.
+       1300 | 863987-6 | Carmen Laura     | López                 | Cruz de Malta S.A.
+       2440 | 698050-3 | María Juan       | Martínez              | Cruz de Malta S.A.
+       2002 | 442390-9 | Lucía Miguel     | Morales               | Cruz de Malta S.A.
+       2568 | 587352-5 | Daniel           | Morales Torres        | Cruz de Malta S.A.
+        213 | 983986-0 | Javier           | Rodríguez             | Cruz de Malta S.A.
+       1626 | 603533-7 | Diego Juan       | Rodríguez Fuentes     | Cruz de Malta S.A.
+       2262 | 513118-9 | Isabel           | Rodríguez Pérez       | Cruz de Malta S.A.
+        139 | 539084-2 | Andrés           | Rodríguez Rodríguez   | Cruz de Malta S.A.
+        916 | 917771-K | Sofía Laura      | Silva González        | Cruz de Malta S.A.
+       1284 | 285376-0 | Lucía            | Torres Sepúlveda      | Cruz de Malta S.A.
+        861 | 913232-5 | Miguel           | Valenzuela            | Cruz de Malta S.A.
+        299 | 380695-2 | Antonio          | Araya                 | Cruz pal cielo Ltda.
+       2021 | 511485-3 | Isabel           | Araya                 | Cruz pal cielo Ltda.
+       1986 | 593969-0 | Sofía            | Espinoza              | Cruz pal cielo Ltda.
+       1814 | 176886-7 | Marta Sofía      | Espinoza Contreras    | Cruz pal cielo Ltda.
+       1357 | 879073-6 | Javier María     | Espinoza Valenzuela   | Cruz pal cielo Ltda.
+       1470 | 946250-3 | Pedro            | Espinoza Valenzuela   | Cruz pal cielo Ltda.
+       1997 | 542793-2 | Ana José         | Flores                | Cruz pal cielo Ltda.
+       1509 | 281988-0 | Andrés           | Flores                | Cruz pal cielo Ltda.
+       2116 | 541161-0 | Marta Luis       | Fuentes Pérez         | Cruz pal cielo Ltda.
+        296 | 753108-7 | Javier Diego     | Fuentes Sepúlveda     | Cruz pal cielo Ltda.
+        207 | 216440-K | Juan             | Fuentes Valenzuela    | Cruz pal cielo Ltda.
+         25 | 797134-6 | Diego            | González Rojas        | Cruz pal cielo Ltda.
+        771 | 523775-0 | Carmen Daniel    | Hernández Valenzuela  | Cruz pal cielo Ltda.
+       2542 | 837678-6 | Javier           | López Araya           | Cruz pal cielo Ltda.
+        108 | 370616-8 | Antonio Pedro    | Martínez              | Cruz pal cielo Ltda.
+        733 | 694977-0 | Luis Miguel      | Martínez Morales      | Cruz pal cielo Ltda.
+       2759 | 641635-7 | Miguel Marta     | Muñoz                 | Cruz pal cielo Ltda.
+        439 | 254644-2 | Paula            | Muñoz                 | Cruz pal cielo Ltda.
+        981 | 725234-K | Laura            | Muñoz González        | Cruz pal cielo Ltda.
+        253 | 129409-1 | Marta            | Muñoz Sepúlveda       | Cruz pal cielo Ltda.
+       2627 | 524286-K | María Carmen     | Pérez                 | Cruz pal cielo Ltda.
+       2303 | 873680-4 | Carmen           | Rodríguez Martínez    | Cruz pal cielo Ltda.
+       1347 | 504372-7 | Sofía Laura      | Rodríguez Rojas       | Cruz pal cielo Ltda.
+        667 | 297883-0 | Isabel José      | Rojas                 | Cruz pal cielo Ltda.
+        604 | 501736-K | José             | Rojas                 | Cruz pal cielo Ltda.
+       2156 | 298616-7 | María Antonio    | Rojas Rojas           | Cruz pal cielo Ltda.
+        757 | 332372-2 | Laura            | Silva Contreras       | Cruz pal cielo Ltda.
+       2499 | 115752-3 | Antonio Paula    | Silva Sepúlveda       | Cruz pal cielo Ltda.
+        799 | 867221-0 | Andrés           | Soto                  | Cruz pal cielo Ltda.
+        425 | 816146-1 | Laura Pedro      | Torres Fuentes        | Cruz pal cielo Ltda.
+       2986 | 999234-0 | Laura            | Torres Morales        | Cruz pal cielo Ltda.
+        740 | 355893-2 | Miguel           | Valenzuela Rodríguez  | Cruz pal cielo Ltda.
+        982 | 504437-5 | Isabel Luis      | Contreras             | especial S.A.
+       1204 | 328052-7 | Diego            | Contreras Torres      | especial S.A.
+        930 | 546502-8 | Antonio          | Díaz Muñoz            | especial S.A.
+        755 | 842141-2 | Francisco        | Díaz Sepúlveda        | especial S.A.
+       1329 | 296324-8 | Antonio          | Espinoza González     | especial S.A.
+        422 | 941989-6 | Ana Francisco    | Flores Rojas          | especial S.A.
+       2597 | 390520-9 | Laura            | Fuentes               | especial S.A.
+        888 | 127112-1 | Andrés           | Fuentes Sepúlveda     | especial S.A.
+        396 | 628371-3 | Juan Juan        | Fuentes Silva         | especial S.A.
+       2641 | 973672-7 | Diego            | Fuentes Soto          | especial S.A.
+       1337 | 897255-9 | Andrés           | Fuentes Valenzuela    | especial S.A.
+       1703 | 539858-4 | Javier           | González              | especial S.A.
+       2547 | 872807-0 | Juan             | González Díaz         | especial S.A.
+       1635 | 302486-5 | Juan             | González Muñoz        | especial S.A.
+        340 | 506750-2 | Marta Ana        | Hernández Valenzuela  | especial S.A.
+       1943 | 591364-0 | Juan             | López                 | especial S.A.
+       2311 | 421352-1 | Sofía Javier     | Martínez Pérez        | especial S.A.
+       1581 | 424702-7 | Daniel           | Morales Hernández     | especial S.A.
+       2511 | 368233-1 | Carmen           | Muñoz                 | especial S.A.
+        602 | 572729-4 | Lucía            | Muñoz Sepúlveda       | especial S.A.
+       1873 | 889355-1 | Juan             | Pérez Flores          | especial S.A.
+         81 | 444102-8 | Luis Isabel      | Sepúlveda             | especial S.A.
+       1434 | 683212-1 | Ana Francisco    | Sepúlveda Flores      | especial S.A.
+       1222 | 507061-9 | Carmen           | Silva                 | especial S.A.
+       1097 | 743353-0 | Lucía Andrés     | Silva                 | especial S.A.
+        964 | 138515-1 | Sofía            | Silva Contreras       | especial S.A.
+       2970 | 271097-8 | Luis             | Soto                  | especial S.A.
+        226 | 478811-7 | Marta            | Torres Contreras      | especial S.A.
+       2468 | 255739-8 | Isabel           | Torres González       | especial S.A.
+        685 | 262096-0 | Pedro            | Torres Muñoz          | especial S.A.
+        490 | 361222-8 | Ana Juan         | Torres Soto           | especial S.A.
+       1505 | 205634-8 | Juan             | Valenzuela            | especial S.A.
+        879 | 328342-9 | Marta            | Valenzuela López      | especial S.A.
+       1736 | 739906-5 | Ana Andrés       | Valenzuela Rojas      | especial S.A.
+       2009 | 963567-K | Francisco Andrés | Valenzuela Valenzuela | especial S.A.
+       1853 | 988341-K | Antonio          | Araya                 | FONASA
+        224 | 185584-0 | Paula            | Araya                 | FONASA
+        864 | 887315-1 | Pedro            | Araya González        | FONASA
+        117 | 683106-0 | Juan             | Contreras             | FONASA
+       2922 | 833820-5 | Lucía            | Contreras Araya       | FONASA
+       1662 | 434665-3 | Ana              | Contreras Torres      | FONASA
+       2150 | 120719-9 | Pedro            | Díaz Rodríguez        | FONASA
+       1752 | 945331-8 | José Lucía       | Flores                | FONASA
+       2996 | 981405-1 | Francisco        | González Muñoz        | FONASA
+        203 | 693992-9 | Isabel           | González Muñoz        | FONASA
+       1155 | 214257-0 | Lucía            | González Rojas        | FONASA
+        333 | 264451-7 | Sofía            | González Rojas        | FONASA
+       1920 | 954265-5 | Antonio          | González Valenzuela   | FONASA
+       2423 | 756302-7 | Laura            | Hernández Torres      | FONASA
+       1558 | 490072-3 | Luis             | López Díaz            | FONASA
+       1376 | 418156-5 | Carmen Paula     | López Martínez        | FONASA
+       1289 | 460181-5 | Diego Lucía      | Martínez              | FONASA
+        770 | 580759-K | Lucía            | Martínez Hernández    | FONASA
+       2845 | 736703-1 | Francisco        | Martínez Rojas        | FONASA
+         40 | 961392-7 | Diego            | Morales López         | FONASA
+         83 | 871220-4 | Andrés Francisco | Pérez Espinoza        | FONASA
+       2461 | 693568-0 | Daniel           | Pérez Soto            | FONASA
+        768 | 675083-4 | Paula            | Rodríguez Contreras   | FONASA
+       1652 | 258473-5 | Isabel Daniel    | Rodríguez Díaz        | FONASA
+       2644 | 899004-2 | Francisco Ana    | Rodríguez Espinoza    | FONASA
+       2407 | 635452-1 | Daniel           | Rojas                 | FONASA
+       1730 | 310111-8 | Ana              | Rojas Muñoz           | FONASA
+        694 | 796799-3 | Pedro            | Sepúlveda Espinoza    | FONASA
+       1070 | 697907-6 | Antonio          | Soto                  | FONASA
+       2056 | 431455-7 | Antonio          | Soto                  | FONASA
+       2175 | 136337-9 | Isabel           | Soto Muñoz            | FONASA
+       1872 | 855342-4 | Antonio          | Torres                | FONASA
+        372 | 973297-7 | Daniel Laura     | Torres                | FONASA
+         15 | 685785-K | Lucía            | Torres Sepúlveda      | FONASA
+       2975 | 781728-2 | Juan             | Díaz Morales          | Fundación e imperio
+       1923 | 119448-8 | Pedro Juan       | Díaz Rojas            | Fundación e imperio
+        121 | 106211-5 | Paula            | Espinoza              | Fundación e imperio
+       2470 | 631763-4 | Sofía            | Espinoza Flores       | Fundación e imperio
+       2999 | 586621-9 | Francisco        | Espinoza Soto         | Fundación e imperio
+       1518 | 432242-8 | Andrés           | Flores Rodríguez      | Fundación e imperio
+       1584 | 604723-8 | Laura            | Fuentes Torres        | Fundación e imperio
+       2567 | 216936-3 | Ana              | González Contreras    | Fundación e imperio
+       1964 | 740594-4 | Diego Isabel     | Hernández             | Fundación e imperio
+       2224 | 551232-8 | Laura            | Hernández Araya       | Fundación e imperio
+       1291 | 199898-6 | Luis             | Hernández Díaz        | Fundación e imperio
+       2992 | 619830-9 | Javier José      | Hernández Hernández   | Fundación e imperio
+       1821 | 798541-K | Laura            | Hernández López       | Fundación e imperio
+        986 | 148665-9 | Diego            | Morales               | Fundación e imperio
+       2806 | 982106-6 | Lucía            | Morales Espinoza      | Fundación e imperio
+       1713 | 642945-9 | Pedro Sofía      | Morales Martínez      | Fundación e imperio
+       1928 | 742890-1 | Lucía            | Morales Rodríguez     | Fundación e imperio
+        398 | 831653-8 | Ana              | Muñoz                 | Fundación e imperio
+        373 | 658047-5 | José             | Muñoz                 | Fundación e imperio
+       2386 | 477098-6 | María Miguel     | Muñoz Sepúlveda       | Fundación e imperio
+        971 | 120325-8 | Laura            | Muñoz Silva           | Fundación e imperio
+        702 | 809757-7 | Antonio Isabel   | Muñoz Valenzuela      | Fundación e imperio
+        802 | 779884-9 | Luis             | Pérez Flores          | Fundación e imperio
+       2142 | 620377-9 | Paula            | Pérez Soto            | Fundación e imperio
+       2131 | 413451-6 | Sofía            | Pérez Valenzuela      | Fundación e imperio
+       2473 | 414205-5 | Ana Marta        | Silva                 | Fundación e imperio
+       2819 | 785591-5 | Diego Francisco  | Silva Muñoz           | Fundación e imperio
+        945 | 649657-1 | José Marta       | Soto Pérez            | Fundación e imperio
+        479 | 790709-5 | Juan             | Valenzuela            | Fundación e imperio
+       1906 | 909411-3 | Francisco        | Valenzuela Araya      | Fundación e imperio
+       1981 | 596664-7 | José             | Valenzuela Espinoza   | Fundación e imperio
+       1637 | 175125-5 | Marta            | Araya Muñoz           | Medibanc S.A.
+        329 | 648901-K | Sofía            | Contreras             | Medibanc S.A.
+       1636 | 527699-3 | Carmen           | Contreras Díaz        | Medibanc S.A.
+       2868 | 843814-5 | Javier           | Contreras Soto        | Medibanc S.A.
+       2429 | 132876-K | Javier           | Díaz                  | Medibanc S.A.
+       1401 | 741641-5 | Marta            | Díaz                  | Medibanc S.A.
+       1350 | 579242-8 | José             | Díaz Valenzuela       | Medibanc S.A.
+       1220 | 541428-8 | Andrés           | Espinoza              | Medibanc S.A.
+        769 | 682499-4 | Antonio Laura    | Espinoza              | Medibanc S.A.
+       1564 | 205164-8 | Lucía            | Espinoza Araya        | Medibanc S.A.
+        835 | 895217-5 | María            | Espinoza Contreras    | Medibanc S.A.
+       1130 | 353232-1 | José             | Espinoza Espinoza     | Medibanc S.A.
+       1243 | 569790-5 | Carmen           | Flores Espinoza       | Medibanc S.A.
+         91 | 460310-9 | Carmen           | González              | Medibanc S.A.
+       2306 | 992933-9 | Marta            | Hernández González    | Medibanc S.A.
+       1308 | 687279-4 | Ana              | López                 | Medibanc S.A.
+        105 | 984178-4 | Carmen           | López                 | Medibanc S.A.
+       2517 | 113232-6 | Francisco        | López                 | Medibanc S.A.
+       2718 | 921276-0 | Javier Laura     | López Silva           | Medibanc S.A.
+        658 | 336684-7 | Juan Carmen      | Martínez              | Medibanc S.A.
+       2534 | 222221-3 | Miguel           | Morales               | Medibanc S.A.
+       1195 | 326000-3 | Ana Ana          | Muñoz Díaz            | Medibanc S.A.
+       2698 | 942542-K | Antonio Diego    | Pérez Rojas           | Medibanc S.A.
+       1952 | 293796-4 | Carmen           | Pérez Soto            | Medibanc S.A.
+       1573 | 147421-9 | Antonio          | Rodríguez Rojas       | Medibanc S.A.
+       1682 | 829521-2 | Laura Ana        | Rojas Contreras       | Medibanc S.A.
+       2359 | 120354-1 | Ana              | Sepúlveda González    | Medibanc S.A.
+        950 | 859603-4 | Juan             | Sepúlveda Soto        | Medibanc S.A.
+       1553 | 100307-0 | Paula            | Sepúlveda Torres      | Medibanc S.A.
+       1789 | 160706-5 | Laura            | Soto                  | Medibanc S.A.
+       1025 | 650798-0 | Laura            | Soto Araya            | Medibanc S.A.
+       1538 | 758493-8 | Isabel           | Soto Hernández        | Medibanc S.A.
+        498 | 300587-9 | Paula            | Soto Torres           | Medibanc S.A.
+         95 | 959401-9 | Isabel           | Torres                | Medibanc S.A.
+       1868 | 459532-7 | Francisco José   | Torres Martínez       | Medibanc S.A.
+        654 | 703120-3 | Pedro Isabel     | Torres Muñoz          | Medibanc S.A.
+        601 | 451312-6 | Francisco        | Torres Rojas          | Medibanc S.A.
+        430 | 757963-2 | Javier           | Valenzuela            | Medibanc S.A.
+       2408 | 475907-9 | Miguel           | Valenzuela Pérez      | Medibanc S.A.
+        302 | 130508-5 | Andrés Marta     | Araya                 | Menos vida S.A.
+       1530 | 761136-6 | Francisco        | Araya Flores          | Menos vida S.A.
+       2518 | 791127-0 | Andrés           | Araya Hernández       | Menos vida S.A.
+        276 | 633630-2 | Miguel Luis      | Araya Valenzuela      | Menos vida S.A.
+       1367 | 180153-8 | Francisco        | Díaz                  | Menos vida S.A.
+        183 | 522089-0 | Diego            | Díaz Contreras        | Menos vida S.A.
+       1742 | 150441-K | Juan             | Díaz Silva            | Menos vida S.A.
+       2344 | 466721-2 | Luis Juan        | Díaz Torres           | Menos vida S.A.
+        780 | 239716-1 | Pedro            | Espinoza Díaz         | Menos vida S.A.
+        924 | 151413-K | Juan             | Fuentes Rojas         | Menos vida S.A.
+        524 | 570656-4 | María            | Martínez Díaz         | Menos vida S.A.
+        734 | 681911-7 | Javier           | Martínez Espinoza     | Menos vida S.A.
+        541 | 560240-8 | Juan             | Martínez Flores       | Menos vida S.A.
+        297 | 574034-7 | Lucía            | Morales               | Menos vida S.A.
+       1982 | 811290-8 | Paula            | Morales Silva         | Menos vida S.A.
+       2277 | 125987-3 | Antonio          | Muñoz                 | Menos vida S.A.
+       2917 | 614805-0 | Luis             | Muñoz                 | Menos vida S.A.
+       1879 | 727194-8 | Marta            | Pérez Espinoza        | Menos vida S.A.
+       2325 | 219717-0 | Sofía            | Rodríguez             | Menos vida S.A.
+        252 | 884360-0 | José Juan        | Rojas Díaz            | Menos vida S.A.
+       2042 | 837334-5 | Diego            | Rojas Pérez           | Menos vida S.A.
+       1567 | 167283-5 | Sofía            | Rojas Rodríguez       | Menos vida S.A.
+       1785 | 158762-5 | Luis             | Sepúlveda Muñoz       | Menos vida S.A.
+       1622 | 653294-2 | Luis Carmen      | Sepúlveda Muñoz       | Menos vida S.A.
+       2776 | 660470-6 | Marta Diego      | Sepúlveda Pérez       | Menos vida S.A.
+       1762 | 982438-3 | Daniel Sofía     | Soto                  | Menos vida S.A.
+        419 | 128294-8 | Isabel           | Soto Espinoza         | Menos vida S.A.
+       1150 | 684662-9 | María            | Torres Rodríguez      | Menos vida S.A.
+       1377 | 596671-K | Ana Andrés       | Valenzuela            | Menos vida S.A.
+        273 | 419681-3 | Miguel Antonio   | Valenzuela            | Menos vida S.A.
+        913 | 295777-9 | Ana María        | Valenzuela Silva      | Menos vida S.A.
+       1648 | 406327-9 | Ana              | Araya                 | Salud Ltda.
+       2634 | 395297-5 | Isabel Paula     | Araya                 | Salud Ltda.
+       1867 | 499951-7 | Antonio José     | Araya Flores          | Salud Ltda.
+       1071 | 186552-8 | María            | Araya Morales         | Salud Ltda.
+        728 | 322823-1 | Isabel           | Contreras             | Salud Ltda.
+       2657 | 505902-K | Marta Daniel     | Contreras             | Salud Ltda.
+       1618 | 380936-6 | Paula            | Contreras Flores      | Salud Ltda.
+       2250 | 884986-2 | Paula            | Contreras González    | Salud Ltda.
+       1725 | 638649-0 | Laura Miguel     | Díaz Soto             | Salud Ltda.
+       2207 | 493158-0 | Paula            | Espinoza López        | Salud Ltda.
+       1878 | 107803-8 | Ana              | Espinoza Muñoz        | Salud Ltda.
+       1984 | 711960-7 | Marta            | Espinoza Rodríguez    | Salud Ltda.
+       2211 | 592291-7 | Daniel Ana       | Flores                | Salud Ltda.
+       2466 | 586972-2 | Paula            | Flores                | Salud Ltda.
+          9 | 738274-K | Isabel           | Flores López          | Salud Ltda.
+       2324 | 821790-4 | José             | Fuentes               | Salud Ltda.
+        222 | 845603-8 | Sofía Marta      | Fuentes               | Salud Ltda.
+       1710 | 483293-0 | Antonio          | Fuentes Fuentes       | Salud Ltda.
+       2474 | 227488-4 | Sofía            | González              | Salud Ltda.
+         49 | 726334-1 | Antonio          | González Contreras    | Salud Ltda.
+        941 | 942967-0 | Carmen Luis      | González Díaz         | Salud Ltda.
+        176 | 275377-4 | Laura            | González Pérez        | Salud Ltda.
+        315 | 448305-7 | Javier           | Hernández Valenzuela  | Salud Ltda.
+       1064 | 635434-3 | Antonio          | López López           | Salud Ltda.
+       1840 | 711099-5 | Laura            | López Rojas           | Salud Ltda.
+        500 | 226249-5 | Diego            | Martínez Espinoza     | Salud Ltda.
+        158 | 597138-1 | Daniel           | Martínez Pérez        | Salud Ltda.
+       1143 | 383145-0 | Isabel           | Morales Muñoz         | Salud Ltda.
+        274 | 582926-7 | Javier           | Morales Soto          | Salud Ltda.
+        859 | 960409-K | José Andrés      | Muñoz Espinoza        | Salud Ltda.
+       1065 | 582633-0 | Laura            | Pérez Flores          | Salud Ltda.
+       1487 | 852806-3 | Francisco        | Rodríguez Díaz        | Salud Ltda.
+       1702 | 241318-3 | Sofía            | Rodríguez Pérez       | Salud Ltda.
+       2767 | 457016-2 | María Diego      | Rodríguez Soto        | Salud Ltda.
+       2294 | 235751-8 | Marta María      | Rojas                 | Salud Ltda.
+       2372 | 264381-2 | Juan Lucía       | Sepúlveda Araya       | Salud Ltda.
+        547 | 978263-K | Daniel           | Soto Araya            | Salud Ltda.
+       1694 | 248177-4 | Ana              | Soto Espinoza         | Salud Ltda.
+       2941 | 440578-1 | Sofía            | Soto Pérez            | Salud Ltda.
+       1197 | 131376-2 | Andrés Francisco | Torres                | Salud Ltda.
+       1770 | 540278-6 | Paula            | Torres                | Salud Ltda.
+       2925 | 651629-7 | Carmen           | Torres Díaz           | Salud Ltda.
+         60 | 603422-5 | Antonio Carmen   | Torres Muñoz          | Salud Ltda.
+        298 | 408859-K | Ana Francisco    | Valenzuela Contreras  | Salud Ltda.
+        908 | 454680-6 | Carmen           | Contreras             | sinsalud S.A.
+        256 | 159355-2 | Carmen Lucía     | Contreras             | sinsalud S.A.
+       1617 | 199356-9 | Ana              | Díaz                  | sinsalud S.A.
+       1008 | 927171-6 | Francisco        | Espinoza              | sinsalud S.A.
+       2793 | 217029-9 | Juan             | Flores Martínez       | sinsalud S.A.
+       1327 | 490841-4 | Carmen Lucía     | Flores Muñoz          | sinsalud S.A.
+       1057 | 339683-5 | Luis             | Flores Pérez          | sinsalud S.A.
+        138 | 720877-4 | Carmen           | Flores Sepúlveda      | sinsalud S.A.
+       2433 | 548782-K | Paula            | Fuentes Hernández     | sinsalud S.A.
+        418 | 259736-5 | Isabel           | González              | sinsalud S.A.
+       1417 | 948066-8 | José Javier      | Hernández             | sinsalud S.A.
+       2689 | 616210-K | Luis             | Hernández             | sinsalud S.A.
+        192 | 758519-5 | Andrés           | Hernández Díaz        | sinsalud S.A.
+       1485 | 319555-4 | Sofía            | Hernández Hernández   | sinsalud S.A.
+       1366 | 254734-1 | Miguel           | López Torres          | sinsalud S.A.
+       1236 | 101362-9 | Andrés           | Martínez Silva        | sinsalud S.A.
+        704 | 814913-5 | Daniel Daniel    | Martínez Soto         | sinsalud S.A.
+       2414 | 123922-8 | Diego            | Morales Torres        | sinsalud S.A.
+       1593 | 222642-1 | Marta            | Muñoz                 | sinsalud S.A.
+       1038 | 370528-5 | María            | Muñoz Morales         | sinsalud S.A.
+        251 | 194294-8 | Isabel           | Muñoz Rodríguez       | sinsalud S.A.
+       2073 | 199280-5 | María            | Pérez Fuentes         | sinsalud S.A.
+       2791 | 493335-4 | Paula Miguel     | Rodríguez Morales     | sinsalud S.A.
+       2106 | 398345-5 | Miguel           | Rojas                 | sinsalud S.A.
+        153 | 335232-3 | Antonio Marta    | Rojas Hernández       | sinsalud S.A.
+       2263 | 108317-1 | Daniel           | Rojas Morales         | sinsalud S.A.
+        684 | 106958-6 | Paula            | Sepúlveda Díaz        | sinsalud S.A.
+       1490 | 875560-4 | Daniel           | Sepúlveda Espinoza    | sinsalud S.A.
+       2832 | 757081-3 | Juan             | Silva                 | sinsalud S.A.
+        330 | 129414-8 | Daniel           | Soto González         | sinsalud S.A.
+        741 | 659214-7 | Ana              | Soto Pérez            | sinsalud S.A.
+       2050 | 705002-K | José             | Torres Flores         | sinsalud S.A.
+       2483 | 680706-2 | Daniel           | Torres González       | sinsalud S.A.
+       1554 | 106623-4 | Javier           | Valenzuela Contreras  | sinsalud S.A.
+       2406 | 928187-8 | Diego Javier     | Valenzuela Flores     | sinsalud S.A.
+        129 | 531157-8 | Francisco María  | Araya                 | Vida uno S.A.
+       1374 | 530522-5 | Paula            | Araya Araya           | Vida uno S.A.
+       2029 | 109073-9 | Laura            | Araya Contreras       | Vida uno S.A.
+       1393 | 570687-4 | Marta            | Araya Rojas           | Vida uno S.A.
+       1782 | 681548-0 | Laura            | Contreras             | Vida uno S.A.
+        793 | 694689-5 | Francisco        | Contreras Martínez    | Vida uno S.A.
+       1707 | 762728-9 | Ana Isabel       | Díaz Muñoz            | Vida uno S.A.
+       1719 | 668223-5 | Isabel Paula     | Díaz Rojas            | Vida uno S.A.
+       1632 | 473356-8 | Javier           | Espinoza              | Vida uno S.A.
+        264 | 488171-0 | Juan             | Espinoza              | Vida uno S.A.
+         45 | 257933-2 | Luis María       | Espinoza              | Vida uno S.A.
+       2995 | 297781-8 | Paula            | Espinoza Fuentes      | Vida uno S.A.
+       2928 | 349255-9 | Ana Ana          | Espinoza Silva        | Vida uno S.A.
+        811 | 513289-4 | Laura            | Flores Araya          | Vida uno S.A.
+       1980 | 741818-3 | Juan             | Flores Valenzuela     | Vida uno S.A.
+        374 | 830256-1 | Daniel           | Fuentes               | Vida uno S.A.
+       2589 | 558287-3 | Javier           | Fuentes               | Vida uno S.A.
+         27 | 220629-3 | Pedro            | Fuentes               | Vida uno S.A.
+       2438 | 736213-7 | Diego            | González Araya        | Vida uno S.A.
+         14 | 955378-9 | Luis             | González González     | Vida uno S.A.
+         38 | 405885-2 | Francisco        | González Morales      | Vida uno S.A.
+        146 | 201979-5 | Antonio          | López Espinoza        | Vida uno S.A.
+        180 | 321706-K | Miguel Laura     | López Soto            | Vida uno S.A.
+        454 | 175395-9 | Isabel           | Martínez              | Vida uno S.A.
+       1341 | 923583-3 | Lucía            | Martínez Araya        | Vida uno S.A.
+       2264 | 414648-4 | María            | Martínez Araya        | Vida uno S.A.
+        149 | 174621-9 | Sofía Lucía      | Martínez Rojas        | Vida uno S.A.
+       2492 | 592043-4 | Andrés Andrés    | Morales Rodríguez     | Vida uno S.A.
+       1126 | 108709-6 | Lucía            | Morales Torres        | Vida uno S.A.
+        160 | 311081-8 | María            | Morales Valenzuela    | Vida uno S.A.
+       1493 | 217593-2 | Andrés María     | Muñoz                 | Vida uno S.A.
+        589 | 504733-1 | Pedro            | Muñoz                 | Vida uno S.A.
+       1786 | 872601-9 | Carmen Carmen    | Muñoz González        | Vida uno S.A.
+       1438 | 162981-6 | Carmen           | Pérez Araya           | Vida uno S.A.
+        832 | 478412-K | Miguel           | Rodríguez             | Vida uno S.A.
+        416 | 621649-8 | Laura            | Rojas Torres          | Vida uno S.A.
+       2790 | 242147-K | Pedro María      | Sepúlveda             | Vida uno S.A.
+        432 | 843783-1 | Laura Ana        | Sepúlveda Pérez       | Vida uno S.A.
+        566 | 227165-6 | Juan José        | Silva                 | Vida uno S.A.
+       1812 | 478513-4 | Daniel Paula     | Silva Flores          | Vida uno S.A.
+       2646 | 239186-4 | Antonio          | Silva Rodríguez       | Vida uno S.A.
+       2240 | 908056-2 | Javier           | Soto Contreras        | Vida uno S.A.
+        234 | 739604-K | Pedro            | Soto Soto             | Vida uno S.A.
+       2898 | 464457-3 | Javier Marta     | Torres López          | Vida uno S.A.
+       1124 | 345911-K | Isabel           | Valenzuela Pérez      | Vida uno S.A.
+(390 rows)
+

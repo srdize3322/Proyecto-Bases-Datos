@@ -1,0 +1,129 @@
+                                 tipo                                 | n_aranceles | n_ordenes 
+----------------------------------------------------------------------+-------------+-----------
+ (vacío)                                                              |       17483 |     17275
+ PROC DIAGNOSTICO Y TERAPEUTICO                                       |         599 |       599
+ PROC DIAGNOSTICO Y TERAPEUTICO INCLUYE USO DE ANESTESIA TOPICA       |         528 |       528
+ PROCEDIMIENTOS DIAGNOSTICOS Y TERAPEUTICOS  DEL APARATO RESPIRATORIO |         430 |       430
+ PROCEDIMIENTOS                                                       |         157 |       157
+ PROCEDIMIENTOS UROLÓGICOS                                            |          69 |        69
+ PROCEDIMIENTOS DE INMOVILIZACIÓN                                     |          64 |        64
+ BIOPSIA SINOVIAL  ÓSEA O MUSCULAR (proc aut)                         |          60 |        60
+ PROCEDIMIENTOS ORTOPEDICOS                                           |          59 |        59
+ PROCEDIMIENTOS TERAPEUTICOS                                          |          48 |        48
+ EXAMENES URODINAMICOS                                                |          47 |        47
+ PROCEDIMIENTOS PARA EXAMENES RADIOLOGICOS                            |          39 |        39
+ INJERTOS OSEOS                                                       |          33 |        33
+ FRACTURAS EXPUESTAS                                                  |          25 |        25
+ MISCELANEOS                                                          |          25 |        25
+ PROCEDIMIENTOS EN ESCARAS                                            |          23 |        23
+ ACTIVIDAD COMPIN                                                     |          15 |        11
+ CONSULTAS Y ATENCION MEDICA                                          |          51 |         0
+ TELECONSULTA                                                         |          46 |         0
+ CIRUGIA PROCTOLOGICA                                                 |          39 |         0
+ HIGADO Y VIAS BILIARES                                               |          33 |         0
+ MANO                                                                 |          26 |         0
+ INTESTINOS DELGADO Y GRUESO                                          |          25 |         0
+ ESTOMAGO                                                             |          25 |         0
+ CIRUGIAS                                                             |          24 |         0
+ CADERA                                                               |          20 |         0
+ PIE                                                                  |          18 |         0
+ DIA CAMA                                                             |          17 |         0
+ RODILLA                                                              |          15 |         0
+ VEJIGA                                                               |          14 |         0
+ TOBILLO                                                              |          12 |         0
+ CIRUGÍA PEDIÁTRICA Y NEONATAL                                        |          12 |         0
+ HOMBRO                                                               |          12 |         0
+ COLUMNA                                                              |          12 |         0
+ RIÑON                                                                |          12 |         0
+ URETER                                                               |          11 |         0
+ URETRA                                                               |          11 |         0
+ TESTICULOS Y SUS ANEXOS                                              |          11 |         0
+ CODO                                                                 |          10 |         0
+ DIALISIS                                                             |           9 |         0
+ ANTEBRAZO                                                            |           9 |         0
+ PIERNA                                                               |           9 |         0
+ PENE                                                                 |           8 |         0
+ MUSLO                                                                |           8 |         0
+ MUÑECA                                                               |           8 |         0
+ EPIDIDIMO Y CONDUCTO DEFERENTE                                       |           7 |         0
+ TUMORES O QUISTES O LESIONES PSEUDOTUMORALES  OSEOS O MUSCULARES     |           7 |         0
+ CONSULTAS POR OTROS PROFESIONALES DE LA SALUD                        |           7 |         0
+ EDUCACION DE GRUPO                                                   |           6 |         0
+ HUMERO                                                               |           6 |         0
+ CIRUGIA ABDOMINAL                                                    |           6 |         0
+ VISITAS DOMICILIARIAS                                                |           5 |         0
+ BAZO                                                                 |           4 |         0
+ PARED ABDOMINAL                                                      |           4 |         0
+ PELVIS                                                               |           4 |         0
+ PROSTATA Y VESICULAS SEMINALES                                       |           4 |         0
+ PERITONEO                                                            |           3 |         0
+ RETIRO DE ELEMENTOS DE OSTEOSINTESIS                                 |           3 |         0
+ INFECCIONES OSEAS                                                    |           3 |         0
+ INFECCIONES ARTICULARES                                              |           3 |         0
+ TELEREHABILITACIÓN: PSICOLOGÍA                                       |           3 |         0
+ ARTRODESIS                                                           |           3 |         0
+ SINOVECTOMIAS QUIRURGICAS  (proc aut)                                |           2 |         0
+ OTROS                                                                |           2 |         0
+ TELEINTERCONSULTA (TELEMEDICINA)                                     |           2 |         0
+ SUPRARRENAL                                                          |           1 |         0
+ NEUROLISIS - NEURORRAFIAS - NEURECTOMIAS                             |           1 |         0
+ MALFORMACIONES CONGENITAS                                            |           1 |         0
+ TELEMEDICINA PROFESIONALES NO MÉDICOS                                |           1 |         0
+(69 rows)
+
+ Codigo  |                                                                                              ConsAtMedica                                                                                               |  tipo   
+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------
+ 0301002 | Acido fólico o folatos                                                                                                                                                                                  | (vacío)
+ 0301003 | Adenograma  mielograma  c/u                                                                                                                                                                             | (vacío)
+ 0301006 | Agregación plaquetaria con diferentes agonistas                                                                                                                                                         | (vacío)
+ 0301007 | Anticoagulantes circulantes o anticoagulante lúpico                                                                                                                                                     | (vacío)
+ 0301008 | Antitrombina III                                                                                                                                                                                        | (vacío)
+ 0301011 | Coagulación  tiempo de                                                                                                                                                                                  | (vacío)
+ 0301013 | Tiempo de lisis del coágulo                                                                                                                                                                             | (vacío)
+ 0301014 | Prueba de antiglobulina directa                                                                                                                                                                         | (vacío)
+ 0301017 | Deshidrogenasa glucosa-6-fosfato en eritrocitos                                                                                                                                                         | (vacío)
+ 0301020 | Tiempo de lisis de euglobulinas                                                                                                                                                                         | (vacío)
+ 0301021 | Fibrinógeno                                                                                                                                                                                             | (vacío)
+ 0301022 | Test de neutralización plaquetaria                                                                                                                                                                      | (vacío)
+ 0301024 | Factor V                                                                                                                                                                                                | (vacío)
+ 0301025 | Factores VII  VIII  IX  X  XI  XII  XIII  c/u                                                                                                                                                           | (vacío)
+ 0301026 | Ferritina                                                                                                                                                                                               | (vacío)
+ 0301027 | Fibrinógeno  productos de degradación del                                                                                                                                                               | (vacío)
+ 0301028 | Fierro sérico                                                                                                                                                                                           | (vacío)
+ 0301029 | Fierro  capacidad de fijación del (incluye fierro sérico)                                                                                                                                               | (vacío)
+ 0301030 | Fierro  cinética del (cada determinación)                                                                                                                                                               | (vacío)
+ 0301034 | Clasificación sanguínea AB0 y RhD                                                                                                                                                                       | (vacío)
+ 0301035 | Haptoglobina cuantitativa                                                                                                                                                                               | (vacío)
+ 0301036 | Hematocrito (proc aut)                                                                                                                                                                                  | (vacío)
+ 0301038 | Hemoglobina en sangre total (proc aut)                                                                                                                                                                  | (vacío)
+ 0301040 | Hemoglobina fetal cuantitativa en eritrocitos                                                                                                                                                           | (vacío)
+ 0301041 | Hemoglobina glicada A1c                                                                                                                                                                                 | (vacío)
+ 0301042 | Hemoglobina plasmática                                                                                                                                                                                  | (vacío)
+ 0301044 | Electroforesis de hemoglobina                                                                                                                                                                           | (vacío)
+ 0301045 | Hemograma (incluye recuentos de leucocitos  eritrocitos  plaquetas  hemoglobina  hematocrito  fórmula leucocitaria  características de los elementos figurados y velocidad de eritrosedimentación)      | (vacío)
+ 0301048 | Hemosiderina medular                                                                                                                                                                                    | (vacío)
+ 0301049 | Cuantificación de heparina                                                                                                                                                                              | (vacío)
+ 0301051 | Identificación de anticuerpos irregulares eritrocitarios                                                                                                                                                | (vacío)
+ 0301054 | Metahemoglobina                                                                                                                                                                                         | (vacío)
+ 0301059 | Tiempo de protrombina (incluye INR  Razón Internacional Normalizada)                                                                                                                                    | (vacío)
+ 0301062 | Recuento de basófilos (absoluto)                                                                                                                                                                        | (vacío)
+ 0301063 | Recuento de eosinófilos (absoluto)                                                                                                                                                                      | (vacío)
+ 0301064 | Recuento de eritrocitos  absoluto (proc aut)                                                                                                                                                            | (vacío)
+ 0301065 | Recuento de leucocitos  absoluto (proc aut)                                                                                                                                                             | (vacío)
+ 0301066 | Recuento de linfocitos (absoluto)                                                                                                                                                                       | (vacío)
+ 0301067 | Recuento de plaquetas (absoluto)                                                                                                                                                                        | (vacío)
+ 0301068 | Recuento de reticulocitos (absoluto o porcentual)                                                                                                                                                       | (vacío)
+(40 rows)
+
+                                                                                    examen                                                                                    | veces_solicitado 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------
+ Resonancia Magnética  de columna cervical                                                                                                                                    |               24
+ Angiotensina                                                                                                                                                                 |               22
+ Perfil lipídico (incluye mediciones de colesterol total  HDL-colesterol y triglicéridos con estimaciones por fórmula de LDL-colesterol  VLDL-colesterol y colesterol no-HDL) |               20
+ Alfa fetoproteínas                                                                                                                                                           |               19
+ Lipasa en sangre                                                                                                                                                             |               19
+ Mutación JAK-2                                                                                                                                                               |               19
+ Recuento de linfocitos (absoluto)                                                                                                                                            |               19
+ Tinción para campylobacter                                                                                                                                                   |               19
+(8 rows)
+

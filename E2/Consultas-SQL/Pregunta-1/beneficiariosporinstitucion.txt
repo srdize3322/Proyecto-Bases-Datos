@@ -1,0 +1,15 @@
+       institucion       | titulares_pacientes | no_titulares_pacientes 
+-------------------------+---------------------+------------------------
+ Colmena de avispas S.A. |                  62 |                     84
+ Cruz de Malta S.A.      |                  50 |                     69
+ Cruz pal cielo Ltda.    |                  52 |                     65
+ especial S.A.           |                  57 |                     78
+ FONASA                  |                  54 |                     79
+ Fundación e imperio     |                  54 |                     81
+ Medibanc S.A.           |                  60 |                     62
+ Menos vida S.A.         |                  59 |                     87
+ Salud Ltda.             |                  70 |                     78
+ sinsalud S.A.           |                  56 |                     80
+ Vida uno S.A.           |                  62 |                     84
+(11 rows)
+
