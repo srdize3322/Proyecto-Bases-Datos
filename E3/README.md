@@ -87,8 +87,7 @@ Se identifica la ruta del archivo `Persona.csv` en la carpeta `Old/`, se asegura
 También se construye un **diccionario de columnas** para localizar cada campo de forma dinámica, lo que permite adaptarse a variaciones en los nombres de las cabeceras.
 
 #### Normalización del RUN  
-Se limpia el RUN de puntos y espacios, se separan el cuerpo y el dígito verificador, y se valida que el cuerpo tenga al menos 6 dígitos y no más de 8 (si hay más, se toman los últimos ocho).  
-Se calcula el dígito verificador con el algoritmo **módulo-11** y, si no coincide con el proporcionado, se corrige.  
+Se limpia el RUN de puntos y espacios, se separan el cuerpo y el dígito verificador, y se valida que el cuerpo tenga al menos 6 dígitos y no más de 8 (si hay más, se toman los últimos ocho). 
 Los RUN duplicados se envían a `ERR` y se registra el motivo en el log.
 
 #### Corrección de nombres y apellidos  
@@ -134,5 +133,21 @@ Si está vacío o no coincide con una entrada del catálogo, se reemplaza por **
 Cada fila procesada se escribe en `OK` o `ERR` dependiendo de si supera todas estas validaciones.  
 Las acciones realizadas sobre cada registro (correcciones, inferencias o descartes) se van acumulando en un **array de mensajes**, que finalmente se vuelca en `Persona_LOG.txt` con una marca de tiempo y el número de línea original.  
 
-De este modo, el script proporciona un **rastro claro y completo de lo ocurrido con cada dato**, dejando el CSV **listo para su carga en la base de datos** en la siguiente etapa del proyecto.
+
+---
+
+### 1.4.2. Explicación `filtroInstituciones.php`
+
+El script `filtroInstituciones.php` realiza la depuración del archivo `Old/Instituciones previsionales de salud.csv`.  
+Su tarea es mucho más simple que la de personas, ya que este dataset sólo requiere limpieza estructural y de formato.  
+El script elimina las filas completamente vacías, corrige pequeñas inconsistencias en los campos y genera las tres salidas estándar (`_OK.csv`, `_ERR.csv`, `_LOG.txt`).  
+
+Durante la depuración:
+- Se eliminan las filas vacías o con todos los campos en blanco.
+- Se corrigen los prefijos de enlace, eliminando `https://` del campo **Enlace**.
+- Se eliminan los puntos en el campo **rut** y se valida cada uno con el algoritmo **módulo 11** (corrigiendo el dígito verificador si es necesario). El algoritmo lo encontré en internet y lo adapté.
+- Se recortan espacios sobrantes en los extremos de los campos, especialmente en el nombre.
+- Se mantiene el encabezado tal cual fue entregado en el CSV original, sin renombrar columnas.
+
+De esta forma, se garantiza que las instituciones previsionales estén normalizadas y válidas antes de ser utilizadas como referencia para la carga de datos de personas u otras entidades del proyecto.
 

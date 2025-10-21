@@ -15,7 +15,7 @@ $LOG = "$R/Logs/Persona_LOG.txt";
 @mkdir("$R/Depurado",0777,true); @mkdir("$R/Eliminado",0777,true); @mkdir("$R/Logs",0777,true);
 if(!is_readable($IN)) die("No puedo leer $IN\n");
 
-// ---------- helpers compactos ----------
+// ---------- helpers de internet normalizar rut sacado de internet se usa en otras partes tambien ----------
 $log = function($h,$m){ fwrite($h,'['.date('Y-m-d H:i:s')."] $m\n"); };
 $cap = function($s){ $s=trim(mb_strtolower((string)$s)); if($s==='')return ''; $s=preg_replace('/\s+/u',' ',$s);
   return preg_replace_callback('/\b(\p{L})(\p{L}*)/u',fn($m)=>mb_strtoupper($m[1]).$m[2],$s); };
