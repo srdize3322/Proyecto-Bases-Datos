@@ -29,9 +29,9 @@ $normRUN = function($raw,&$why=null,&$trace=null,$ln=null) use($dv11){
   if(strpos($s,'-')!==false){ [$c,$d]=explode('-',$s,2); } else { if(strlen($s)<2){$why='formato';return null;} $c=substr($s,0,-1); $d=substr($s,-1); }
   $c=preg_replace('/\D/','',$c); $d=strtoupper($d);
   if($c===''||strlen($c)<6){ $why='menos de 6'; return null; }
-  if(strlen($c)>8){ $c=substr($c,-8); $trace && $trace[]="L$ln cuerpo>8 -> $c"; }
+  if(strlen($c)>8){ $why='cuerpo>8'; return null; }
   if(!preg_match('/^[0-9K]$/',$d)){ $why='DV inválido'; return null; }
-  $calc=$dv11($c); if($d!==$calc){ $trace && $trace[]="L$ln DV '$d'->'$calc'"; $d=$calc; }
+  $calc=$dv11($c); if($d!==$calc){ $d=$calc; }
   return "$c-$d";
 };
 
@@ -60,10 +60,18 @@ $instSet = array_flip(array_map(fn($x)=>mb_strtoupper($x,'UTF-8'),[
 ]));
 $cat="$R/Old/Instituciones previsionales de salud.csv";
 if(is_readable($cat) && ($h=fopen($cat,'r'))){
-  fgetcsv($h, 0, ';', '"', '\\');
+  // leer header y ubicar columna "nombre" (trim para manejar "nombre ")
+  $hdr = fgetcsv($h, 0, ';', '"', '\\');
+  $nameIdx = null;
+  if ($hdr !== false) {
+    foreach ($hdr as $i=>$hh) {
+      if (mb_strtolower(trim((string)$hh),'UTF-8') === 'nombre') { $nameIdx = $i; break; }
+    }
+  }
+  // si se encontró la columna nombre, usar sólo esa; si no, no añadimos nada extra
   while(($r=fgetcsv($h, 0, ';', '"', '\\'))!==false){
-    foreach($r as $c){
-      $k=mb_strtoupper(trim((string)$c),'UTF-8');
+    if ($nameIdx !== null && isset($r[$nameIdx])){
+      $k = mb_strtoupper(trim((string)$r[$nameIdx]),'UTF-8');
       if($k!=='') $instSet[$k]=true;
     }
   }
