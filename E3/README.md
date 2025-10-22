@@ -99,11 +99,11 @@ Se compactan los espacios repetidos sin modificar el contenido.
 
 #### Correo electrónico  
 Se convierten a minúsculas, se eliminan caracteres no permitidos y diacríticos, y se valida que tengan una sola `@` y un dominio con al menos un punto.  
-Cuando el correo no es reparable o viene vacío, se sustituye por `mail@invalido.com` y se documenta la corrección en el log.
+Cuando el correo no es reparable o viene vacío, se documenta la corrección en el log.
 
 #### Teléfono  
 Se extraen todos los dígitos y se elimina el prefijo `56` si aparece.  
-Se conservan los últimos 9 dígitos (formato de telefonía chilena); si el resultado no alcanza esa longitud, se reemplaza por `111111111` y se registra en el log.
+Se conservan los últimos 9 dígitos (formato de telefonía chilena); si el resultado no alcanza esa longitud, se reemplaza por `1 1111 1111` y se registra en el log.
 
 ####  Tipo y titular  
 Se valida el campo `tipo` (debe ser **titular** o **beneficiario**).  
@@ -119,9 +119,6 @@ El campo `rol` se compara contra una lista de valores permitidos (*Paciente, Sta
 Los roles no reconocidos se sustituyen por **Paciente**.  
 Si el rol no es clínico, los campos de profesión y especialidad se vacían; de lo contrario, se capitalizan.  
 También se corrigen alias comunes (por ejemplo, *Paramedico* → *Paramédico*).
-
-#### Firma  
-Se mantiene el valor del campo firma tras eliminar espacios; no se valida la existencia del archivo aquí (esa verificación puede hacerse en otra etapa si se requiere).
 
 #### Institución previsional de salud  
 Se normaliza el nombre y se consulta contra el catálogo de instituciones (cargado desde `Instituciones previsionales de salud.csv` lo puse manualmente no revisa como tal el csv).  
