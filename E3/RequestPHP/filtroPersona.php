@@ -59,8 +59,14 @@ $instSet = array_flip(array_map(fn($x)=>mb_strtoupper($x,'UTF-8'),[
   'Menos vida S.A.','Cruz pal cielo Ltda.','Medibanc S.A.','sinsalud S.A.','especial S.A.','FONASA'
 ]));
 $cat="$R/Old/Instituciones previsionales de salud.csv";
-if(is_readable($cat) && ($h=fopen($cat,'r'))){ fgetcsv($h);
-  while(($r=fgetcsv($h))!==false){ foreach($r as $c){ $k=mb_strtoupper(trim((string)$c),'UTF-8'); if($k!=='') $instSet[$k]=true; } }
+if(is_readable($cat) && ($h=fopen($cat,'r'))){
+  fgetcsv($h, 0, ';', '"', '\\');
+  while(($r=fgetcsv($h, 0, ';', '"', '\\'))!==false){
+    foreach($r as $c){
+      $k=mb_strtoupper(trim((string)$c),'UTF-8');
+      if($k!=='') $instSet[$k]=true;
+    }
+  }
   fclose($h);
 }
 $rolesOK   = array_flip(['Paciente','Staff Médico','Administrativo','Enfermero','Enfermera','Médico','Medico','Tens','Paramédico','Tecnólogo Médico','Kinesiólogo']);
@@ -69,37 +75,25 @@ $aliasRol  = ['Staff Medico'=>'Staff Médico','Medico'=>'Médico','Paramedico'=>
 
 // ---------- IO ----------
 $in=fopen($IN,'r'); $ok=fopen($OK,'w'); $er=fopen($ERR,'w'); $lg=fopen($LOG,'w');
-$del=';'; $hdr=fgetcsv($in,0,$del); if($hdr===false) exit(0);
-fputcsv($ok,$hdr,$del); fputcsv($er,$hdr,$del);
+$del=';'; $hdr=fgetcsv($in, 0, $del, '"', '\\'); if($hdr===false) exit(0);
+fputcsv($ok, $hdr, $del, '"', '\\'); fputcsv($er, $hdr, $del, '"', '\\');
 
 // índice flexible
-$idx=[]; $map=[]; foreach($hdr as $i=>$h){ $map[mb_strtolower(trim($h),'UTF-8')]=$i; }
-$pick=function($arr)use($map){ foreach($arr as $a){ $k=mb_strtolower($a,'UTF-8'); if(isset($map[$k])) return $map[$k]; } return null; };
-$idx['RUN']=$pick(['RUN','Rut','run','rut']);
-$idx['Nom']=$pick(['Nombre','Nombres','nombre','nombres']);
-$idx['Ape']=$pick(['Apellidos','Apellido','apellidos','apellido']);
-$idx['Dir']=$pick(['Dirección','Direccion','dirección','direccion']);
-$idx['Mail']=$pick(['Correo Electrónico','Correo','Email','E-mail','email','mail']);
-$idx['Tel']=$pick(['Teléfono','Telefono','Fono','Celular','fono']);
-$idx['Tipo']=$pick(['tipo','Tipo']);
-$idx['Tit']=$pick(['titular','Titular','RUN_Titular','Titular_RUN']);
-$idx['Rol']=$pick(['rol','Rol']);
-$idx['Prof']=$pick(['profesión','Profesion','Profesión','profesion']);
-$idx['Esp']=$pick(['especialidad','Especialidad']);
-$idx['Fir']=$pick(['firma','Firma']);
-$idx['Inst']=$pick(['institucion previsional de salud','institución previsional de salud','Institución','Institucion','Isapre','Previsión','Prevision']);
-if($idx['RUN']===null) die("No se encontró columna RUN\n");
+$idx = [
+  'ID'=>0,'RUN'=>1,'Nom'=>2,'Ape'=>3,'Dir'=>4,'Mail'=>5,'Tel'=>6,
+  'Tipo'=>7,'Tit'=>8,'Rol'=>9,'Prof'=>10,'Esp'=>11,'Fir'=>12,'Inst'=>13
+];
 
 // ---------- proceso ----------
 $seen=[]; $ln=1;
-while(($row=fgetcsv($in,0,$del))!==false){ $ln++; $t=[];
+while(($row=fgetcsv($in, 0, $del, '"', '\\'))!==false){ $ln++; $t=[];
   $get=function($k)use($row,$idx){ return $idx[$k]!==null && isset($row[$idx[$k]])? $row[$idx[$k]]:''; };
   $set=function($k,$v)use(&$row,$idx){ if($idx[$k]!==null) $row[$idx[$k]]=$v; };
 
   // RUN (descarta sólo irrecuperables) + duplicados
   $why=null; $run=$normRUN($get('RUN'),$why,$t,$ln);
-  if($run===null){ $t[]="L$ln RUN '{$get('RUN')}' -> ERR ($why)"; fputcsv($er,$row,$del); $log($lg,implode(' | ',$t)); continue; }
-  if(isset($seen[$run])){ $t[]="L$ln Duplicado $run -> ERR"; fputcsv($er,$row,$del); $log($lg,implode(' | ',$t)); continue; }
+  if($run===null){ $t[]="L$ln RUN '{$get('RUN')}' -> ERR ($why)"; fputcsv($er, $row, $del, '"', '\\'); $log($lg,implode(' | ',$t)); continue; }
+  if(isset($seen[$run])){ $t[]="L$ln Duplicado $run -> ERR"; fputcsv($er, $row, $del, '"', '\\'); $log($lg,implode(' | ',$t)); continue; }
   $seen[$run]=1; if($get('RUN')!==$run){ $t[]="L$ln RUN '{$get('RUN')}'->'$run'"; $set('RUN',$run); }
 
   // Nombre/Apellidos
@@ -140,7 +134,7 @@ while(($row=fgetcsv($in,0,$del))!==false){ $ln++; $t=[];
     if($ir==='' || !isset($instSet[$key])) $set('Inst','FONASA');
   }
 
-  fputcsv($ok,$row,$del);
+  fputcsv($ok, $row, $del, '"', '\\');
   if($t) $log($lg,implode(' | ',$t));
 }
 
