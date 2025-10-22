@@ -4,7 +4,7 @@
 // Reglas: RUN 6–8 dígitos + DV (con/sin guion, DV numérico o K); corrige DV; dup=ERR;
 // nombre/apellidos no nulos; email translitera tildes (diaz), repara y valida; teléfono últimos 9;
 // tipo/titular coherentes (infiero si falta); rol listado (limpia prof/esp si no clínico);
-// institución ∈ {lista fija + catálogo Old/*.csv} o FONASA; firma ignorada.
+// institución ∈ lista fija (abajo); si no coincide -> FONASA; firma ignorada.
 
 mb_internal_encoding('UTF-8');
 $R = realpath(__DIR__.'/..');
@@ -53,30 +53,10 @@ $telFix = function($s,&$trace,$ln){
   $trace[]="L$ln tel '$s' -> 111111111"; return '111111111';
 };
 
-// instituciones válidas (lista fija + catálogo si existe)
 $instSet = array_flip(array_map(fn($x)=>mb_strtoupper($x,'UTF-8'),[
   'Salud Ltda.','Colmena de avispas S.A.','Fundación e imperio','Cruz de Malta S.A.','Vida uno S.A.',
   'Menos vida S.A.','Cruz pal cielo Ltda.','Medibanc S.A.','sinsalud S.A.','especial S.A.','FONASA'
 ]));
-$cat="$R/Old/Instituciones previsionales de salud.csv";
-if(is_readable($cat) && ($h=fopen($cat,'r'))){
-  // leer header y ubicar columna "nombre" (trim para manejar "nombre ")
-  $hdr = fgetcsv($h, 0, ';', '"', '\\');
-  $nameIdx = null;
-  if ($hdr !== false) {
-    foreach ($hdr as $i=>$hh) {
-      if (mb_strtolower(trim((string)$hh),'UTF-8') === 'nombre') { $nameIdx = $i; break; }
-    }
-  }
-  // si se encontró la columna nombre, usar sólo esa; si no, no añadimos nada extra
-  while(($r=fgetcsv($h, 0, ';', '"', '\\'))!==false){
-    if ($nameIdx !== null && isset($r[$nameIdx])){
-      $k = mb_strtoupper(trim((string)$r[$nameIdx]),'UTF-8');
-      if($k!=='') $instSet[$k]=true;
-    }
-  }
-  fclose($h);
-}
 $rolesOK   = array_flip(['Paciente','Staff Médico','Administrativo','Enfermero','Enfermera','Médico','Medico','Tens','Paramédico','Tecnólogo Médico','Kinesiólogo']);
 $rolesClin = array_flip(['Staff Médico','Enfermero','Enfermera','Médico','Medico','Tens','Paramédico','Tecnólogo Médico','Kinesiólogo']);
 $aliasRol  = ['Staff Medico'=>'Staff Médico','Medico'=>'Médico','Paramedico'=>'Paramédico','Tecnologo Medico'=>'Tecnólogo Médico','Kinesiologo'=>'Kinesiólogo'];
