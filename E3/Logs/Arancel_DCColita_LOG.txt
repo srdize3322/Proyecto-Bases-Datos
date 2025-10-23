@@ -1,609 +1,609 @@
-[2025-10-23 14:01:59] L3 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L52 código duplicado 8423 -> ERR
-[2025-10-23 14:01:59] L172 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L219 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L241 atencion:Normalizada
-[2025-10-23 14:01:59] L248 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L249 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L250 código duplicado 9230 -> ERR
-[2025-10-23 14:01:59] L256 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L270 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L275 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L289 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L295 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L313 atencion:Normalizada
-[2025-10-23 14:01:59] L319 sin código FONASA -> ERR
-[2025-10-23 14:01:59] L323 sin código interno -> ERR
-[2025-10-23 14:01:59] L330 valor vacío -> ERR
-[2025-10-23 14:01:59] L331 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L340 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L341 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L342 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L344 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L345 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L346 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L349 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L350 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L351 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L353 código duplicado 3956 -> ERR
-[2025-10-23 14:01:59] L355 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L356 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L360 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L361 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L362 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L378 código duplicado 8532 -> ERR
-[2025-10-23 14:01:59] L394 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L396 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L405 código duplicado 7236 -> ERR
-[2025-10-23 14:01:59] L407 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L411 código duplicado 1621 -> ERR
-[2025-10-23 14:01:59] L420 código duplicado 4513 -> ERR
-[2025-10-23 14:01:59] L423 atencion:Normalizada
-[2025-10-23 14:01:59] L424 atencion:Normalizada
-[2025-10-23 14:01:59] L425 atencion:Normalizada
-[2025-10-23 14:01:59] L428 atencion:Normalizada
-[2025-10-23 14:01:59] L430 atencion:Normalizada
-[2025-10-23 14:01:59] L431 atencion:Normalizada
-[2025-10-23 14:01:59] L433 atencion:Normalizada
-[2025-10-23 14:01:59] L434 atencion:Normalizada
-[2025-10-23 14:01:59] L436 código duplicado 8459 -> ERR
-[2025-10-23 14:01:59] L449 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L464 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L465 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L483 código duplicado 2155 -> ERR
-[2025-10-23 14:01:59] L493 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L494 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L495 código duplicado 8323 -> ERR
-[2025-10-23 14:01:59] L496 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L497 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L498 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L499 código duplicado 5948 -> ERR
-[2025-10-23 14:01:59] L501 código duplicado 4272 -> ERR
-[2025-10-23 14:01:59] L502 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L504 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L510 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L511 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L512 código duplicado 7271 -> ERR
-[2025-10-23 14:01:59] L513 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L524 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L525 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L526 código duplicado 3370 -> ERR
-[2025-10-23 14:01:59] L537 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L539 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L540 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L548 código duplicado 2286 -> ERR
-[2025-10-23 14:01:59] L553 código duplicado 3241 -> ERR
-[2025-10-23 14:01:59] L555 código duplicado 3316 -> ERR
-[2025-10-23 14:01:59] L556 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L563 código duplicado 2286 -> ERR
-[2025-10-23 14:01:59] L564 atencion:Normalizada
-[2025-10-23 14:01:59] L577 código duplicado 1584 -> ERR
-[2025-10-23 14:01:59] L580 código duplicado 8190 -> ERR
-[2025-10-23 14:01:59] L591 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L601 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L605 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L607 atencion:Normalizada
-[2025-10-23 14:01:59] L630 código duplicado 6656 -> ERR
-[2025-10-23 14:01:59] L635 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L658 atencion:Normalizada
-[2025-10-23 14:01:59] L662 código duplicado 1902 -> ERR
-[2025-10-23 14:01:59] L664 atencion:Normalizada
-[2025-10-23 14:01:59] L674 atencion:Normalizada
-[2025-10-23 14:01:59] L681 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L684 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L686 código duplicado 3038 -> ERR
-[2025-10-23 14:01:59] L687 código duplicado 8551 -> ERR
-[2025-10-23 14:01:59] L691 atencion:Normalizada
-[2025-10-23 14:01:59] L692 atencion:Normalizada
-[2025-10-23 14:01:59] L693 atencion:Normalizada
-[2025-10-23 14:01:59] L694 atencion:Normalizada
-[2025-10-23 14:01:59] L696 atencion:Normalizada
-[2025-10-23 14:01:59] L699 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L701 atencion:Normalizada
-[2025-10-23 14:01:59] L708 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L709 código duplicado 7709 -> ERR
-[2025-10-23 14:01:59] L714 atencion:Normalizada
-[2025-10-23 14:01:59] L717 atencion:Normalizada
-[2025-10-23 14:01:59] L718 código duplicado 7550 -> ERR
-[2025-10-23 14:01:59] L725 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L726 código duplicado 8636 -> ERR
-[2025-10-23 14:01:59] L737 código duplicado 2813 -> ERR
-[2025-10-23 14:01:59] L740 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L741 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L742 código duplicado 2215 -> ERR
-[2025-10-23 14:01:59] L745 código duplicado 1470 -> ERR
-[2025-10-23 14:01:59] L751 código duplicado 4333 -> ERR
-[2025-10-23 14:01:59] L752 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L753 atencion:Normalizada
-[2025-10-23 14:01:59] L754 código duplicado 8881 -> ERR
-[2025-10-23 14:01:59] L760 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L767 código duplicado 1653 -> ERR
-[2025-10-23 14:01:59] L783 código duplicado 8479 -> ERR
-[2025-10-23 14:01:59] L784 atencion:Normalizada
-[2025-10-23 14:01:59] L786 atencion:Normalizada
-[2025-10-23 14:01:59] L794 atencion:Normalizada
-[2025-10-23 14:01:59] L795 atencion:Normalizada
-[2025-10-23 14:01:59] L796 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L798 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L824 código duplicado 2010 -> ERR
-[2025-10-23 14:01:59] L827 código duplicado 8734 -> ERR
-[2025-10-23 14:01:59] L831 código duplicado 5183 -> ERR
-[2025-10-23 14:01:59] L847 código duplicado 4216 -> ERR
-[2025-10-23 14:01:59] L852 código duplicado 4995 -> ERR
-[2025-10-23 14:01:59] L856 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L857 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L858 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L863 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L866 código duplicado 6566 -> ERR
-[2025-10-23 14:01:59] L877 código duplicado 1424 -> ERR
-[2025-10-23 14:01:59] L879 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L884 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L892 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L895 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L896 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L902 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L904 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L905 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L906 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L907 código duplicado 5267 -> ERR
-[2025-10-23 14:01:59] L910 código duplicado 4216 -> ERR
-[2025-10-23 14:01:59] L913 código duplicado 8934 -> ERR
-[2025-10-23 14:01:59] L921 código duplicado 6396 -> ERR
-[2025-10-23 14:01:59] L925 código duplicado 6524 -> ERR
-[2025-10-23 14:01:59] L931 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L933 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L934 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L938 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L941 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L948 código duplicado 4810 -> ERR
-[2025-10-23 14:01:59] L954 código duplicado 3173 -> ERR
-[2025-10-23 14:01:59] L955 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L956 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L958 atencion:Normalizada
-[2025-10-23 14:01:59] L959 atencion:Normalizada
-[2025-10-23 14:01:59] L969 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L970 código duplicado 2018 -> ERR
-[2025-10-23 14:01:59] L971 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L978 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L984 código duplicado 4386 -> ERR
-[2025-10-23 14:01:59] L995 código duplicado 1424 -> ERR
-[2025-10-23 14:01:59] L997 código duplicado 1615 -> ERR
-[2025-10-23 14:01:59] L1009 código duplicado 4933 -> ERR
-[2025-10-23 14:01:59] L1011 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1012 código duplicado 1684 -> ERR
-[2025-10-23 14:01:59] L1013 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1020 código duplicado 6642 -> ERR
-[2025-10-23 14:01:59] L1024 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1030 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1037 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1041 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1043 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1057 código duplicado 5372 -> ERR
-[2025-10-23 14:01:59] L1065 código duplicado 6566 -> ERR
-[2025-10-23 14:01:59] L1071 código duplicado 6925 -> ERR
-[2025-10-23 14:01:59] L1075 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1079 código duplicado 6430 -> ERR
-[2025-10-23 14:01:59] L1084 código duplicado 7484 -> ERR
-[2025-10-23 14:01:59] L1096 código duplicado 3295 -> ERR
-[2025-10-23 14:01:59] L1105 código duplicado 3190 -> ERR
-[2025-10-23 14:01:59] L1109 código duplicado 3827 -> ERR
-[2025-10-23 14:01:59] L1110 código duplicado 4878 -> ERR
-[2025-10-23 14:01:59] L1120 código duplicado 9730 -> ERR
-[2025-10-23 14:01:59] L1121 código duplicado 1560 -> ERR
-[2025-10-23 14:01:59] L1123 atencion:Normalizada
-[2025-10-23 14:01:59] L1133 código duplicado 8510 -> ERR
-[2025-10-23 14:01:59] L1134 código duplicado 3332 -> ERR
-[2025-10-23 14:01:59] L1146 código duplicado 8633 -> ERR
-[2025-10-23 14:01:59] L1148 código duplicado 9705 -> ERR
-[2025-10-23 14:01:59] L1170 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1171 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1176 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1179 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1192 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1199 código duplicado 3117 -> ERR
-[2025-10-23 14:01:59] L1201 código duplicado 7088 -> ERR
-[2025-10-23 14:01:59] L1207 código duplicado 3083 -> ERR
-[2025-10-23 14:01:59] L1219 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1221 código duplicado 3512 -> ERR
-[2025-10-23 14:01:59] L1222 código duplicado 7637 -> ERR
-[2025-10-23 14:01:59] L1226 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1227 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1229 código duplicado 5089 -> ERR
-[2025-10-23 14:01:59] L1231 código duplicado 6214 -> ERR
-[2025-10-23 14:01:59] L1238 código duplicado 8190 -> ERR
-[2025-10-23 14:01:59] L1240 código duplicado 7788 -> ERR
-[2025-10-23 14:01:59] L1252 código duplicado 7632 -> ERR
-[2025-10-23 14:01:59] L1255 código duplicado 6437 -> ERR
-[2025-10-23 14:01:59] L1258 código duplicado 3289 -> ERR
-[2025-10-23 14:01:59] L1262 código duplicado 6402 -> ERR
-[2025-10-23 14:01:59] L1266 código duplicado 4456 -> ERR
-[2025-10-23 14:01:59] L1269 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1270 código duplicado 3018 -> ERR
-[2025-10-23 14:01:59] L1276 código duplicado 9470 -> ERR
-[2025-10-23 14:01:59] L1279 código duplicado 6895 -> ERR
-[2025-10-23 14:01:59] L1283 código duplicado 1720 -> ERR
-[2025-10-23 14:01:59] L1285 atencion:Normalizada
-[2025-10-23 14:01:59] L1287 código duplicado 3675 -> ERR
-[2025-10-23 14:01:59] L1300 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1312 código duplicado 8711 -> ERR
-[2025-10-23 14:01:59] L1313 código duplicado 2226 -> ERR
-[2025-10-23 14:01:59] L1315 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1316 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1317 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1318 código duplicado 9244 -> ERR
-[2025-10-23 14:01:59] L1320 código duplicado 9541 -> ERR
-[2025-10-23 14:01:59] L1328 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1333 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1339 código duplicado 5690 -> ERR
-[2025-10-23 14:01:59] L1340 código duplicado 4235 -> ERR
-[2025-10-23 14:01:59] L1356 código duplicado 5850 -> ERR
-[2025-10-23 14:01:59] L1358 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1364 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1366 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1369 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1370 código duplicado 4990 -> ERR
-[2025-10-23 14:01:59] L1371 código duplicado 3993 -> ERR
-[2025-10-23 14:01:59] L1374 código duplicado 5128 -> ERR
-[2025-10-23 14:01:59] L1375 código duplicado 7421 -> ERR
-[2025-10-23 14:01:59] L1378 código duplicado 5056 -> ERR
-[2025-10-23 14:01:59] L1379 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1380 código duplicado 2714 -> ERR
-[2025-10-23 14:01:59] L1386 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1397 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1399 código duplicado 2624 -> ERR
-[2025-10-23 14:01:59] L1407 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1408 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1411 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1416 atencion:Normalizada
-[2025-10-23 14:01:59] L1417 atencion:Normalizada
-[2025-10-23 14:01:59] L1427 código duplicado 3208 -> ERR
-[2025-10-23 14:01:59] L1430 código duplicado 3728 -> ERR
-[2025-10-23 14:01:59] L1431 código duplicado 2464 -> ERR
-[2025-10-23 14:01:59] L1440 código duplicado 1622 -> ERR
-[2025-10-23 14:01:59] L1452 código duplicado 3512 -> ERR
-[2025-10-23 14:01:59] L1458 código duplicado 7868 -> ERR
-[2025-10-23 14:01:59] L1459 código duplicado 7757 -> ERR
-[2025-10-23 14:01:59] L1467 código duplicado 3035 -> ERR
-[2025-10-23 14:01:59] L1473 código duplicado 7599 -> ERR
-[2025-10-23 14:01:59] L1480 atencion:Normalizada
-[2025-10-23 14:01:59] L1481 código duplicado 7375 -> ERR
-[2025-10-23 14:01:59] L1483 código duplicado 8914 -> ERR
-[2025-10-23 14:01:59] L1485 código duplicado 7172 -> ERR
-[2025-10-23 14:01:59] L1489 código duplicado 8051 -> ERR
-[2025-10-23 14:01:59] L1494 atencion:Normalizada
-[2025-10-23 14:01:59] L1495 código duplicado 2377 -> ERR
-[2025-10-23 14:01:59] L1497 código duplicado 4525 -> ERR
-[2025-10-23 14:01:59] L1498 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1499 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1500 código duplicado 6308 -> ERR
-[2025-10-23 14:01:59] L1501 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1504 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1505 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1506 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1511 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1512 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1513 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1518 atencion:Normalizada
-[2025-10-23 14:01:59] L1519 atencion:Normalizada
-[2025-10-23 14:01:59] L1520 atencion:Normalizada
-[2025-10-23 14:01:59] L1521 código duplicado 7540 -> ERR
-[2025-10-23 14:01:59] L1523 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1524 atencion:Normalizada
-[2025-10-23 14:01:59] L1526 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1530 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1532 código duplicado 4930 -> ERR
-[2025-10-23 14:01:59] L1535 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1542 atencion:Normalizada
-[2025-10-23 14:01:59] L1543 atencion:Normalizada
-[2025-10-23 14:01:59] L1544 código duplicado 3241 -> ERR
-[2025-10-23 14:01:59] L1548 código duplicado 4656 -> ERR
-[2025-10-23 14:01:59] L1549 código duplicado 2101 -> ERR
-[2025-10-23 14:01:59] L1551 código duplicado 2892 -> ERR
-[2025-10-23 14:01:59] L1552 código duplicado 5176 -> ERR
-[2025-10-23 14:01:59] L1553 código duplicado 8035 -> ERR
-[2025-10-23 14:01:59] L1556 código duplicado 3165 -> ERR
-[2025-10-23 14:01:59] L1557 código duplicado 9801 -> ERR
-[2025-10-23 14:01:59] L1566 código duplicado 7599 -> ERR
-[2025-10-23 14:01:59] L1574 código duplicado 2752 -> ERR
-[2025-10-23 14:01:59] L1582 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1583 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1587 código duplicado 6647 -> ERR
-[2025-10-23 14:01:59] L1592 código duplicado 4441 -> ERR
-[2025-10-23 14:01:59] L1595 código duplicado 4758 -> ERR
-[2025-10-23 14:01:59] L1596 código duplicado 2813 -> ERR
-[2025-10-23 14:01:59] L1598 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1602 código duplicado 1376 -> ERR
-[2025-10-23 14:01:59] L1608 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1611 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1613 código duplicado 4080 -> ERR
-[2025-10-23 14:01:59] L1614 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1617 código duplicado 8174 -> ERR
-[2025-10-23 14:01:59] L1620 código duplicado 4914 -> ERR
-[2025-10-23 14:01:59] L1628 código duplicado 4651 -> ERR
-[2025-10-23 14:01:59] L1650 atencion:Normalizada
-[2025-10-23 14:01:59] L1651 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1652 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1653 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1654 código duplicado 4675 -> ERR
-[2025-10-23 14:01:59] L1655 código duplicado 8880 -> ERR
-[2025-10-23 14:01:59] L1656 código duplicado 4977 -> ERR
-[2025-10-23 14:01:59] L1657 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1661 código duplicado 4144 -> ERR
-[2025-10-23 14:01:59] L1665 código duplicado 4949 -> ERR
-[2025-10-23 14:01:59] L1666 código duplicado 4873 -> ERR
-[2025-10-23 14:01:59] L1669 código duplicado 2450 -> ERR
-[2025-10-23 14:01:59] L1671 atencion:Normalizada
-[2025-10-23 14:01:59] L1676 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1680 código duplicado 5107 -> ERR
-[2025-10-23 14:01:59] L1686 código duplicado 8105 -> ERR
-[2025-10-23 14:01:59] L1688 código duplicado 1978 -> ERR
-[2025-10-23 14:01:59] L1693 código duplicado 5503 -> ERR
-[2025-10-23 14:01:59] L1698 código duplicado 7651 -> ERR
-[2025-10-23 14:01:59] L1702 código duplicado 4555 -> ERR
-[2025-10-23 14:01:59] L1704 código duplicado 3320 -> ERR
-[2025-10-23 14:01:59] L1715 código duplicado 8934 -> ERR
-[2025-10-23 14:01:59] L1717 código duplicado 5746 -> ERR
-[2025-10-23 14:01:59] L1727 código duplicado 3412 -> ERR
-[2025-10-23 14:01:59] L1728 código duplicado 3190 -> ERR
-[2025-10-23 14:01:59] L1731 atencion:Normalizada
-[2025-10-23 14:01:59] L1740 código duplicado 7414 -> ERR
-[2025-10-23 14:01:59] L1741 código duplicado 9565 -> ERR
-[2025-10-23 14:01:59] L1747 código duplicado 8783 -> ERR
-[2025-10-23 14:01:59] L1748 código duplicado 4481 -> ERR
-[2025-10-23 14:01:59] L1749 código duplicado 4923 -> ERR
-[2025-10-23 14:01:59] L1755 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1765 código duplicado 8914 -> ERR
-[2025-10-23 14:01:59] L1766 código duplicado 7236 -> ERR
-[2025-10-23 14:01:59] L1770 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1773 código duplicado 7449 -> ERR
-[2025-10-23 14:01:59] L1774 código duplicado 5785 -> ERR
-[2025-10-23 14:01:59] L1776 código duplicado 8891 -> ERR
-[2025-10-23 14:01:59] L1779 código duplicado 4807 -> ERR
-[2025-10-23 14:01:59] L1785 código duplicado 5528 -> ERR
-[2025-10-23 14:01:59] L1791 código duplicado 3186 -> ERR
-[2025-10-23 14:01:59] L1802 código duplicado 2693 -> ERR
-[2025-10-23 14:01:59] L1805 código duplicado 4780 -> ERR
-[2025-10-23 14:01:59] L1807 código duplicado 1458 -> ERR
-[2025-10-23 14:01:59] L1811 código duplicado 9810 -> ERR
-[2025-10-23 14:01:59] L1813 código duplicado 7059 -> ERR
-[2025-10-23 14:01:59] L1817 código duplicado 2150 -> ERR
-[2025-10-23 14:01:59] L1819 código duplicado 1784 -> ERR
-[2025-10-23 14:01:59] L1822 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1827 código duplicado 6501 -> ERR
-[2025-10-23 14:01:59] L1829 código duplicado 2292 -> ERR
-[2025-10-23 14:01:59] L1840 código duplicado 6600 -> ERR
-[2025-10-23 14:01:59] L1844 código duplicado 5549 -> ERR
-[2025-10-23 14:01:59] L1845 código duplicado 6194 -> ERR
-[2025-10-23 14:01:59] L1846 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1847 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1848 código duplicado 7271 -> ERR
-[2025-10-23 14:01:59] L1860 código duplicado 8731 -> ERR
-[2025-10-23 14:01:59] L1863 código duplicado 1513 -> ERR
-[2025-10-23 14:01:59] L1866 código duplicado 4228 -> ERR
-[2025-10-23 14:01:59] L1867 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1871 atencion:Normalizada
-[2025-10-23 14:01:59] L1872 código duplicado 3462 -> ERR
-[2025-10-23 14:01:59] L1875 código duplicado 9377 -> ERR
-[2025-10-23 14:01:59] L1883 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L1889 código duplicado 9564 -> ERR
-[2025-10-23 14:01:59] L1892 código duplicado 6540 -> ERR
-[2025-10-23 14:01:59] L1897 código duplicado 2018 -> ERR
-[2025-10-23 14:01:59] L1900 código duplicado 5211 -> ERR
-[2025-10-23 14:01:59] L1904 código duplicado 8456 -> ERR
-[2025-10-23 14:01:59] L1907 código duplicado 7424 -> ERR
-[2025-10-23 14:01:59] L1910 código duplicado 1876 -> ERR
-[2025-10-23 14:01:59] L1911 código duplicado 7355 -> ERR
-[2025-10-23 14:01:59] L1913 código duplicado 2024 -> ERR
-[2025-10-23 14:01:59] L1914 código duplicado 1509 -> ERR
-[2025-10-23 14:01:59] L1922 código duplicado 1727 -> ERR
-[2025-10-23 14:01:59] L1926 código duplicado 7779 -> ERR
-[2025-10-23 14:01:59] L1927 código duplicado 9447 -> ERR
-[2025-10-23 14:01:59] L1932 código duplicado 2412 -> ERR
-[2025-10-23 14:01:59] L1933 código duplicado 4124 -> ERR
-[2025-10-23 14:01:59] L1935 atencion:Normalizada
-[2025-10-23 14:01:59] L1937 código duplicado 3038 -> ERR
-[2025-10-23 14:01:59] L1945 código duplicado 1784 -> ERR
-[2025-10-23 14:01:59] L1949 código duplicado 3966 -> ERR
-[2025-10-23 14:01:59] L1956 código duplicado 3927 -> ERR
-[2025-10-23 14:01:59] L1968 código duplicado 4102 -> ERR
-[2025-10-23 14:01:59] L1970 código duplicado 7625 -> ERR
-[2025-10-23 14:01:59] L1971 código duplicado 8099 -> ERR
-[2025-10-23 14:01:59] L1975 código duplicado 3138 -> ERR
-[2025-10-23 14:01:59] L1980 código duplicado 5848 -> ERR
-[2025-10-23 14:01:59] L1984 código duplicado 3524 -> ERR
-[2025-10-23 14:01:59] L1985 código duplicado 6159 -> ERR
-[2025-10-23 14:01:59] L1986 código duplicado 6975 -> ERR
-[2025-10-23 14:01:59] L1987 código duplicado 3796 -> ERR
-[2025-10-23 14:01:59] L1990 código duplicado 8797 -> ERR
-[2025-10-23 14:01:59] L1992 código duplicado 2778 -> ERR
-[2025-10-23 14:01:59] L1997 código duplicado 2949 -> ERR
-[2025-10-23 14:01:59] L2003 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2004 atencion:Normalizada
-[2025-10-23 14:01:59] L2009 código duplicado 3597 -> ERR
-[2025-10-23 14:01:59] L2010 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2015 código duplicado 5534 -> ERR
-[2025-10-23 14:01:59] L2021 código duplicado 7799 -> ERR
-[2025-10-23 14:01:59] L2025 código duplicado 1721 -> ERR
-[2025-10-23 14:01:59] L2027 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2030 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2032 atencion:Normalizada
-[2025-10-23 14:01:59] L2033 código duplicado 1349 -> ERR
-[2025-10-23 14:01:59] L2038 código duplicado 1913 -> ERR
-[2025-10-23 14:01:59] L2041 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2050 código duplicado 3489 -> ERR
-[2025-10-23 14:01:59] L2051 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2052 código duplicado 2528 -> ERR
-[2025-10-23 14:01:59] L2053 código duplicado 9067 -> ERR
-[2025-10-23 14:01:59] L2054 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2059 código duplicado 7274 -> ERR
-[2025-10-23 14:01:59] L2060 código duplicado 2138 -> ERR
-[2025-10-23 14:01:59] L2064 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2066 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2068 código duplicado 6404 -> ERR
-[2025-10-23 14:01:59] L2071 código duplicado 2898 -> ERR
-[2025-10-23 14:01:59] L2072 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2074 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2080 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2082 código duplicado 3018 -> ERR
-[2025-10-23 14:01:59] L2085 código duplicado 7807 -> ERR
-[2025-10-23 14:01:59] L2087 código duplicado 6413 -> ERR
-[2025-10-23 14:01:59] L2089 código duplicado 3609 -> ERR
-[2025-10-23 14:01:59] L2090 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2091 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2092 código duplicado 9841 -> ERR
-[2025-10-23 14:01:59] L2097 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2098 código duplicado 2058 -> ERR
-[2025-10-23 14:01:59] L2106 código duplicado 8543 -> ERR
-[2025-10-23 14:01:59] L2111 código duplicado 2684 -> ERR
-[2025-10-23 14:01:59] L2113 código duplicado 4653 -> ERR
-[2025-10-23 14:01:59] L2121 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2122 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2124 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2131 código duplicado 2046 -> ERR
-[2025-10-23 14:01:59] L2136 código duplicado 4974 -> ERR
-[2025-10-23 14:01:59] L2141 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2142 atencion:Normalizada
-[2025-10-23 14:01:59] L2145 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2156 código duplicado 5170 -> ERR
-[2025-10-23 14:01:59] L2162 código duplicado 8986 -> ERR
-[2025-10-23 14:01:59] L2163 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2164 código duplicado 7236 -> ERR
-[2025-10-23 14:01:59] L2166 código duplicado 8146 -> ERR
-[2025-10-23 14:01:59] L2168 código duplicado 4023 -> ERR
-[2025-10-23 14:01:59] L2170 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2171 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2172 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2173 atencion:Normalizada
-[2025-10-23 14:01:59] L2182 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2184 código duplicado 3066 -> ERR
-[2025-10-23 14:01:59] L2194 código duplicado 8931 -> ERR
-[2025-10-23 14:01:59] L2196 código duplicado 1249 -> ERR
-[2025-10-23 14:01:59] L2197 atencion:Normalizada
-[2025-10-23 14:01:59] L2199 código duplicado 7227 -> ERR
-[2025-10-23 14:01:59] L2200 atencion:Normalizada | atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2204 código duplicado 5165 -> ERR
-[2025-10-23 14:01:59] L2205 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2207 código duplicado 7751 -> ERR
-[2025-10-23 14:01:59] L2210 código duplicado 5788 -> ERR
-[2025-10-23 14:01:59] L2211 código duplicado 7807 -> ERR
-[2025-10-23 14:01:59] L2212 código duplicado 7283 -> ERR
-[2025-10-23 14:01:59] L2214 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2224 código duplicado 6853 -> ERR
-[2025-10-23 14:01:59] L2229 código duplicado 7783 -> ERR
-[2025-10-23 14:01:59] L2230 código duplicado 5314 -> ERR
-[2025-10-23 14:01:59] L2239 código duplicado 5160 -> ERR
-[2025-10-23 14:01:59] L2243 código duplicado 3337 -> ERR
-[2025-10-23 14:01:59] L2245 código duplicado 6804 -> ERR
-[2025-10-23 14:01:59] L2248 código duplicado 8561 -> ERR
-[2025-10-23 14:01:59] L2249 código duplicado 3634 -> ERR
-[2025-10-23 14:01:59] L2251 código duplicado 2205 -> ERR
-[2025-10-23 14:01:59] L2252 código duplicado 4324 -> ERR
-[2025-10-23 14:01:59] L2256 código duplicado 8543 -> ERR
-[2025-10-23 14:01:59] L2258 código duplicado 1529 -> ERR
-[2025-10-23 14:01:59] L2262 código duplicado 1317 -> ERR
-[2025-10-23 14:01:59] L2274 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2278 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2281 código duplicado 6619 -> ERR
-[2025-10-23 14:01:59] L2285 código duplicado 8246 -> ERR
-[2025-10-23 14:01:59] L2287 código duplicado 7069 -> ERR
-[2025-10-23 14:01:59] L2291 código duplicado 7424 -> ERR
-[2025-10-23 14:01:59] L2292 código duplicado 7458 -> ERR
-[2025-10-23 14:01:59] L2293 código duplicado 2746 -> ERR
-[2025-10-23 14:01:59] L2294 código duplicado 9632 -> ERR
-[2025-10-23 14:01:59] L2296 código duplicado 8014 -> ERR
-[2025-10-23 14:01:59] L2297 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2298 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2308 código duplicado 3814 -> ERR
-[2025-10-23 14:01:59] L2315 atencion:Normalizada
-[2025-10-23 14:01:59] L2318 código duplicado 8535 -> ERR
-[2025-10-23 14:01:59] L2319 código duplicado 7165 -> ERR
-[2025-10-23 14:01:59] L2322 código duplicado 9102 -> ERR
-[2025-10-23 14:01:59] L2331 código duplicado 7110 -> ERR
-[2025-10-23 14:01:59] L2332 código duplicado 5936 -> ERR
-[2025-10-23 14:01:59] L2335 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2339 código duplicado 5554 -> ERR
-[2025-10-23 14:01:59] L2342 código duplicado 6491 -> ERR
-[2025-10-23 14:01:59] L2345 atencion:Normalizada
-[2025-10-23 14:01:59] L2347 código duplicado 4656 -> ERR
-[2025-10-23 14:01:59] L2353 código duplicado 2868 -> ERR
-[2025-10-23 14:01:59] L2356 código duplicado 6652 -> ERR
-[2025-10-23 14:01:59] L2357 atencion:Normalizada
-[2025-10-23 14:01:59] L2358 atencion:Normalizada
-[2025-10-23 14:01:59] L2359 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2362 código duplicado 3973 -> ERR
-[2025-10-23 14:01:59] L2378 atencion:Normalizada
-[2025-10-23 14:01:59] L2386 código duplicado 7574 -> ERR
-[2025-10-23 14:01:59] L2387 código duplicado 4069 -> ERR
-[2025-10-23 14:01:59] L2388 código duplicado 5676 -> ERR
-[2025-10-23 14:01:59] L2402 código duplicado 3779 -> ERR
-[2025-10-23 14:01:59] L2404 código duplicado 3823 -> ERR
-[2025-10-23 14:01:59] L2405 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2406 atencion:Normalizada
-[2025-10-23 14:01:59] L2409 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2411 código duplicado 6164 -> ERR
-[2025-10-23 14:01:59] L2412 atencion:Normalizada
-[2025-10-23 14:01:59] L2413 código duplicado 8369 -> ERR
-[2025-10-23 14:01:59] L2414 código duplicado 3083 -> ERR
-[2025-10-23 14:01:59] L2416 código duplicado 2792 -> ERR
-[2025-10-23 14:01:59] L2438 código duplicado 3431 -> ERR
-[2025-10-23 14:01:59] L2441 código duplicado 5170 -> ERR
-[2025-10-23 14:01:59] L2443 código duplicado 6804 -> ERR
-[2025-10-23 14:01:59] L2447 código duplicado 6075 -> ERR
-[2025-10-23 14:01:59] L2453 código duplicado 2311 -> ERR
-[2025-10-23 14:01:59] L2456 código duplicado 6620 -> ERR
-[2025-10-23 14:01:59] L2464 código duplicado 2205 -> ERR
-[2025-10-23 14:01:59] L2468 código duplicado 7983 -> ERR
-[2025-10-23 14:01:59] L2469 código duplicado 1751 -> ERR
-[2025-10-23 14:01:59] L2473 código duplicado 3898 -> ERR
-[2025-10-23 14:01:59] L2474 código duplicado 7780 -> ERR
-[2025-10-23 14:01:59] L2475 código duplicado 6393 -> ERR
-[2025-10-23 14:01:59] L2477 código duplicado 9282 -> ERR
-[2025-10-23 14:01:59] L2479 código duplicado 5939 -> ERR
-[2025-10-23 14:01:59] L2482 código duplicado 5571 -> ERR
-[2025-10-23 14:01:59] L2485 código duplicado 9230 -> ERR
-[2025-10-23 14:01:59] L2487 código duplicado 7535 -> ERR
-[2025-10-23 14:01:59] L2488 código duplicado 5010 -> ERR
-[2025-10-23 14:01:59] L2497 código duplicado 8022 -> ERR
-[2025-10-23 14:01:59] L2498 código duplicado 5098 -> ERR
-[2025-10-23 14:01:59] L2515 código duplicado 4211 -> ERR
-[2025-10-23 14:01:59] L2520 código duplicado 4202 -> ERR
-[2025-10-23 14:01:59] L2525 código duplicado 6336 -> ERR
-[2025-10-23 14:01:59] L2531 código duplicado 5393 -> ERR
-[2025-10-23 14:01:59] L2532 código duplicado 8323 -> ERR
-[2025-10-23 14:01:59] L2536 código duplicado 1284 -> ERR
-[2025-10-23 14:01:59] L2537 código duplicado 4765 -> ERR
-[2025-10-23 14:01:59] L2538 código duplicado 4189 -> ERR
-[2025-10-23 14:01:59] L2539 código duplicado 2464 -> ERR
-[2025-10-23 14:01:59] L2545 código duplicado 3318 -> ERR
-[2025-10-23 14:01:59] L2548 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2552 código duplicado 9798 -> ERR
-[2025-10-23 14:01:59] L2559 código duplicado 9715 -> ERR
-[2025-10-23 14:01:59] L2560 código duplicado 6968 -> ERR
-[2025-10-23 14:01:59] L2564 atencion:Normalizada
-[2025-10-23 14:01:59] L2570 código duplicado 7357 -> ERR
-[2025-10-23 14:01:59] L2574 código duplicado 5125 -> ERR
-[2025-10-23 14:01:59] L2576 código duplicado 2835 -> ERR
-[2025-10-23 14:01:59] L2577 código duplicado 1463 -> ERR
-[2025-10-23 14:01:59] L2585 código duplicado 1435 -> ERR
-[2025-10-23 14:01:59] L2588 código duplicado 3048 -> ERR
-[2025-10-23 14:01:59] L2589 código duplicado 8124 -> ERR
-[2025-10-23 14:01:59] L2596 código duplicado 9586 -> ERR
-[2025-10-23 14:01:59] L2597 código duplicado 3851 -> ERR
-[2025-10-23 14:01:59] L2600 código duplicado 1894 -> ERR
-[2025-10-23 14:01:59] L2603 código duplicado 1435 -> ERR
-[2025-10-23 14:01:59] L2604 atencion:>100 -> trunc
-[2025-10-23 14:01:59] L2610 código duplicado 9604 -> ERR
-[2025-10-23 14:01:59] L2612 código duplicado 4158 -> ERR
-[2025-10-23 14:01:59] L2613 código duplicado 1939 -> ERR
-[2025-10-23 14:01:59] L2616 código duplicado 1432 -> ERR
-[2025-10-23 14:01:59] L2619 código duplicado 3337 -> ERR
-[2025-10-23 14:01:59] L2622 código duplicado 9053 -> ERR
-[2025-10-23 14:01:59] L2624 código duplicado 6121 -> ERR
-[2025-10-23 14:01:59] L2630 código duplicado 1970 -> ERR
-[2025-10-23 14:01:59] L2633 atencion:Normalizada
-[2025-10-23 14:01:59] L2636 atencion:Normalizada
-[2025-10-23 14:01:59] L2637 código duplicado 8595 -> ERR
-[2025-10-23 14:01:59] L2643 atencion:Normalizada
-[2025-10-23 14:01:59] L2646 código duplicado 8391 -> ERR
-[2025-10-23 14:01:59] L2651 atencion:Normalizada
-[2025-10-23 14:01:59] L2656 código duplicado 3846 -> ERR
+[2025-10-23 14:31:11] L3 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L52 código duplicado 8423 -> ERR
+[2025-10-23 14:31:11] L172 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L219 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L241 atencion:Normalizada
+[2025-10-23 14:31:11] L248 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L249 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L250 código duplicado 9230 -> ERR
+[2025-10-23 14:31:11] L256 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L270 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L275 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L289 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L295 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L313 atencion:Normalizada
+[2025-10-23 14:31:11] L319 sin código FONASA -> ERR
+[2025-10-23 14:31:11] L323 sin código interno -> ERR
+[2025-10-23 14:31:11] L330 valor vacío -> ERR
+[2025-10-23 14:31:11] L331 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L340 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L341 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L342 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L344 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L345 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L346 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L349 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L350 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L351 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L353 código duplicado 3956 -> ERR
+[2025-10-23 14:31:11] L355 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L356 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L360 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L361 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L362 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L378 código duplicado 8532 -> ERR
+[2025-10-23 14:31:11] L394 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L396 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L405 código duplicado 7236 -> ERR
+[2025-10-23 14:31:11] L407 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L411 código duplicado 1621 -> ERR
+[2025-10-23 14:31:11] L420 código duplicado 4513 -> ERR
+[2025-10-23 14:31:11] L423 atencion:Normalizada
+[2025-10-23 14:31:11] L424 atencion:Normalizada
+[2025-10-23 14:31:11] L425 atencion:Normalizada
+[2025-10-23 14:31:11] L428 atencion:Normalizada
+[2025-10-23 14:31:11] L430 atencion:Normalizada
+[2025-10-23 14:31:11] L431 atencion:Normalizada
+[2025-10-23 14:31:11] L433 atencion:Normalizada
+[2025-10-23 14:31:11] L434 atencion:Normalizada
+[2025-10-23 14:31:11] L436 código duplicado 8459 -> ERR
+[2025-10-23 14:31:11] L449 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L464 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L465 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L483 código duplicado 2155 -> ERR
+[2025-10-23 14:31:11] L493 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L494 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L495 código duplicado 8323 -> ERR
+[2025-10-23 14:31:11] L496 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L497 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L498 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L499 código duplicado 5948 -> ERR
+[2025-10-23 14:31:11] L501 código duplicado 4272 -> ERR
+[2025-10-23 14:31:11] L502 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L504 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L510 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L511 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L512 código duplicado 7271 -> ERR
+[2025-10-23 14:31:11] L513 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L524 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L525 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L526 código duplicado 3370 -> ERR
+[2025-10-23 14:31:11] L537 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L539 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L540 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L548 código duplicado 2286 -> ERR
+[2025-10-23 14:31:11] L553 código duplicado 3241 -> ERR
+[2025-10-23 14:31:11] L555 código duplicado 3316 -> ERR
+[2025-10-23 14:31:11] L556 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L563 código duplicado 2286 -> ERR
+[2025-10-23 14:31:11] L564 atencion:Normalizada
+[2025-10-23 14:31:11] L577 código duplicado 1584 -> ERR
+[2025-10-23 14:31:11] L580 código duplicado 8190 -> ERR
+[2025-10-23 14:31:11] L591 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L601 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L605 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L607 atencion:Normalizada
+[2025-10-23 14:31:11] L630 código duplicado 6656 -> ERR
+[2025-10-23 14:31:11] L635 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L658 atencion:Normalizada
+[2025-10-23 14:31:11] L662 código duplicado 1902 -> ERR
+[2025-10-23 14:31:11] L664 atencion:Normalizada
+[2025-10-23 14:31:11] L674 atencion:Normalizada
+[2025-10-23 14:31:11] L681 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L684 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L686 código duplicado 3038 -> ERR
+[2025-10-23 14:31:11] L687 código duplicado 8551 -> ERR
+[2025-10-23 14:31:11] L691 atencion:Normalizada
+[2025-10-23 14:31:11] L692 atencion:Normalizada
+[2025-10-23 14:31:11] L693 atencion:Normalizada
+[2025-10-23 14:31:11] L694 atencion:Normalizada
+[2025-10-23 14:31:11] L696 atencion:Normalizada
+[2025-10-23 14:31:11] L699 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L701 atencion:Normalizada
+[2025-10-23 14:31:11] L708 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L709 código duplicado 7709 -> ERR
+[2025-10-23 14:31:11] L714 atencion:Normalizada
+[2025-10-23 14:31:11] L717 atencion:Normalizada
+[2025-10-23 14:31:11] L718 código duplicado 7550 -> ERR
+[2025-10-23 14:31:11] L725 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L726 código duplicado 8636 -> ERR
+[2025-10-23 14:31:11] L737 código duplicado 2813 -> ERR
+[2025-10-23 14:31:11] L740 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L741 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L742 código duplicado 2215 -> ERR
+[2025-10-23 14:31:11] L745 código duplicado 1470 -> ERR
+[2025-10-23 14:31:11] L751 código duplicado 4333 -> ERR
+[2025-10-23 14:31:11] L752 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L753 atencion:Normalizada
+[2025-10-23 14:31:11] L754 código duplicado 8881 -> ERR
+[2025-10-23 14:31:11] L760 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L767 código duplicado 1653 -> ERR
+[2025-10-23 14:31:11] L783 código duplicado 8479 -> ERR
+[2025-10-23 14:31:11] L784 atencion:Normalizada
+[2025-10-23 14:31:11] L786 atencion:Normalizada
+[2025-10-23 14:31:11] L794 atencion:Normalizada
+[2025-10-23 14:31:11] L795 atencion:Normalizada
+[2025-10-23 14:31:11] L796 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L798 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L824 código duplicado 2010 -> ERR
+[2025-10-23 14:31:11] L827 código duplicado 8734 -> ERR
+[2025-10-23 14:31:11] L831 código duplicado 5183 -> ERR
+[2025-10-23 14:31:11] L847 código duplicado 4216 -> ERR
+[2025-10-23 14:31:11] L852 código duplicado 4995 -> ERR
+[2025-10-23 14:31:11] L856 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L857 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L858 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L863 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L866 código duplicado 6566 -> ERR
+[2025-10-23 14:31:11] L877 código duplicado 1424 -> ERR
+[2025-10-23 14:31:11] L879 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L884 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L892 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L895 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L896 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L902 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L904 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L905 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L906 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L907 código duplicado 5267 -> ERR
+[2025-10-23 14:31:11] L910 código duplicado 4216 -> ERR
+[2025-10-23 14:31:11] L913 código duplicado 8934 -> ERR
+[2025-10-23 14:31:11] L921 código duplicado 6396 -> ERR
+[2025-10-23 14:31:11] L925 código duplicado 6524 -> ERR
+[2025-10-23 14:31:11] L931 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L933 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L934 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L938 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L941 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L948 código duplicado 4810 -> ERR
+[2025-10-23 14:31:11] L954 código duplicado 3173 -> ERR
+[2025-10-23 14:31:11] L955 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L956 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L958 atencion:Normalizada
+[2025-10-23 14:31:11] L959 atencion:Normalizada
+[2025-10-23 14:31:11] L969 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L970 código duplicado 2018 -> ERR
+[2025-10-23 14:31:11] L971 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L978 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L984 código duplicado 4386 -> ERR
+[2025-10-23 14:31:11] L995 código duplicado 1424 -> ERR
+[2025-10-23 14:31:11] L997 código duplicado 1615 -> ERR
+[2025-10-23 14:31:11] L1009 código duplicado 4933 -> ERR
+[2025-10-23 14:31:11] L1011 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1012 código duplicado 1684 -> ERR
+[2025-10-23 14:31:11] L1013 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1020 código duplicado 6642 -> ERR
+[2025-10-23 14:31:11] L1024 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1030 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1037 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1041 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1043 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1057 código duplicado 5372 -> ERR
+[2025-10-23 14:31:11] L1065 código duplicado 6566 -> ERR
+[2025-10-23 14:31:11] L1071 código duplicado 6925 -> ERR
+[2025-10-23 14:31:11] L1075 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1079 código duplicado 6430 -> ERR
+[2025-10-23 14:31:11] L1084 código duplicado 7484 -> ERR
+[2025-10-23 14:31:11] L1096 código duplicado 3295 -> ERR
+[2025-10-23 14:31:11] L1105 código duplicado 3190 -> ERR
+[2025-10-23 14:31:11] L1109 código duplicado 3827 -> ERR
+[2025-10-23 14:31:11] L1110 código duplicado 4878 -> ERR
+[2025-10-23 14:31:11] L1120 código duplicado 9730 -> ERR
+[2025-10-23 14:31:11] L1121 código duplicado 1560 -> ERR
+[2025-10-23 14:31:11] L1123 atencion:Normalizada
+[2025-10-23 14:31:11] L1133 código duplicado 8510 -> ERR
+[2025-10-23 14:31:11] L1134 código duplicado 3332 -> ERR
+[2025-10-23 14:31:11] L1146 código duplicado 8633 -> ERR
+[2025-10-23 14:31:11] L1148 código duplicado 9705 -> ERR
+[2025-10-23 14:31:11] L1170 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1171 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1176 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1179 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1192 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1199 código duplicado 3117 -> ERR
+[2025-10-23 14:31:11] L1201 código duplicado 7088 -> ERR
+[2025-10-23 14:31:11] L1207 código duplicado 3083 -> ERR
+[2025-10-23 14:31:11] L1219 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1221 código duplicado 3512 -> ERR
+[2025-10-23 14:31:11] L1222 código duplicado 7637 -> ERR
+[2025-10-23 14:31:11] L1226 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1227 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1229 código duplicado 5089 -> ERR
+[2025-10-23 14:31:11] L1231 código duplicado 6214 -> ERR
+[2025-10-23 14:31:11] L1238 código duplicado 8190 -> ERR
+[2025-10-23 14:31:11] L1240 código duplicado 7788 -> ERR
+[2025-10-23 14:31:11] L1252 código duplicado 7632 -> ERR
+[2025-10-23 14:31:11] L1255 código duplicado 6437 -> ERR
+[2025-10-23 14:31:11] L1258 código duplicado 3289 -> ERR
+[2025-10-23 14:31:11] L1262 código duplicado 6402 -> ERR
+[2025-10-23 14:31:11] L1266 código duplicado 4456 -> ERR
+[2025-10-23 14:31:11] L1269 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1270 código duplicado 3018 -> ERR
+[2025-10-23 14:31:11] L1276 código duplicado 9470 -> ERR
+[2025-10-23 14:31:11] L1279 código duplicado 6895 -> ERR
+[2025-10-23 14:31:11] L1283 código duplicado 1720 -> ERR
+[2025-10-23 14:31:11] L1285 atencion:Normalizada
+[2025-10-23 14:31:11] L1287 código duplicado 3675 -> ERR
+[2025-10-23 14:31:11] L1300 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1312 código duplicado 8711 -> ERR
+[2025-10-23 14:31:11] L1313 código duplicado 2226 -> ERR
+[2025-10-23 14:31:11] L1315 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1316 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1317 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1318 código duplicado 9244 -> ERR
+[2025-10-23 14:31:11] L1320 código duplicado 9541 -> ERR
+[2025-10-23 14:31:11] L1328 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1333 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1339 código duplicado 5690 -> ERR
+[2025-10-23 14:31:11] L1340 código duplicado 4235 -> ERR
+[2025-10-23 14:31:11] L1356 código duplicado 5850 -> ERR
+[2025-10-23 14:31:11] L1358 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1364 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1366 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1369 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1370 código duplicado 4990 -> ERR
+[2025-10-23 14:31:11] L1371 código duplicado 3993 -> ERR
+[2025-10-23 14:31:11] L1374 código duplicado 5128 -> ERR
+[2025-10-23 14:31:11] L1375 código duplicado 7421 -> ERR
+[2025-10-23 14:31:11] L1378 código duplicado 5056 -> ERR
+[2025-10-23 14:31:11] L1379 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1380 código duplicado 2714 -> ERR
+[2025-10-23 14:31:11] L1386 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1397 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1399 código duplicado 2624 -> ERR
+[2025-10-23 14:31:11] L1407 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1408 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1411 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1416 atencion:Normalizada
+[2025-10-23 14:31:11] L1417 atencion:Normalizada
+[2025-10-23 14:31:11] L1427 código duplicado 3208 -> ERR
+[2025-10-23 14:31:11] L1430 código duplicado 3728 -> ERR
+[2025-10-23 14:31:11] L1431 código duplicado 2464 -> ERR
+[2025-10-23 14:31:11] L1440 código duplicado 1622 -> ERR
+[2025-10-23 14:31:11] L1452 código duplicado 3512 -> ERR
+[2025-10-23 14:31:11] L1458 código duplicado 7868 -> ERR
+[2025-10-23 14:31:11] L1459 código duplicado 7757 -> ERR
+[2025-10-23 14:31:11] L1467 código duplicado 3035 -> ERR
+[2025-10-23 14:31:11] L1473 código duplicado 7599 -> ERR
+[2025-10-23 14:31:11] L1480 atencion:Normalizada
+[2025-10-23 14:31:11] L1481 código duplicado 7375 -> ERR
+[2025-10-23 14:31:11] L1483 código duplicado 8914 -> ERR
+[2025-10-23 14:31:11] L1485 código duplicado 7172 -> ERR
+[2025-10-23 14:31:11] L1489 código duplicado 8051 -> ERR
+[2025-10-23 14:31:11] L1494 atencion:Normalizada
+[2025-10-23 14:31:11] L1495 código duplicado 2377 -> ERR
+[2025-10-23 14:31:11] L1497 código duplicado 4525 -> ERR
+[2025-10-23 14:31:11] L1498 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1499 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1500 código duplicado 6308 -> ERR
+[2025-10-23 14:31:11] L1501 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1504 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1505 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1506 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1511 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1512 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1513 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1518 atencion:Normalizada
+[2025-10-23 14:31:11] L1519 atencion:Normalizada
+[2025-10-23 14:31:11] L1520 atencion:Normalizada
+[2025-10-23 14:31:11] L1521 código duplicado 7540 -> ERR
+[2025-10-23 14:31:11] L1523 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1524 atencion:Normalizada
+[2025-10-23 14:31:11] L1526 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1530 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1532 código duplicado 4930 -> ERR
+[2025-10-23 14:31:11] L1535 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1542 atencion:Normalizada
+[2025-10-23 14:31:11] L1543 atencion:Normalizada
+[2025-10-23 14:31:11] L1544 código duplicado 3241 -> ERR
+[2025-10-23 14:31:11] L1548 código duplicado 4656 -> ERR
+[2025-10-23 14:31:11] L1549 código duplicado 2101 -> ERR
+[2025-10-23 14:31:11] L1551 código duplicado 2892 -> ERR
+[2025-10-23 14:31:11] L1552 código duplicado 5176 -> ERR
+[2025-10-23 14:31:11] L1553 código duplicado 8035 -> ERR
+[2025-10-23 14:31:11] L1556 código duplicado 3165 -> ERR
+[2025-10-23 14:31:11] L1557 código duplicado 9801 -> ERR
+[2025-10-23 14:31:11] L1566 código duplicado 7599 -> ERR
+[2025-10-23 14:31:11] L1574 código duplicado 2752 -> ERR
+[2025-10-23 14:31:11] L1582 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1583 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1587 código duplicado 6647 -> ERR
+[2025-10-23 14:31:11] L1592 código duplicado 4441 -> ERR
+[2025-10-23 14:31:11] L1595 código duplicado 4758 -> ERR
+[2025-10-23 14:31:11] L1596 código duplicado 2813 -> ERR
+[2025-10-23 14:31:11] L1598 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1602 código duplicado 1376 -> ERR
+[2025-10-23 14:31:11] L1608 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1611 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1613 código duplicado 4080 -> ERR
+[2025-10-23 14:31:11] L1614 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1617 código duplicado 8174 -> ERR
+[2025-10-23 14:31:11] L1620 código duplicado 4914 -> ERR
+[2025-10-23 14:31:11] L1628 código duplicado 4651 -> ERR
+[2025-10-23 14:31:11] L1650 atencion:Normalizada
+[2025-10-23 14:31:11] L1651 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1652 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1653 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1654 código duplicado 4675 -> ERR
+[2025-10-23 14:31:11] L1655 código duplicado 8880 -> ERR
+[2025-10-23 14:31:11] L1656 código duplicado 4977 -> ERR
+[2025-10-23 14:31:11] L1657 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1661 código duplicado 4144 -> ERR
+[2025-10-23 14:31:11] L1665 código duplicado 4949 -> ERR
+[2025-10-23 14:31:11] L1666 código duplicado 4873 -> ERR
+[2025-10-23 14:31:11] L1669 código duplicado 2450 -> ERR
+[2025-10-23 14:31:11] L1671 atencion:Normalizada
+[2025-10-23 14:31:11] L1676 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1680 código duplicado 5107 -> ERR
+[2025-10-23 14:31:11] L1686 código duplicado 8105 -> ERR
+[2025-10-23 14:31:11] L1688 código duplicado 1978 -> ERR
+[2025-10-23 14:31:11] L1693 código duplicado 5503 -> ERR
+[2025-10-23 14:31:11] L1698 código duplicado 7651 -> ERR
+[2025-10-23 14:31:11] L1702 código duplicado 4555 -> ERR
+[2025-10-23 14:31:11] L1704 código duplicado 3320 -> ERR
+[2025-10-23 14:31:11] L1715 código duplicado 8934 -> ERR
+[2025-10-23 14:31:11] L1717 código duplicado 5746 -> ERR
+[2025-10-23 14:31:11] L1727 código duplicado 3412 -> ERR
+[2025-10-23 14:31:11] L1728 código duplicado 3190 -> ERR
+[2025-10-23 14:31:11] L1731 atencion:Normalizada
+[2025-10-23 14:31:11] L1740 código duplicado 7414 -> ERR
+[2025-10-23 14:31:11] L1741 código duplicado 9565 -> ERR
+[2025-10-23 14:31:11] L1747 código duplicado 8783 -> ERR
+[2025-10-23 14:31:11] L1748 código duplicado 4481 -> ERR
+[2025-10-23 14:31:11] L1749 código duplicado 4923 -> ERR
+[2025-10-23 14:31:11] L1755 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1765 código duplicado 8914 -> ERR
+[2025-10-23 14:31:11] L1766 código duplicado 7236 -> ERR
+[2025-10-23 14:31:11] L1770 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1773 código duplicado 7449 -> ERR
+[2025-10-23 14:31:11] L1774 código duplicado 5785 -> ERR
+[2025-10-23 14:31:11] L1776 código duplicado 8891 -> ERR
+[2025-10-23 14:31:11] L1779 código duplicado 4807 -> ERR
+[2025-10-23 14:31:11] L1785 código duplicado 5528 -> ERR
+[2025-10-23 14:31:11] L1791 código duplicado 3186 -> ERR
+[2025-10-23 14:31:11] L1802 código duplicado 2693 -> ERR
+[2025-10-23 14:31:11] L1805 código duplicado 4780 -> ERR
+[2025-10-23 14:31:11] L1807 código duplicado 1458 -> ERR
+[2025-10-23 14:31:11] L1811 código duplicado 9810 -> ERR
+[2025-10-23 14:31:11] L1813 código duplicado 7059 -> ERR
+[2025-10-23 14:31:11] L1817 código duplicado 2150 -> ERR
+[2025-10-23 14:31:11] L1819 código duplicado 1784 -> ERR
+[2025-10-23 14:31:11] L1822 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1827 código duplicado 6501 -> ERR
+[2025-10-23 14:31:11] L1829 código duplicado 2292 -> ERR
+[2025-10-23 14:31:11] L1840 código duplicado 6600 -> ERR
+[2025-10-23 14:31:11] L1844 código duplicado 5549 -> ERR
+[2025-10-23 14:31:11] L1845 código duplicado 6194 -> ERR
+[2025-10-23 14:31:11] L1846 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1847 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1848 código duplicado 7271 -> ERR
+[2025-10-23 14:31:11] L1860 código duplicado 8731 -> ERR
+[2025-10-23 14:31:11] L1863 código duplicado 1513 -> ERR
+[2025-10-23 14:31:11] L1866 código duplicado 4228 -> ERR
+[2025-10-23 14:31:11] L1867 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1871 atencion:Normalizada
+[2025-10-23 14:31:11] L1872 código duplicado 3462 -> ERR
+[2025-10-23 14:31:11] L1875 código duplicado 9377 -> ERR
+[2025-10-23 14:31:11] L1883 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L1889 código duplicado 9564 -> ERR
+[2025-10-23 14:31:11] L1892 código duplicado 6540 -> ERR
+[2025-10-23 14:31:11] L1897 código duplicado 2018 -> ERR
+[2025-10-23 14:31:11] L1900 código duplicado 5211 -> ERR
+[2025-10-23 14:31:11] L1904 código duplicado 8456 -> ERR
+[2025-10-23 14:31:11] L1907 código duplicado 7424 -> ERR
+[2025-10-23 14:31:11] L1910 código duplicado 1876 -> ERR
+[2025-10-23 14:31:11] L1911 código duplicado 7355 -> ERR
+[2025-10-23 14:31:11] L1913 código duplicado 2024 -> ERR
+[2025-10-23 14:31:11] L1914 código duplicado 1509 -> ERR
+[2025-10-23 14:31:11] L1922 código duplicado 1727 -> ERR
+[2025-10-23 14:31:11] L1926 código duplicado 7779 -> ERR
+[2025-10-23 14:31:11] L1927 código duplicado 9447 -> ERR
+[2025-10-23 14:31:11] L1932 código duplicado 2412 -> ERR
+[2025-10-23 14:31:11] L1933 código duplicado 4124 -> ERR
+[2025-10-23 14:31:11] L1935 atencion:Normalizada
+[2025-10-23 14:31:11] L1937 código duplicado 3038 -> ERR
+[2025-10-23 14:31:11] L1945 código duplicado 1784 -> ERR
+[2025-10-23 14:31:11] L1949 código duplicado 3966 -> ERR
+[2025-10-23 14:31:11] L1956 código duplicado 3927 -> ERR
+[2025-10-23 14:31:11] L1968 código duplicado 4102 -> ERR
+[2025-10-23 14:31:11] L1970 código duplicado 7625 -> ERR
+[2025-10-23 14:31:11] L1971 código duplicado 8099 -> ERR
+[2025-10-23 14:31:11] L1975 código duplicado 3138 -> ERR
+[2025-10-23 14:31:11] L1980 código duplicado 5848 -> ERR
+[2025-10-23 14:31:11] L1984 código duplicado 3524 -> ERR
+[2025-10-23 14:31:11] L1985 código duplicado 6159 -> ERR
+[2025-10-23 14:31:11] L1986 código duplicado 6975 -> ERR
+[2025-10-23 14:31:11] L1987 código duplicado 3796 -> ERR
+[2025-10-23 14:31:11] L1990 código duplicado 8797 -> ERR
+[2025-10-23 14:31:11] L1992 código duplicado 2778 -> ERR
+[2025-10-23 14:31:11] L1997 código duplicado 2949 -> ERR
+[2025-10-23 14:31:11] L2003 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2004 atencion:Normalizada
+[2025-10-23 14:31:11] L2009 código duplicado 3597 -> ERR
+[2025-10-23 14:31:11] L2010 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2015 código duplicado 5534 -> ERR
+[2025-10-23 14:31:11] L2021 código duplicado 7799 -> ERR
+[2025-10-23 14:31:11] L2025 código duplicado 1721 -> ERR
+[2025-10-23 14:31:11] L2027 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2030 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2032 atencion:Normalizada
+[2025-10-23 14:31:11] L2033 código duplicado 1349 -> ERR
+[2025-10-23 14:31:11] L2038 código duplicado 1913 -> ERR
+[2025-10-23 14:31:11] L2041 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2050 código duplicado 3489 -> ERR
+[2025-10-23 14:31:11] L2051 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2052 código duplicado 2528 -> ERR
+[2025-10-23 14:31:11] L2053 código duplicado 9067 -> ERR
+[2025-10-23 14:31:11] L2054 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2059 código duplicado 7274 -> ERR
+[2025-10-23 14:31:11] L2060 código duplicado 2138 -> ERR
+[2025-10-23 14:31:11] L2064 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2066 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2068 código duplicado 6404 -> ERR
+[2025-10-23 14:31:11] L2071 código duplicado 2898 -> ERR
+[2025-10-23 14:31:11] L2072 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2074 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2080 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2082 código duplicado 3018 -> ERR
+[2025-10-23 14:31:11] L2085 código duplicado 7807 -> ERR
+[2025-10-23 14:31:11] L2087 código duplicado 6413 -> ERR
+[2025-10-23 14:31:11] L2089 código duplicado 3609 -> ERR
+[2025-10-23 14:31:11] L2090 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2091 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2092 código duplicado 9841 -> ERR
+[2025-10-23 14:31:11] L2097 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2098 código duplicado 2058 -> ERR
+[2025-10-23 14:31:11] L2106 código duplicado 8543 -> ERR
+[2025-10-23 14:31:11] L2111 código duplicado 2684 -> ERR
+[2025-10-23 14:31:11] L2113 código duplicado 4653 -> ERR
+[2025-10-23 14:31:11] L2121 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2122 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2124 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2131 código duplicado 2046 -> ERR
+[2025-10-23 14:31:11] L2136 código duplicado 4974 -> ERR
+[2025-10-23 14:31:11] L2141 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2142 atencion:Normalizada
+[2025-10-23 14:31:11] L2145 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2156 código duplicado 5170 -> ERR
+[2025-10-23 14:31:11] L2162 código duplicado 8986 -> ERR
+[2025-10-23 14:31:11] L2163 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2164 código duplicado 7236 -> ERR
+[2025-10-23 14:31:11] L2166 código duplicado 8146 -> ERR
+[2025-10-23 14:31:11] L2168 código duplicado 4023 -> ERR
+[2025-10-23 14:31:11] L2170 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2171 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2172 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2173 atencion:Normalizada
+[2025-10-23 14:31:11] L2182 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2184 código duplicado 3066 -> ERR
+[2025-10-23 14:31:11] L2194 código duplicado 8931 -> ERR
+[2025-10-23 14:31:11] L2196 código duplicado 1249 -> ERR
+[2025-10-23 14:31:11] L2197 atencion:Normalizada
+[2025-10-23 14:31:11] L2199 código duplicado 7227 -> ERR
+[2025-10-23 14:31:11] L2200 atencion:Normalizada | atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2204 código duplicado 5165 -> ERR
+[2025-10-23 14:31:11] L2205 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2207 código duplicado 7751 -> ERR
+[2025-10-23 14:31:11] L2210 código duplicado 5788 -> ERR
+[2025-10-23 14:31:11] L2211 código duplicado 7807 -> ERR
+[2025-10-23 14:31:11] L2212 código duplicado 7283 -> ERR
+[2025-10-23 14:31:11] L2214 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2224 código duplicado 6853 -> ERR
+[2025-10-23 14:31:11] L2229 código duplicado 7783 -> ERR
+[2025-10-23 14:31:11] L2230 código duplicado 5314 -> ERR
+[2025-10-23 14:31:11] L2239 código duplicado 5160 -> ERR
+[2025-10-23 14:31:11] L2243 código duplicado 3337 -> ERR
+[2025-10-23 14:31:11] L2245 código duplicado 6804 -> ERR
+[2025-10-23 14:31:11] L2248 código duplicado 8561 -> ERR
+[2025-10-23 14:31:11] L2249 código duplicado 3634 -> ERR
+[2025-10-23 14:31:11] L2251 código duplicado 2205 -> ERR
+[2025-10-23 14:31:11] L2252 código duplicado 4324 -> ERR
+[2025-10-23 14:31:11] L2256 código duplicado 8543 -> ERR
+[2025-10-23 14:31:11] L2258 código duplicado 1529 -> ERR
+[2025-10-23 14:31:11] L2262 código duplicado 1317 -> ERR
+[2025-10-23 14:31:11] L2274 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2278 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2281 código duplicado 6619 -> ERR
+[2025-10-23 14:31:11] L2285 código duplicado 8246 -> ERR
+[2025-10-23 14:31:11] L2287 código duplicado 7069 -> ERR
+[2025-10-23 14:31:11] L2291 código duplicado 7424 -> ERR
+[2025-10-23 14:31:11] L2292 código duplicado 7458 -> ERR
+[2025-10-23 14:31:11] L2293 código duplicado 2746 -> ERR
+[2025-10-23 14:31:11] L2294 código duplicado 9632 -> ERR
+[2025-10-23 14:31:11] L2296 código duplicado 8014 -> ERR
+[2025-10-23 14:31:11] L2297 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2298 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2308 código duplicado 3814 -> ERR
+[2025-10-23 14:31:11] L2315 atencion:Normalizada
+[2025-10-23 14:31:11] L2318 código duplicado 8535 -> ERR
+[2025-10-23 14:31:11] L2319 código duplicado 7165 -> ERR
+[2025-10-23 14:31:11] L2322 código duplicado 9102 -> ERR
+[2025-10-23 14:31:11] L2331 código duplicado 7110 -> ERR
+[2025-10-23 14:31:11] L2332 código duplicado 5936 -> ERR
+[2025-10-23 14:31:11] L2335 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2339 código duplicado 5554 -> ERR
+[2025-10-23 14:31:11] L2342 código duplicado 6491 -> ERR
+[2025-10-23 14:31:11] L2345 atencion:Normalizada
+[2025-10-23 14:31:11] L2347 código duplicado 4656 -> ERR
+[2025-10-23 14:31:11] L2353 código duplicado 2868 -> ERR
+[2025-10-23 14:31:11] L2356 código duplicado 6652 -> ERR
+[2025-10-23 14:31:11] L2357 atencion:Normalizada
+[2025-10-23 14:31:11] L2358 atencion:Normalizada
+[2025-10-23 14:31:11] L2359 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2362 código duplicado 3973 -> ERR
+[2025-10-23 14:31:11] L2378 atencion:Normalizada
+[2025-10-23 14:31:11] L2386 código duplicado 7574 -> ERR
+[2025-10-23 14:31:11] L2387 código duplicado 4069 -> ERR
+[2025-10-23 14:31:11] L2388 código duplicado 5676 -> ERR
+[2025-10-23 14:31:11] L2402 código duplicado 3779 -> ERR
+[2025-10-23 14:31:11] L2404 código duplicado 3823 -> ERR
+[2025-10-23 14:31:11] L2405 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2406 atencion:Normalizada
+[2025-10-23 14:31:11] L2409 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2411 código duplicado 6164 -> ERR
+[2025-10-23 14:31:11] L2412 atencion:Normalizada
+[2025-10-23 14:31:11] L2413 código duplicado 8369 -> ERR
+[2025-10-23 14:31:11] L2414 código duplicado 3083 -> ERR
+[2025-10-23 14:31:11] L2416 código duplicado 2792 -> ERR
+[2025-10-23 14:31:11] L2438 código duplicado 3431 -> ERR
+[2025-10-23 14:31:11] L2441 código duplicado 5170 -> ERR
+[2025-10-23 14:31:11] L2443 código duplicado 6804 -> ERR
+[2025-10-23 14:31:11] L2447 código duplicado 6075 -> ERR
+[2025-10-23 14:31:11] L2453 código duplicado 2311 -> ERR
+[2025-10-23 14:31:11] L2456 código duplicado 6620 -> ERR
+[2025-10-23 14:31:11] L2464 código duplicado 2205 -> ERR
+[2025-10-23 14:31:11] L2468 código duplicado 7983 -> ERR
+[2025-10-23 14:31:11] L2469 código duplicado 1751 -> ERR
+[2025-10-23 14:31:11] L2473 código duplicado 3898 -> ERR
+[2025-10-23 14:31:11] L2474 código duplicado 7780 -> ERR
+[2025-10-23 14:31:11] L2475 código duplicado 6393 -> ERR
+[2025-10-23 14:31:11] L2477 código duplicado 9282 -> ERR
+[2025-10-23 14:31:11] L2479 código duplicado 5939 -> ERR
+[2025-10-23 14:31:11] L2482 código duplicado 5571 -> ERR
+[2025-10-23 14:31:11] L2485 código duplicado 9230 -> ERR
+[2025-10-23 14:31:11] L2487 código duplicado 7535 -> ERR
+[2025-10-23 14:31:11] L2488 código duplicado 5010 -> ERR
+[2025-10-23 14:31:11] L2497 código duplicado 8022 -> ERR
+[2025-10-23 14:31:11] L2498 código duplicado 5098 -> ERR
+[2025-10-23 14:31:11] L2515 código duplicado 4211 -> ERR
+[2025-10-23 14:31:11] L2520 código duplicado 4202 -> ERR
+[2025-10-23 14:31:11] L2525 código duplicado 6336 -> ERR
+[2025-10-23 14:31:11] L2531 código duplicado 5393 -> ERR
+[2025-10-23 14:31:11] L2532 código duplicado 8323 -> ERR
+[2025-10-23 14:31:11] L2536 código duplicado 1284 -> ERR
+[2025-10-23 14:31:11] L2537 código duplicado 4765 -> ERR
+[2025-10-23 14:31:11] L2538 código duplicado 4189 -> ERR
+[2025-10-23 14:31:11] L2539 código duplicado 2464 -> ERR
+[2025-10-23 14:31:11] L2545 código duplicado 3318 -> ERR
+[2025-10-23 14:31:11] L2548 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2552 código duplicado 9798 -> ERR
+[2025-10-23 14:31:11] L2559 código duplicado 9715 -> ERR
+[2025-10-23 14:31:11] L2560 código duplicado 6968 -> ERR
+[2025-10-23 14:31:11] L2564 atencion:Normalizada
+[2025-10-23 14:31:11] L2570 código duplicado 7357 -> ERR
+[2025-10-23 14:31:11] L2574 código duplicado 5125 -> ERR
+[2025-10-23 14:31:11] L2576 código duplicado 2835 -> ERR
+[2025-10-23 14:31:11] L2577 código duplicado 1463 -> ERR
+[2025-10-23 14:31:11] L2585 código duplicado 1435 -> ERR
+[2025-10-23 14:31:11] L2588 código duplicado 3048 -> ERR
+[2025-10-23 14:31:11] L2589 código duplicado 8124 -> ERR
+[2025-10-23 14:31:11] L2596 código duplicado 9586 -> ERR
+[2025-10-23 14:31:11] L2597 código duplicado 3851 -> ERR
+[2025-10-23 14:31:11] L2600 código duplicado 1894 -> ERR
+[2025-10-23 14:31:11] L2603 código duplicado 1435 -> ERR
+[2025-10-23 14:31:11] L2604 atencion:>100 -> trunc
+[2025-10-23 14:31:11] L2610 código duplicado 9604 -> ERR
+[2025-10-23 14:31:11] L2612 código duplicado 4158 -> ERR
+[2025-10-23 14:31:11] L2613 código duplicado 1939 -> ERR
+[2025-10-23 14:31:11] L2616 código duplicado 1432 -> ERR
+[2025-10-23 14:31:11] L2619 código duplicado 3337 -> ERR
+[2025-10-23 14:31:11] L2622 código duplicado 9053 -> ERR
+[2025-10-23 14:31:11] L2624 código duplicado 6121 -> ERR
+[2025-10-23 14:31:11] L2630 código duplicado 1970 -> ERR
+[2025-10-23 14:31:11] L2633 atencion:Normalizada
+[2025-10-23 14:31:11] L2636 atencion:Normalizada
+[2025-10-23 14:31:11] L2637 código duplicado 8595 -> ERR
+[2025-10-23 14:31:11] L2643 atencion:Normalizada
+[2025-10-23 14:31:11] L2646 código duplicado 8391 -> ERR
+[2025-10-23 14:31:11] L2651 atencion:Normalizada
+[2025-10-23 14:31:11] L2656 código duplicado 3846 -> ERR

@@ -34,6 +34,17 @@ $trimRow = function (&$row) {
 $collapseSpaces = fn($s) => preg_replace('/\s+/u', ' ', trim((string)$s));
 $onlyDigits     = fn($s) => preg_replace('/\D/', '', (string)$s);
 
+$stripBom = function ($s) {
+    $s = (string)$s;
+    if (strncmp($s, "\xEF\xBB\xBF", 3) === 0) {
+        return substr($s, 3);
+    }
+    if ($s !== '' && $s[0] === "\xEF") { // fallback for multibyte operations
+        return preg_replace('/^\xEF\xBB\xBF/u', '', $s);
+    }
+    return $s;
+};
+
 $in  = fopen($IN, 'r');
 $ok  = fopen($OK, 'w');
 $er  = fopen($ERR, 'w');
@@ -45,6 +56,10 @@ if ($header === false) {
     fclose($in); fclose($ok); fclose($er); fclose($lg);
     exit(0);
 }
+foreach ($header as &$col) {
+    $col = $stripBom($col);
+}
+unset($col);
 fputcsv($ok, $header, $sep, $enc, $esc);
 fputcsv($er, $header, $sep, $enc, $esc);
 
@@ -60,6 +75,9 @@ while (($row = fgetcsv($in, 0, $sep, $enc, $esc)) !== false) {
     $line++;
     $raw = $row;
     $trimRow($row);
+    if (isset($row[$idxCodigo])) {
+        $row[$idxCodigo] = $stripBom($row[$idxCodigo]);
+    }
     $notes = [];
 
     if (!array_filter($row, fn($c) => $c !== '')) {
