@@ -118,22 +118,32 @@ Para las filas con tipo titular, el campo titular siempre queda igual al RUN de 
 El campo `rol` se compara contra una lista de valores permitidos (*Paciente, Staff Médico, Administrativo, Enfermero(a)*, etc.).  
 Los roles no reconocidos se sustituyen por **Paciente**.  
 Si el rol no es clínico, los campos de profesión y especialidad se vacían; de lo contrario, se capitalizan.  
-También se corrigen alias comunes (por ejemplo, *Paramedico* → *Paramédico*).
+También se corrigen alias frecuentes (por ejemplo, *Staff Medico* → *Staff Médico* o *Paramedico* → *Paramédico*).
 
 #### Institución previsional de salud  
-Se normaliza el nombre y se consulta contra el catálogo de instituciones (cargado desde `Instituciones previsionales de salud.csv` lo puse manualmente no revisa como tal el csv).  
-Si está vacío o no coincide con una entrada del catálogo, se reemplaza por **FONASA** y se anota la corrección en el log.
-**Importante**: se anoto en Fonasa porque es el servicio publico y la logica es que si no tiene institucion previsional es porque es Fonasa.
+Se normaliza el nombre y se contrasta contra un catálogo fijo; si está vacío o no coincide, se reemplaza por **FONASA**. En todos los casos se deja registro en el log para mantener la trazabilidad de la decisión.
 
 ---
 
 Cada fila procesada se escribe en `OK` o `ERR` dependiendo de si supera todas estas validaciones.  
-Las acciones realizadas sobre cada registro (correcciones, inferencias o descartes) se van acumulando en un **array de mensajes**, que finalmente se vuelca en `Persona_LOG.txt` con una marca de tiempo y el número de línea original.  
-
+Las acciones realizadas sobre cada registro (correcciones, inferencias o descartes) se acumulan en un **array de mensajes** que termina en `Persona_LOG.txt` con marca de tiempo y número de línea original.
 
 ---
 
-### 1.4.2. Explicación `filtroInstituciones.php`
+### 1.4.2. Explicación `filtroFarmacia.php`
+
+El script `filtroFarmacia.php` procesa el archivo `Old/Farmacia.csv` y aplica criterios de limpieza específicos al catálogo de productos farmacéuticos:
+
+- **Validación de código genérico:** extrae solo los dígitos del campo código, descarta filas vacías o sin código y detecta duplicados para enviarlos a `Farmacia_ERR.csv`, registrando el motivo.
+- **Normalización de textos:** recorta espacios invisibles, impone longitudes máximas (100 caracteres para nombres, 256 para descripciones, 50 para clasificaciones internas) y reemplaza vacíos por valores controlados como *“Sin nombre”* o *“Sin descripción”*.
+- **Homologación de dominios:** estandariza el tipo de producto a un catálogo cerrado (*Fármacos, Equipamiento, Insumos*, etc.) e interpreta valores fuera de catálogo como “insumos”; también valida el estado y la canasta esencial, dejando ambos campos en los valores controlados `activo` o `inactivo`.
+- **Campos numéricos:** limpia el código ONU y el precio dejando únicamente dígitos; si falta código ONU elimina la clasificación asociada.
+- **Salida controlada:** genera `Farmacia_OK.csv` con los registros corregidos, `Farmacia_ERR.csv` con entradas descartadas y `Farmacia_LOG.txt` con un resumen por línea de cada corrección aplicada (por ejemplo, cambios en tipo o normalización de precio).
+
+Esta lógica asegura que el catálogo de farmacia quede libre de duplicados, con dominios consistentes y valores aptos para sus claves y reglas de negocio posteriores.
+Mantiene además el encabezado original y los separadores para ser compatible con la carga posterior.
+
+### 1.4.3. Explicación `filtroInstituciones.php`
 
 El script `filtroInstituciones.php` realiza la depuración del archivo `Old/Instituciones previsionales de salud.csv`.  
 Su tarea es mucho más simple que la de personas, ya que este dataset sólo requiere limpieza estructural y de formato.  
@@ -147,4 +157,3 @@ Durante la depuración:
 - Se mantiene el encabezado tal cual fue entregado en el CSV original, sin renombrar columnas.
 
 De esta forma, se garantiza que las instituciones previsionales estén normalizadas y válidas antes de ser utilizadas como referencia para la carga de datos de personas u otras entidades del proyecto.
-

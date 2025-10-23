@@ -116,7 +116,8 @@ while(($r=fgetcsv($I,0,$SEP,$ENC,$ESC))!==false){
   /* 4.6) Estado y esencial */
   $est = $normEstado($r[$C_EST]);
   if($est!==$r[$C_EST]){ $t[]="estado:'{$r[$C_EST]}'->$est"; $r[$C_EST]=$est; }
-  $esencial = ($r[$C_ESEN]==='1') ? '1' : '0';
+  $esVal = mb_strtolower(trim((string)$r[$C_ESEN]),'UTF-8');
+  $esencial = in_array($esVal, ['1','si','sí','true','activo'], true) ? 'activo' : 'inactivo';
   if($esencial!==$r[$C_ESEN]){ $t[]="esencial:'{$r[$C_ESEN]}'->$esencial"; $r[$C_ESEN]=$esencial; }
 
   /* 4.7) Precio */
