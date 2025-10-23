@@ -25,7 +25,8 @@
 | 2 | 2025-10-23 | Nuevo script `filtroArancel_DCColita.php`, generación de `_OK/_ERR/_LOG`, README | `E3/RequestPHP/filtroArancel_DCColita.php`, `E3/Depurado/Arancel_DCColita_OK.csv`, `E3/Eliminado/Arancel_DCColita_ERR.csv`, `E3/Logs/Arancel_DCColita_LOG.txt`, `E3/README.md` | `arancel dcc colita de rana` |
 | 3 | 2025-10-23 | Corrección BOM en encabezados de Arancel DCColita | archivos anteriores | `ajuste encabezado arancel dcc` |
 | 4 | 2025-10-23 | Nuevo `filtroArancelFonasa.php`, generación de salidas y README | `E3/RequestPHP/filtroArancelFonasa.php`, `E3/Depurado/Arancel_Fonasa_OK.csv`, `E3/Eliminado/Arancel_Fonasa_ERR.csv`, `E3/Logs/Arancel_Fonasa_LOG.txt`, `E3/README.md` | `arancel fonasa` |
-| 5 | 2025-10-23 | Creación y commit de esta bitácora | `E3/Codex.md` | `bitacora codex` (reemplazado por versión actual) |
+| 5 | 2025-10-23 | Implementación `filtroAtencion.php` + salidas y README | `E3/RequestPHP/filtroAtencion.php`, `E3/Depurado/Atencion_OK.csv`, `E3/Eliminado/Atencion_ERR.csv`, `E3/Logs/Atencion_LOG.txt`, `E3/README.md` | _pendiente de commit_ |
+| 6 | 2025-10-23 | Creación y commit de esta bitácora | `E3/Codex.md` | `bitacora codex` / `bitacora codex v2` |
 
 > **Estado actual:** Todo lo anterior está en `origin/main`. La bitácora actual todavía no se ha commiteado (ver Sección 6).
 
@@ -40,8 +41,9 @@
 | `filtroFarmacia.php` | `Old/Farmacia.csv` | `Farmacia_OK/ERR/LOG` | Códigos únicos, normaliza campos, estado y canasta → `activo/inactivo`. |
 | `filtroArancel_DCColita.php` | `Old/Arancel DCColita de rana.csv` | `Arancel_DCColita_OK/ERR/LOG` | `codigo` único, `codFonasa` patrón `entero`/`entero-entero`, truncado atenciones 100 caracteres, valor entero. |
 | `filtroArancelFonasa.php` | `Old/Arancel fonasa.csv` | `Arancel_Fonasa_OK/ERR/LOG` | `codF` único sin ceros a la izquierda, `codA` opcional, `grupo`/`tipo` ≤30 chars, valor entero. |
+| `filtroAtencion.php` | `Old/Atencion.csv` | `Atencion_OK/ERR/LOG` | ID único, fecha ISO, RUN validados contra personas, diagnóstico limpio (mojibake), `efectuada` consistente. |
 
-> Scripts faltantes: medicamentos, atenciones, órdenes, planes, validaciones cruzadas, `main.php`, `validador.php`.
+> Scripts faltantes: Medicamento, Orden, Planes, validaciones cruzadas, utilidades comunes, `main.php`, `validador.php`.
 
 ---
 
@@ -54,12 +56,13 @@
 | `Farmacia_OK.csv` | Encabezados entre comillas por espacios; códigos únicos; estado/canasta `activo/inactivo`; log documenta duplicados removidos. |
 | `Arancel_DCColita_OK.csv` | Sin BOM; descripciones truncadas (log indica líneas afectadas); duplicados van a `_ERR`. |
 | `Arancel_Fonasa_OK.csv` | Encabezado sin BOM; valores sin puntos; grupos/tipos truncados si exceden 30 caracteres; `_ERR` solo con encabezado. |
+| `Atencion_OK.csv` | Fechas en formato ISO, RUN validados contra personas, diagnósticos depurados (sin mojibake) y vacíos cuando la atención no se efectuó. |
 
 ---
 
 ## 5. Pending / To-Do
 
-1. **Scripts pendientes:** Medicamento, Atencion, Orden, Planes, utilidades comunes, `main.php`, `validador.php`.
+1. **Scripts pendientes:** Medicamento, Orden, Planes, utilidades comunes, `main.php`, `validador.php`.
 2. **BOM residual:** Eliminar BOM en `Persona_OK.csv` y `Instituciones..._OK.csv` replicando la lógica usada en aranceles.
 3. **Referencias cruzadas:** Validar:
    - RUN en `Atencion` y `Orden` contra `Persona_OK`.
@@ -77,9 +80,13 @@
 git status --short
  M .DS_Store
  M E3/.DS_Store
- M E3/README.md
-?? E3/Codex.md   ← esta versión aún sin commit/push
 ?? E3/Old/.DS_Store
+?? E3/RequestPHP/filtroAtencion.php   ← nuevo script
+?? E3/Depurado/Atencion_OK.csv
+?? E3/Eliminado/Atencion_ERR.csv
+?? E3/Logs/Atencion_LOG.txt
+ M E3/README.md
+ M E3/Codex.md   ← esta versión aún sin commit/push
 ```
 
 > Recordatorio: Al terminar de editar esta bitácora, ejecutar:
@@ -106,6 +113,7 @@ git push
   - `php E3/RequestPHP/filtroFarmacia.php`
   - `php E3/RequestPHP/filtroArancel_DCColita.php`
   - `php E3/RequestPHP/filtroArancelFonasa.php`
+  - `php E3/RequestPHP/filtroAtencion.php`
 - **Consultas útiles:**
   - `head -n 5 E3/Depurado/<archivo>` para validar formato.
   - `rg "-> ERR" E3/Logs/<archivo>` para encontrar descartes críticos.
@@ -121,4 +129,4 @@ git push
 
 ---
 
-*Última actualización:* 2025-10-23 15:05 (actualizar manualmente tras cada edición).
+*Última actualización:* 2025-10-23 21:25 (actualizar manualmente tras cada edición).

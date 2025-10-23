@@ -191,4 +191,16 @@ El script dedicado a `Old/Arancel fonasa.csv` deja el catálogo público en el f
 
 El resultado limpio (`Arancel_Fonasa_OK.csv`) conserva el encabezado oficial de Fonasa, pero todas las columnas ya están alineadas con los dominios y longitudes definidas para la carga en la base relacional.
 
+### 1.4.6. Explicación `filtroAtencion.php`
+
+`filtroAtencion.php` procesa `Old/Atencion.csv`, asegurando consistencia de las atenciones clínicas:
+
+- **ID:** sólo dígitos, sin ceros iniciales, obligatorio y único; se descartan filas sin ID o repetidas.
+- **Fecha:** convierte el formato `dd-mm-yy` a `YYYY-MM-DD` y valida su coherencia.
+- **RUN paciente/médico:** normaliza con el algoritmo módulo 11 y exige existencia previa en `Persona_OK.csv`.
+- **Diagnóstico:** corrige mojibake, compacta espacios y trunca a 100 caracteres; si `efectuada = FALSE`, se deja vacío, mientras que para `TRUE` la ausencia del diagnóstico provoca descarte.
+- **Efectuada:** se normaliza a los valores `TRUE`/`FALSE`; cualquier otra variante genera `_ERR`.
+
+El log (`Atencion_LOG.txt`) evidencia cada normalización (fechas, RUN ajustados, truncados, limpiezas) y los motivos de descarte (RUN sin referencia, diagnósticos faltantes, etc.). Los registros válidos se almacenan en `Atencion_OK.csv`, listos para validaciones cruzadas con órdenes y medicamentos.
+
 ---
