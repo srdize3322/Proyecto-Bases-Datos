@@ -176,6 +176,8 @@ Este módulo limpia el catálogo `Old/Arancel DCColita de rana.csv`, preparando 
 
 El archivo `Arancel_DCColita_OK.csv` mantiene los nombres de columnas originales para conservar la compatibilidad con el enunciado, pero con valores ya normalizados y listos para el script de carga.
 
+---
+
 ### 1.4.5. Explicación `filtroArancelFonasa.php`
 
 El script dedicado a `Old/Arancel fonasa.csv` deja el catálogo público en el formato requerido por la base:
