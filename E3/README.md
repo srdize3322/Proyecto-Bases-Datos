@@ -176,4 +176,17 @@ Este módulo limpia el catálogo `Old/Arancel DCColita de rana.csv`, preparando 
 
 El archivo `Arancel_DCColita_OK.csv` mantiene los nombres de columnas originales para conservar la compatibilidad con el enunciado, pero con valores ya normalizados y listos para el script de carga.
 
+### 1.4.5. Explicación `filtroArancelFonasa.php`
+
+El script dedicado a `Old/Arancel fonasa.csv` deja el catálogo público en el formato requerido por la base:
+
+- **codF (Código FONASA):** se eliminan puntos y espacios, quedando sólo dígitos sin ceros a la izquierda. Es obligatorio y único; si aparece repetido o vacío, la fila se descarta.
+- **codA (Código adicional):** se limpian caracteres no numéricos. Si tras la limpieza queda vacío, se almacena como cadena vacía.
+- **atencion:** se compactan espacios, se documentan las normalizaciones y, si supera 100 caracteres, se trunca para cumplir la restricción del esquema.
+- **valor:** se remueven separadores de miles (`.`) y se fuerza a un entero positivo.
+- **grupo / tipo:** ambas columnas se normalizan (sin espacios dobles) y se truncan a 30 caracteres en caso de exceder ese límite.
+- **Registros inválidos:** filas con campos clave vacíos quedan en `Arancel_Fonasa_ERR.csv` junto con el detalle en `Arancel_Fonasa_LOG.txt`.
+
+El resultado limpio (`Arancel_Fonasa_OK.csv`) conserva el encabezado oficial de Fonasa, pero todas las columnas ya están alineadas con los dominios y longitudes definidas para la carga en la base relacional.
+
 ---
