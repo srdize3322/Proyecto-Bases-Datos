@@ -237,4 +237,14 @@ Los planes de isapres se entregan como varios CSV individuales dentro de `Old/pl
 
 De esta forma, todos los planes quedan homogéneos, con cabeceras normalizadas (`bonificacion;grupo`), listas para aplicarse como porcentajes de descuento en la etapa de carga SQL.
 
+### 1.4.10. Explicación `main.php`
+
+Para facilitar la ejecución secuencial de todos los filtros, se agregó `E3/main.php`. Este script:
+
+- Recorre la lista de `filtro*.php` en `RequestPHP/` siguiendo el orden lógico de dependencias (instituciones → personas → catálogos → atenciones → medicamentos/órdenes → planes).
+- Invoca cada filtro con el intérprete PHP del sistema, mostrando el progreso por consola y propagando cualquier error encontrado.
+- Permite regenerar toda la carpeta `Depurado/`, `Eliminado/` y `Logs/` con un solo comando: `php E3/main.php`.
+
+Cuando se incorporen nuevos filtros, basta con añadir su nombre al arreglo `$SCRIPTS` para integrarlos en la cadena de ejecución.
+
 ---

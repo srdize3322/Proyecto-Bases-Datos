@@ -29,7 +29,8 @@
 | 6 | 2025-10-23 | Creación y commit de esta bitácora | `E3/Codex.md` | `bitacora codex` / `bitacora codex v2` |
 | 7 | 2025-10-24 | Implementación `filtroMedicamento.php` + salidas y README | `E3/RequestPHP/filtroMedicamento.php`, `E3/Depurado/Medicamento_OK.csv`, `E3/Eliminado/Medicamento_ERR.csv`, `E3/Logs/Medicamento_LOG.txt`, `E3/README.md` | `medicamento` |
 | 8 | 2025-10-24 | Implementación `filtroOrden.php` + salidas y README | `E3/RequestPHP/filtroOrden.php`, `E3/Depurado/Orden_OK.csv`, `E3/Eliminado/Orden_ERR.csv`, `E3/Logs/Orden_LOG.txt`, `E3/README.md` | `orden` |
-| 9 | 2025-10-24 | Implementación `filtroPlanes.php` + salidas y README | `E3/RequestPHP/filtroPlanes.php`, `E3/Depurado/planes/*_OK.csv`, `E3/Eliminado/planes/*_ERR.csv`, `E3/Logs/planes/*_LOG.txt`, `E3/README.md` | _pendiente de commit_ |
+| 9 | 2025-10-24 | Implementación `filtroPlanes.php` + salidas y README | `E3/RequestPHP/filtroPlanes.php`, `E3/Depurado/planes/*_OK.csv`, `E3/Eliminado/planes/*_ERR.csv`, `E3/Logs/planes/*_LOG.txt`, `E3/README.md` | `planes` |
+| 10 | 2025-10-24 | Agregado `main.php` (orquestador de filtros) | `E3/main.php`, README/Codex | _pendiente de commit_ |
 
 > **Estado actual:** Todo lo anterior está en `origin/main`. La bitácora actual todavía no se ha commiteado (ver Sección 6).
 
@@ -48,6 +49,7 @@
 | `filtroMedicamento.php` | `Old/Medicamento.csv` | `Medicamento_OK/ERR/LOG` | ID de atención limpiado a entero, textos ≤100 caracteres, boolean normalizado, posología por defecto cuando falta. |
 | `filtroOrden.php` | `Old/Orden.csv` | `Orden_OK/ERR/LOG` | IDs numéricos limpios, descripciones normalizadas/truncadas, columnas extra removidas. |
 | `filtroPlanes.php` | `Old/planes/*.csv` | `Depurado/planes/*_OK`, `Eliminado/planes/*_ERR`, `Logs/planes/*_LOG` | Bonificación (0–100) y grupos normalizados por plan, se recorren todos los archivos de la carpeta. |
+| `main.php` | Orquestador | — | Ejecuta en cadena todos los `filtro*.php` para regenerar las carpetas Depurado/Eliminado/Logs. |
 
 > Scripts faltantes: Validaciones cruzadas, utilidades comunes, `main.php`, `validador.php`.
 
@@ -106,7 +108,8 @@ git status --short
 ?? E3/Depurado/Orden_OK.csv
 ?? E3/Eliminado/Orden_ERR.csv
 ?? E3/Logs/Orden_LOG.txt
-M E3/README.md
+?? E3/main.php   ← orquestador
+ M E3/README.md
  M E3/Codex.md   ← esta versión aún sin commit/push
 ```
 
@@ -138,6 +141,7 @@ git push
   - `php E3/RequestPHP/filtroMedicamento.php`
   - `php E3/RequestPHP/filtroOrden.php`
   - `php E3/RequestPHP/filtroPlanes.php`
+  - `php E3/main.php` (ejecución orquestada)
 - **Consultas útiles:**
   - `head -n 5 E3/Depurado/<archivo>` para validar formato.
   - `rg "-> ERR" E3/Logs/<archivo>` para encontrar descartes críticos.
