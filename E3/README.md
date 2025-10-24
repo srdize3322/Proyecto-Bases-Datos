@@ -226,4 +226,15 @@ El depurador de órdenes (`filtroOrden.php`) procesa `Old/Orden.csv` y deja la i
 
 Este tratamiento garantiza que los identificadores estén listos para futuros JOIN en SQL y que las descripciones cumplan con la longitud y codificación establecidas.
 
+### 1.4.9. Explicación `filtroPlanes.php`
+
+Los planes de isapres se entregan como varios CSV individuales dentro de `Old/planes/`. El script `filtroPlanes.php` itera por cada archivo y genera sus versiones limpias en `Depurado/planes/` (además de un log y un CSV de descartes por cada plan):
+
+- **Bonificación:** se convierte a entero (0–100). Los valores vacíos o `NULL` pasan a 0; si superan el rango, se saturan en los extremos.
+- **Grupo:** corrige mojibake, compacta espacios y se trunca a 100 caracteres. Cuando falta, se reemplaza por `Sin grupo`.
+- **Carpeta de errores:** filas irrecuperables (actualmente sólo encabezados sin datos) se almacenan en `Eliminado/planes/<plan>_ERR.csv`, conservando el encabezado para trazabilidad.
+- **Registro:** cada detalle de normalización queda anotado en `Logs/planes/<plan>_LOG.txt` (por ejemplo, `bonificación vacía -> 0`, `grupo:>100 -> trunc`).
+
+De esta forma, todos los planes quedan homogéneos, con cabeceras normalizadas (`bonificacion;grupo`), listas para aplicarse como porcentajes de descuento en la etapa de carga SQL.
+
 ---
