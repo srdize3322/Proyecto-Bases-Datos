@@ -215,4 +215,15 @@ Este script se encarga de limpiar `Old/Medicamento.csv` para alinear los tratami
 
 De esta forma, `Medicamento_OK.csv` queda listo para integrarse con el modelo relacional: todas sus claves foráneas son válidas, los textos respetan las longitudes exigidas y los booleanos se mantienen en el dominio requerido.
 
+### 1.4.8. Explicación `filtroOrden.php`
+
+El depurador de órdenes (`filtroOrden.php`) procesa `Old/Orden.csv` y deja la información lista para enlazarla posteriormente con atenciones y aranceles:
+
+- **IDAtencion / IDArancel:** se eliminan caracteres no numéricos y se guardan como enteros. Los registros sin alguno de estos campos se descartan.
+- **Consulta médica:** se corrige mojibake, se compactan espacios y se trunca a 100 caracteres. Cuando viene vacía, se reemplaza por `Sin descripción`.
+- **Columnas residuales:** el CSV original trae columnas vacías extra; el script conserva sólo las tres relevantes (`IDAtencion`, `IDArancel`, `ConsAtMedica`).
+- **Trazabilidad:** `Orden_LOG.txt` registra cada normalización (por ejemplo, `consulta normalizada` o `consulta:>100 -> trunc`), mientras que los registros irrecuperables se almacenan en `Orden_ERR.csv` con la fila exacta que falló.
+
+Este tratamiento garantiza que los identificadores estén listos para futuros JOIN en SQL y que las descripciones cumplan con la longitud y codificación establecidas.
+
 ---

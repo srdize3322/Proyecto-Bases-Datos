@@ -27,7 +27,8 @@
 | 4 | 2025-10-23 | Nuevo `filtroArancelFonasa.php`, generación de salidas y README | `E3/RequestPHP/filtroArancelFonasa.php`, `E3/Depurado/Arancel_Fonasa_OK.csv`, `E3/Eliminado/Arancel_Fonasa_ERR.csv`, `E3/Logs/Arancel_Fonasa_LOG.txt`, `E3/README.md` | `arancel fonasa` |
 | 5 | 2025-10-23 | Implementación `filtroAtencion.php` + salidas y README | `E3/RequestPHP/filtroAtencion.php`, `E3/Depurado/Atencion_OK.csv`, `E3/Eliminado/Atencion_ERR.csv`, `E3/Logs/Atencion_LOG.txt`, `E3/README.md` | `atencion` |
 | 6 | 2025-10-23 | Creación y commit de esta bitácora | `E3/Codex.md` | `bitacora codex` / `bitacora codex v2` |
-| 7 | 2025-10-24 | Implementación `filtroMedicamento.php` + salidas y README | `E3/RequestPHP/filtroMedicamento.php`, `E3/Depurado/Medicamento_OK.csv`, `E3/Eliminado/Medicamento_ERR.csv`, `E3/Logs/Medicamento_LOG.txt`, `E3/README.md` | _pendiente de commit_ |
+| 7 | 2025-10-24 | Implementación `filtroMedicamento.php` + salidas y README | `E3/RequestPHP/filtroMedicamento.php`, `E3/Depurado/Medicamento_OK.csv`, `E3/Eliminado/Medicamento_ERR.csv`, `E3/Logs/Medicamento_LOG.txt`, `E3/README.md` | `medicamento` |
+| 8 | 2025-10-24 | Implementación `filtroOrden.php` + salidas y README | `E3/RequestPHP/filtroOrden.php`, `E3/Depurado/Orden_OK.csv`, `E3/Eliminado/Orden_ERR.csv`, `E3/Logs/Orden_LOG.txt`, `E3/README.md` | _pendiente de commit_ |
 
 > **Estado actual:** Todo lo anterior está en `origin/main`. La bitácora actual todavía no se ha commiteado (ver Sección 6).
 
@@ -44,8 +45,9 @@
 | `filtroArancelFonasa.php` | `Old/Arancel fonasa.csv` | `Arancel_Fonasa_OK/ERR/LOG` | `codF` único sin ceros a la izquierda, `codA` opcional, `grupo`/`tipo` ≤30 chars, valor entero. |
 | `filtroAtencion.php` | `Old/Atencion.csv` | `Atencion_OK/ERR/LOG` | ID único, fecha ISO, RUN validados contra personas, diagnóstico limpio (mojibake), `efectuada` consistente. |
 | `filtroMedicamento.php` | `Old/Medicamento.csv` | `Medicamento_OK/ERR/LOG` | IDAtencion debe existir en Atencion_OK, textos ≤100 caracteres, boolean normalizado, posología por defecto cuando falta. |
+| `filtroOrden.php` | `Old/Orden.csv` | `Orden_OK/ERR/LOG` | IDs numéricos limpios (sin validar referencias), descripciones normalizadas/truncadas, columnas extra removidas. |
 
-> Scripts faltantes: Orden, Planes, validaciones cruzadas, utilidades comunes, `main.php`, `validador.php`.
+> Scripts faltantes: Planes, validaciones cruzadas, utilidades comunes, `main.php`, `validador.php`.
 
 ---
 
@@ -60,12 +62,13 @@
 | `Arancel_Fonasa_OK.csv` | Encabezado sin BOM; valores sin puntos; grupos/tipos truncados si exceden 30 caracteres; `_ERR` solo con encabezado. |
 | `Atencion_OK.csv` | Fechas en formato ISO, RUN validados contra personas, diagnósticos depurados (sin mojibake) y vacíos cuando la atención no se efectuó. |
 | `Medicamento_OK.csv` | IDs válidos según atenciones, nombres y posologías normalizados (máx. 100 caracteres), marcador psicotrópico en dominio `TRUE/FALSE`. |
+| `Orden_OK.csv` | Identificadores numéricos listos para usar como FK y descripciones sanitizadas (truncadas a 100) sin columnas residuales. |
 
 ---
 
 ## 5. Pending / To-Do
 
-1. **Scripts pendientes:** Medicamento, Orden, Planes, utilidades comunes, `main.php`, `validador.php`.
+1. **Scripts pendientes:** Planes, utilidades comunes, `main.php`, `validador.php`.
 2. **BOM residual:** Eliminar BOM en `Persona_OK.csv` y `Instituciones..._OK.csv` replicando la lógica usada en aranceles.
 3. **Referencias cruzadas:** Validar:
    - RUN en `Atencion` y `Orden` contra `Persona_OK`.
@@ -92,6 +95,10 @@ git status --short
 ?? E3/Depurado/Medicamento_OK.csv
 ?? E3/Eliminado/Medicamento_ERR.csv
 ?? E3/Logs/Medicamento_LOG.txt
+?? E3/RequestPHP/filtroOrden.php   ← nuevo script
+?? E3/Depurado/Orden_OK.csv
+?? E3/Eliminado/Orden_ERR.csv
+?? E3/Logs/Orden_LOG.txt
  M E3/README.md
  M E3/Codex.md   ← esta versión aún sin commit/push
 ```
@@ -99,7 +106,7 @@ git status --short
 > Recordatorio: Al terminar de editar esta bitácora, ejecutar:
 ```
 git add E3/Codex.md
-git commit -m "bitacora codex v2"
+git commit -m "bitacora codex vX"
 git push
 ```
 > (y considerar limpiar/ignorar los `.DS_Store`).
@@ -121,6 +128,8 @@ git push
   - `php E3/RequestPHP/filtroArancel_DCColita.php`
   - `php E3/RequestPHP/filtroArancelFonasa.php`
   - `php E3/RequestPHP/filtroAtencion.php`
+  - `php E3/RequestPHP/filtroMedicamento.php`
+  - `php E3/RequestPHP/filtroOrden.php`
 - **Consultas útiles:**
   - `head -n 5 E3/Depurado/<archivo>` para validar formato.
   - `rg "-> ERR" E3/Logs/<archivo>` para encontrar descartes críticos.
@@ -136,4 +145,4 @@ git push
 
 ---
 
-*Última actualización:* 2025-10-24 01:30 (actualizar manualmente tras cada edición).
+*Última actualización:* 2025-10-24 02:05 (actualizar manualmente tras cada edición).
