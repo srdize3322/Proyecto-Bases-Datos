@@ -203,4 +203,16 @@ El resultado limpio (`Arancel_Fonasa_OK.csv`) conserva el encabezado oficial de 
 
 El log (`Atencion_LOG.txt`) evidencia cada normalización (fechas, RUN ajustados, truncados, limpiezas) y los motivos de descarte (RUN sin referencia, diagnósticos faltantes, etc.). Los registros válidos se almacenan en `Atencion_OK.csv`, listos para validaciones cruzadas con órdenes y medicamentos.
 
+### 1.4.7. Explicación `filtroMedicamento.php`
+
+Este script se encarga de limpiar `Old/Medicamento.csv` para alinear los tratamientos con las atenciones depuradas:
+
+- **IDAtencion:** se aceptan sólo dígitos, se normaliza como entero y se valida que exista en `Atencion_OK.csv`; si falta la referencia, el registro pasa a `_ERR`.
+- **Nombre del medicamento:** se corrigen problemas de mojibake, se compactan espacios y se limita a 100 caracteres. Si llega vacío, se reemplaza por `SIN NOMBRE`.
+- **Posología:** se limpia igual que el nombre, se acota a 100 caracteres y, cuando viene ausente, se reemplaza por `Sin posologia`.
+- **Psicotrópico:** se normaliza a `TRUE`/`FALSE`, aceptando variantes (`1/0`, `si/no`). Valores fuera de dominio provocan descarte.
+- **Relación con Atenciones:** los registros correspondientes a atenciones eliminadas (por ejemplo, por RUN inválidos) se derivan a `Medicamento_ERR.csv`, manteniendo la traza en `Medicamento_LOG.txt`.
+
+De esta forma, `Medicamento_OK.csv` queda listo para integrarse con el modelo relacional: todas sus claves foráneas son válidas, los textos respetan las longitudes exigidas y los booleanos se mantienen en el dominio requerido.
+
 ---
