@@ -1,0 +1,231 @@
+Pontificia Universidad Cat´olica de Chile
+Departamento de Ciencia de la Computaci´on
+IIC2413 - Bases de Datos
+Proyecto semestral Etapa 3 2025-2
+17 de octubre de 2025
+Administrativo
+LEA LAS INSTRUCCIONES DEL ENUNCIADO GENERAL
+Fecha de inicio:viernes 17 de octubre
+Fecha de entrega:lunes 3 de noviembre de 2025, 23:59.
+Fecha y hora m´ axima de entrega atrasada:jueves 6 de noviembre de 2025, 23:59.
+Consultas solo por ISSUESse responden en forma consolidada los jueves y s´ abado
+recepci´ on de issues hasta mi´ ercoles 29 de octubre
+Revise las DISCUSSIONS de Github antes de preguntar. Solo se responder´ an las
+consultas originales.
+Entregables:Informe en formato ”Markdown”(README.md) seg´ un la plantilla entregada.
+Programa PHP de data cleansing, archivo sql de creaci´ on y carga de BDD.
+Lugar y forma de entrega:En su cuenta personal<usuario>.e 3 directorio E3 del
+servidor stonebraker.ing.uc.cl.
+Seguridad: SIEMPRE guarde un respaldo del trabajo (por ejemplo en Onedrive).
+No se otorgar´ a tiempo extra por problemas o indisponibilidad de los computadores
+personales. Recuerde que trabajar en el computador personal es OPCIONAL, se puede
+hacer todo el trabajo en el server.
+Correcci´ on del trabajo:Los programas PHP y SQL que se usar´ a para su entrega
+ser´ an ’main.php’ y ’carga.sql’ que ser´ an ejecutadas en forma secuencial mediante la
+l´ ınea de comandos de linux de su cuenta en el servidor.
+Buenas pr´ acticasUse las buenas pr´ acticas de programaci´ on Avanzada, de lo contrario
+puede tener descuento en el puntaje.Solo se permite el uso de PHP y SQL, no est´ a
+Entrega 3 - IIC2413 - Bases de Datos
+permitido la manipulaci´ on manual de los datos en los archivos originales (o copias de
+ellos) o por medio de alg´ un otro software (P.Ej. Excel)
+IntegridadSolo est´ a permitido el c´ odigo generado por usted, el entregado en clases o
+ayudant´ ıa, no est´ a permitido el uso de c´ odigos de otras personas, repositorios p´ ublicos
+o privados ni c´ odigo generado por inteligencia artificial En caso de cometer una falta
+a la integridad est´ a disponible elFormulario de arrepentimiento temprano:Link
+Arrepentimiento Temprano (hasta 6 de octubre)
+Objetivo de la etapa
+El objetivo para esta etapa del proyecto es que el estudiante se familiarice con el lenguaje
+PHP, en el sistema operativo Linux-Ubuntu mediante el procesamiento y limpieza de datos
+almacenados en archivos y cargarlos en una base de datos nueva vac´ ıa.
+1. Contexto
+Usted ya sabe como modelar un problema de base de datos usando los modelos Entidad
+Relaci´ on (E1) y tambi´ en trabajar manipulando datos de una BDD a trav´ es de dos herramientas,
+un ERD Tool y PSQL (E2). Ahora le encargan construir la base de datos del centro m´ edico
+DCColita a partir de datos exportados de la base de datos real del centro m´ edico.
+El proveedor actual, quien perdi´ o la licitaci´ on para la renovaci´ on del sistema, no le va a
+facilitar el trabajo, as´ ı que le entrega una serie de archivos similares, pero no iguales a los
+de la etapa 1 para que Ud. construya la base de datos desde cero. Estos datos estaban
+almacenados con criterios diferentes a los que se requieren en este nuevo sistema (otras
+restricciones de integridad), por lo que pueden tener errores de formato (sintaxis), tipo,
+duplicaciones, datos faltantes e incoherentes. Su misi´ on es tomar estos archivos y, mediante
+exclusivamente PHP y SQL, realizar un proceso de limpieza (data cleaning) y carga de los
+mismos en la base con un m´ ınimo de p´ erdida de informaci´ on. Las acciones a realizar pueden
+ser las siguientes:
+Si el registro se puede reparar, por ejemplo, con informaci´ on adicional, se repara y se
+reporta. Ejemplo correo mal formado jdoe@gmail..com (el . est´ a repetido).
+Si no hay informaci´ on como para repararlo, pero el campo es obligatorio, puede ingresar
+un registro que cumpla el formato, pero el valor indica que no es v´ alido. Ejemplo:
+tel´ efono campo obligatorio, pero aparece 2419 lo que no cumple con ser un tel´ efono
+v´ alido, entonces se cambia a 100000000.
+En ´ ultimo caso y solo si est´ an todas las posibilidades agotadas, si el registro es irreparable
+y esencial para la tupla se elimina en cascada y se reporta.
+2
+Entrega 3 - IIC2413 - Bases de Datos
+2. Encargo para la etapa 3
+Ud. realizar´ a un proceso de data cleaning usando PHP previo a la carga de los datos en SQL
+seg´ un el procedimiento de la figura.
+1. (2 pts.) Ud. bas´ andose en el esquema de la E2, deber´ a crear un (o modificar el) esquema
+de bases de datos en 3NF o BCNF para almacenar los datos provenientes de los archivos
+XXX.csv entregados. Muestre el nuevo esquema en el informe.
+2. (5 pts.)Ud. mediante PHP, deber´ a revisar, identificar y corregir en forma iterativa,
+hasta donde sea posible, los datos de cada archivo de entrada XXX.csv y entregar
+un archivo con datos XXXOK.csv con todos los datos correctos o corregidos. Los
+registros de datos malformados que sean irreparables por su programa PHP deber´ a
+traspasarlos al archivo XXXERR.csv y registrarla en el archivo XXXLOG.txt (si hay
+una modificaci´ on que se realiza repetidamente se reporta solo una vez indicando los
+registros afectados). Luego deber´ a inspeccionar el archivo XXXERR.csv en busca de
+errores reparables que no fueron capturados en la ejecuci´ on del programa, modificarlo
+y volver a correrlo. Este ciclo se debe hacer cuantas veces sea necesario hasta que la
+mayor´ ıa de los registros pasen a la etapa siguiente. El resultado es un programa PHP
+que reuna contenga todos los cambios que Ud. hizo en las iteraciones de modo que los
+3
+Entrega 3 - IIC2413 - Bases de Datos
+registros generados en los XXOK.csv tome la mayor´ ıa de los casos.
+3. (10 pts.)Crear el archivo carga.sql que mediante sentencias SQL i) cree el esquema
+con todas sus tablas, atributos, dominios, restricciones, PK, FK, SK, etc. ii) cargue,
+a partir de todos los archivos XXXOK.csv, los datos a la instancia de la BD. El
+resultado del proceso de carga entrega (al igual que antes) el archivo (esta vez solo uno)
+cargaERR.csv y cargaLOG.txt conteniendo las tuplas con errores (en cargaERR) y la
+acci´ on tomada (en cargaLOG), el proceso carga.sql podra ser ejecutado y modificado
+cuantas veces sea necesario para que la p´ erdida de informaci´ on sea m´ ınima (el m´ ınimo
+de tuplas descartadas). Al final Ud. entregar´ a solo un SQL carga.sql conteniendo el
+acumulado de todas las modificaciones creado por usted
+4. (3 pts.) Informe conteniendo:
+a) archivo Readme.md conteniendo y justificando i) el esquema de bases de datos
+creado ii) todas las modificaciones a cada archivo XXX.csv originales (est´ an en
+XXXLOG.txt) iii) todas las acciones realizadas a los datos del archivo XXXOK.csv
+efectuadas para ser cargadas en la base de datos.
+b) Todos los archivos .csv originales y procesados, los .txt y .sql en el directorio E3.
+c) Como Ud. ya corri´ o numerosas veces main.php y carga.sql los programas finales
+est´ an suficientemente afinados. Para evaluar, se ejecutar´ an tanto el mail.php
+y luego carga.php UNA SOLA VEZ sobre los archivos xxx.csv originales y se
+espera tener como resultado i) la instancia de la base de datos cargada, los
+archivos XXXERR y cargaERR con el m´ ınimo de tuplas irreparables. Asimismo,
+los XXXLOG y cargaLOG con las modificaciones hechas a las tuplas reparadas y
+eliminadas.
+d) Instrucciones para ejecutar los dos programas: main.PHP y carga.sql
+Por ejemplo, el Readme debe contener una tabla como la siguiente que se construye a
+partir del XXXLOG.csv y cargalog.csv
+Error archivo encontrado soluci´ on solucionado por PHP Solucionado SQL
+mal formato de correo Persona corregir PHP
+Ud. NO DEBER ´A entregar otros archivos que no correspondan exactamente a la tarea
+(versiones anteriores, respaldos, pruebas, etc.) si quiere hacer pruebas use un directorio
+diferente a E3 o la cuenta .bdd y una vez finalizado traspase su trabajo definitivo a la
+cuenta usuario.e3/E3
+4
+Entrega 3 - IIC2413 - Bases de Datos
+3. Reglas de negocio
+1. Una persona puede ser paciente, trabajar en el centro m´ edico o ambos. Los trabajadores
+se dividen en staff m´ edico o administrativo.
+2. Solo los m´ edico/as tienen especialidad y realizan atenciones m´ edicas, emiten recetas y
+´ ordenes.
+3. Una persona con rol staff m´ edico o administrativo tambi´ en puede ser paciente, pero en
+este caso solo puede ser titular en la Instituci´ on de salud previsional
+4. Una persona (independiente del rol) puede estar afiliada a una instituci´ on de salud
+previsional (una ISAPRE o FONASA) o no tener previsi´ on, en cuyo caso se considera
+como particular.
+5. Cada ISAPRE tiene un solo plan de salud que especifica el porcentaje de bonificaci´ on
+por cada grupo del Arancel FONASA. Es decir, todos los beneficiarios de cada ISAPRE
+tienen el mismo plan. Sin embargo, las bonificaciones por grupo var´ ıan de una ISAPRE
+a otra.
+6. En el contexto de la instituci´ on de salud previsional, una persona puede ser Beneficiario
+titular o solo beneficiario. En este segundo caso la persona tiene asociado un beneficiario
+titular. Un beneficiario solo puede estar registrado en una instituci´ on y el beneficiario
+est´ a en la misma instituci´ on que el titular
+7. Si el beneficiario (titular o no titular) est´ a en ISAPRE (no FONASA) paga el valor de la
+atenci´ on y del arancel del centro m´ edico menos la bonificaci´ on. Si el beneficiario (titular
+o no titular) est´ a en FONASA paga solo el arancel FONASA, no tiene bonificaci´ on. Si
+la persona es particular (o sea no es FONASA NI ISAPRE) paga el valor completo de
+la atenci´ on. Los medicamentos se pagan al precio de lista de la farmacia independiente
+de su tipo y previsi´ on de salud.
+8. Toda atenci´ on comienza con una consulta m´ edica, en esta el m´ edico realiza un diagn´ ostico
+y pueden generar una o m´ as recetas m´ edicas y una o m´ as ´ ordenes de procedimientos
+o ex´ amenes. Todos los medicamentos de las recetas est´ an registrados en el Maestro
+farmacia y todos los procedimientos o ex´ amenes est´ an registrados en el Arancel FONASA.
+9. las ´ ordenes pueden contener muchos ex´ amenes y procedimientos
+10. las recetas de medicamentos no psicotr´ opicos pueden tener muchos medicamentos, los
+psicotr´ opicos van uno por receta.
+4. Formato de archivos de datos
+Persona
+ID: integer PK, Identificador ´ unico de la persona en el centro m´ edico
+5
+Entrega 3 - IIC2413 - Bases de Datos
+RUN: text 10 NOT NULL formato XDDDDD-A X=1..9 D=0..9 A=0..9+K, Rol ´ unico
+nacional de la persona
+nombre: text 30 NOT NULL, nombres de la persona
+apellido: text 30 NOT NULL, apellidos de la persona
+direcci´ on: text 100, Domicilio de la persona
+correo: text formato partelocal@dominio.TLD RFC 3696, direcci´ on de email
+telefono: formato XDDDDDDDD X=1..9, D=0..9, n´ umero telef´ onico de la persona
+tipo:{beneficiario, titular, NULL}, Tipo de beneficiario registrado en la Instituci´ on
+de salud previsional
+titular:{formato RUN XDDDDD-A X=1..9 D=0..9 A=0..9+K, NULL}, RUN del
+titular en la instituci´ on de salud previsional.
+rol:{Staff m´ edico, administrativo, paciente, NULL}<,Paciente>, Rol(es) de la persona
+en el centro m´ edico
+profesion:{TENS, enfermero/a, Kinesi´ ologo/a, m´ edico/a, NULL}, Profesi´ on de la
+persona
+especialidad: text 30, Especialidad m´ edica, exclusivamente para personas de profesi´ on
+m´ edico/a
+firma: text: 30, Nombre y ubicaci´ on de un archivo conteniendo la imagen de la firma
+de la persona
+InsSalPrev: text 30, Nombre de la instituci´ on de salud previsional
+Instituciones previsionales de salud
+codigo: integer NOT NULL, C´ odigo registrado en MINSAL
+nombre: text 30 NOT NULL, Nombre de la instituci´ on
+tipo:{abierta, cerrada}, Tipo de ISAPRE, abierta recibe a cualquier persona, cerrada
+solo un grupo seleccionado, por ejemplo una empresa.
+RUT: text Formato XD.DDD.DDD-A X=6..9 D=0..9 A=0..9 o K NOT NULL, Rol
+´ unico tributario
+enlace: text Formato{<http<s>//>, NULL}, direcci´ on del servidor.TLD en internet
+TLD=Top level domain
+Farmacia
+cod: integer NOT NULL, C´ odigo gen´ erico del MINSAL
+nombre: text 100 NOT NULL, Nombre producto gen´ erico
+6
+Entrega 3 - IIC2413 - Bases de Datos
+descripcion: text 256 NOT NULL, Descripci´ on producto gen´ erico
+tipo:{Alimentos, Equipamiento, F´ armacos, insumos, psicotr´ opicos, Refrigerados, Sueros},
+Tipo producto
+codonu: integer, C´ odigo ONU
+clasonu: text 30 acepta nulos si el codonu es nulo, Clasificaci´ on ONU
+clasificacion: text 50 NOT NULL, clasificaci´ on interna
+estado:{activo, inactivo}, Estado del c´ odigo gen´ erico. Si est´ a inactivo el producto est´ a
+descontinuado, ya no disponible pero en el pasado existi´ o.
+esencial:{0,1}, Producto miembro de la canasta Esencial de Medicamentos
+precio: integer, valor de venta del producto.
+Arancel DCColita
+codigo: integer, C´ odigo interno de la consulta o atenci´ on m´ edica en DCColita
+codFonasa: text Formato integer<-integer>, C´ odigo Fonasa y c´ odigo adicional si existe
+atencion: text 100, Consultas y Atenci´ on M´ edica
+valor: integer, valor DCColita de la Consulta y Atenci´ on M´ edica
+Arancel Fonasa
+codF: integer, C´ odigo ´ unico FONASA de la Consulta y Atenci´ on m´ edica
+codA: integer, C´ odigo adicional FONASA que tienen algunos codF
+atencion: text 100, Consultas y Atenci´ on M´ edica
+valor: integer, valor FONASA de la Consulta y Atenci´ on M´ edica
+grupo: text 30, Grupo de Consultas y Atenci´ on M´ edica
+tipo: text 30, Tipo de Consultas y Atenci´ on M´ edica
+Atencion
+ID PK: integer, identificaci´ on de la atenci´ on
+runpaciente: NOT NULL, RUN del paciente en formato RUN visto anteriormente
+runmedico: NOT NULL, RUN del m´ edico/a en formato RUN visto anteriormente
+diagnostico: text 100,{diagn´ ostico del paciente, NULL}, Diagn´ ostico resultado de la
+atenci´ on, solo en caso que la consulta haya sido efectuada,
+efectuada: boolean true si la consulta se efectu´ o lo que implica que tiene diagn´ ostico
+7
+Entrega 3 - IIC2413 - Bases de Datos
+Medicamento
+IDAtencion: integer FK: ID de la atenci´ on
+nombre: text 100, Nombre producto gen´ erico en farmacia
+posolog´ ıa: text 100, dosis y frecuencia de administraci´ on del medicamento
+psicotropico: boolean, true para medicamento psicotr´ opico
+Orden
+IDAtencion: integer FK: ID de la atenci´ on
+IDArancel: integer FK codigo, C´ odigo interno DCColita
+consulta: text 100, Consultas y Atenci´ on M´ edica
+Plan
+bonificaci´ on: integer, porcentaje de descuento sobre el precio del arancel DCColita el
+rango 0 a 100, NULL(equivalente a 0)
+Grupo: text 100, Grupo de consulta y atenci´ on m´ edica
+8
