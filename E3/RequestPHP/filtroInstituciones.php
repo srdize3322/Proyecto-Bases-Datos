@@ -14,16 +14,28 @@ $I=fopen($in,'r') or die("No puedo leer $in\n");
 $O=fopen($ok,'w'); $E=fopen($err,'w'); $L=fopen($log,'w');
 $sep=';';
 
-$hdr=fgetcsv($I,0,$sep);
-fputcsv($O,$hdr,$sep); fputcsv($E,$hdr,$sep);
+$stripBom = function($s){
+  $s=(string)$s;
+  if(strncmp($s,"\xEF\xBB\xBF",3)===0) return substr($s,3);
+  return $s;
+};
+$normHeader = function(&$hdr) use ($stripBom) {
+  foreach($hdr as &$h){
+    $h=$stripBom(trim($h));
+  }
+  unset($h);
+};
+$hdr=fgetcsv($I,0,$sep,'"','\\');
+$normHeader($hdr);
+fputcsv($O,$hdr,$sep,'"','\\'); fputcsv($E,$hdr,$sep,'"','\\');
 
 $ixNom=array_search('nombre',$hdr);
 $ixRut=array_search('rut',$hdr);
 $ixEnl=array_search('Enlace',$hdr);
 
-while(($r=fgetcsv($I,0,$sep))!==false){
+while(($r=fgetcsv($I,0,$sep,'"','\\'))!==false){
   if(!array_filter($r,fn($c)=>trim($c)!=='')){
-    fputcsv($E,$r,$sep); fwrite($L,"Línea vacía\n"); continue;
+    fputcsv($E,$r,$sep,'"','\\'); fwrite($L,"Línea vacía\n"); continue;
   }
 
   // nombre
@@ -35,7 +47,18 @@ while(($r=fgetcsv($I,0,$sep))!==false){
 
   // enlace
   if($ixEnl!==false){
-    $r[$ixEnl]=preg_replace('#^https://#i','',$r[$ixEnl]);
+    $url=trim((string)$r[$ixEnl]);
+    $url=preg_replace('#^https?://#i','',$url);
+    $url=strtolower($url);
+    $url=preg_replace('#/+$#','',$url);
+    $r[$ixEnl]=$url;
+  }
+
+  // tipo
+  if(($ixTipo=array_search('tipo',$hdr))!==false){
+    $tipo=strtolower(trim((string)$r[$ixTipo]));
+    if(!in_array($tipo,['abierta','cerrada'],true)) $tipo='abierta';
+    $r[$ixTipo]=$tipo;
   }
 
   // rut
@@ -46,7 +69,7 @@ while(($r=fgetcsv($I,0,$sep))!==false){
     if(strpos($s,'-')===false && strlen($s)>1)
       $s=substr($s,0,-1).'-'.substr($s,-1);
     if(!preg_match('/^(\d{6,8})-([0-9K])$/',$s,$m)){
-      fputcsv($E,$r,$sep); fwrite($L,"RUT inválido: $o\n"); continue;
+      fputcsv($E,$r,$sep,'"','\\'); fwrite($L,"RUT inválido: $o\n"); continue;
     }
     [$c,$d]=[$m[1],$m[2]];
     $sum=0;$m2=2;
@@ -59,7 +82,7 @@ while(($r=fgetcsv($I,0,$sep))!==false){
     $r[$ixRut]="$c-$dv";
   }
 
-  fputcsv($O,$r,$sep);
+  fputcsv($O,$r,$sep,'"','\\');
 }
 
 fclose($I); fclose($O); fclose($E); fclose($L);

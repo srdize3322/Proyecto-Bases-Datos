@@ -1,12 +1,12 @@
-﻿codigo;"nombre ";tipo;rut;Enlace
+codigo;nombre;tipo;rut;Enlace
 63;"Salud Ltda.";cerrada;76334270-0;www.salud.cl
-67;"Colmena de avispas S.A.";abierta;76196619-7;www.avispas.cl
-76;"Fundación e imperio";cerrada;71215700-3;www.fundacion.cl
-78;"Cruz de Malta S.A.";abierta;96301450-3;www.malta.cl
-80;"Vida uno S.A.";abierta;96512530-2;www.vidauno.cl
-81;"Menos vida S.A.";abierta;96514160-K;www.menos.cl
-94;"Cruz pal cielo Ltda.";cerrada;79916120-6;www.cruzpalcielo.cl
-99;"Medibanc S.A.";abierta;96512800-K;www.medibanc.cl
-107;"sinsalud S.A.";abierta;96816780-4;www.sinsalud.cl
-108;"especial S.A.";cerrada;96916100-1;www.espencial.cl
-1;FONASA;abierta;61613000-5;www.fonasa.cl
+67;"Colmena De Avispas S.a.";abierta;76196619-7;www.avispas.cl
+76;"Fundación E Imperio";cerrada;71215700-3;www.fundacion.cl
+78;"Cruz De Malta S.a.";abierta;96301450-3;www.malta.cl
+80;"Vida Uno S.a.";abierta;96512530-2;www.vidauno.cl
+81;"Menos Vida S.a.";abierta;96514160-K;www.menos.cl
+94;"Cruz Pal Cielo Ltda.";cerrada;79916120-6;www.cruzpalcielo.cl
+99;"Medibanc S.a.";abierta;96512800-K;www.medibanc.cl
+107;"Sinsalud S.a.";abierta;96816780-4;www.sinsalud.cl
+108;"Especial S.a.";cerrada;96916100-1;www.espencial.cl
+1;Fonasa;abierta;61613000-5;www.fonasa.cl
