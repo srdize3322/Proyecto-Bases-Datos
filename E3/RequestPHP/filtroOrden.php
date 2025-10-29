@@ -2,8 +2,7 @@
 <?php
 // E3/RequestPHP/filtroOrden.php — depuración de Orden.csv
 // Reglas:
-// - IDAtencion entero obligatorio y debe existir en Atencion_OK.csv.
-// - IDArancel entero obligatorio y debe existir en Arancel_DCColita_OK.csv.
+// - IDAtencion e IDArancel deben ser enteros (sin validar contra otros catálogos).
 // - consulta (ConsAtMedica) normalizada (mojibake, espacios) y truncada a 100 caracteres.
 // - Otras columnas del CSV original (vacías) se descartan.
 
@@ -81,6 +80,7 @@ while (($row = fgetcsv($in, 0, $sep, $enc, $esc)) !== false) {
         $row[$IDX_ATEN] = $stripBom($row[$IDX_ATEN]);
     }
     if (!array_filter($row, fn($c)=>$c!=='')) {
+        fputcsv($er, ['', '', ''], $sep, $enc, $esc);
         $log($lg, "L$line fila vacía -> ERR");
         continue;
     }
@@ -124,7 +124,7 @@ while (($row = fgetcsv($in, 0, $sep, $enc, $esc)) !== false) {
         $cons = mb_substr($cons, 0, 100, 'UTF-8');
         $notes[] = "consulta:>100 -> trunc";
     }
-    if ($cons !== $consRaw && stripos($consRaw, 'Sin descripcion') === false) {
+    if ($cons !== $consRaw && stripos($consRaw, 'Sin descripción') === false && stripos($consRaw, 'Sin descripcion') === false) {
         $notes[] = "consulta normalizada";
     }
 
