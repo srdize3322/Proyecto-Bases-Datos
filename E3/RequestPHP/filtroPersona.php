@@ -60,10 +60,38 @@ $instSet = array_flip(array_map(fn($x)=>mb_strtoupper($x,'UTF-8'),[
 $rolesOK   = array_flip(['Paciente','Staff Médico','Administrativo','Enfermero','Enfermera','Médico','Medico','Tens','Paramédico','Tecnólogo Médico','Kinesiólogo']);
 $rolesClin = array_flip(['Staff Médico','Enfermero','Enfermera','Médico','Medico','Tens','Paramédico','Tecnólogo Médico','Kinesiólogo']);
 $aliasRol  = ['Staff Medico'=>'Staff Médico','Medico'=>'Médico','Paramedico'=>'Paramédico','Tecnologo Medico'=>'Tecnólogo Médico','Kinesiologo'=>'Kinesiólogo'];
+$profCanon = function($profRaw) use ($cap){
+  $prof = $cap($profRaw);
+  $keyMaker = function($txt){
+    $up = mb_strtoupper((string)$txt,'UTF-8');
+    $up = strtr($up,['Á'=>'A','É'=>'E','Í'=>'I','Ó'=>'O','Ú'=>'U','Ñ'=>'N']);
+    return preg_replace('/[^A-Z]/u','',$up);
+  };
+  $map = [
+    'TENS'        => 'Tens',
+    'TENSS'       => 'Tens',
+    'MEDICO'      => 'Médico',
+    'MEDICA'      => 'Médico',
+    'MEDICOA'     => 'Médico',
+    'ENFERMERO'   => 'Enfermero',
+    'ENFERMERA'   => 'Enfermera',
+    'ENFERMEROA'  => 'Enfermero/a',
+    'KINESIOLOGO' => 'Kinesiólogo',
+    'KINESIOLOGOA'=> 'Kinesiólogo/a'
+  ];
+  $key = $keyMaker($prof);
+  return $map[$key] ?? $prof;
+};
+$stripBom = function($s){
+  $s=(string)$s;
+  if(strncmp($s,"\xEF\xBB\xBF",3)===0) return substr($s,3);
+  return $s;
+};
 
 // ---------- IO ----------
 $in=fopen($IN,'r'); $ok=fopen($OK,'w'); $er=fopen($ERR,'w'); $lg=fopen($LOG,'w');
 $del=';'; $hdr=fgetcsv($in, 0, $del, '"', '\\'); if($hdr===false) exit(0);
+foreach($hdr as &$h){ $h=$stripBom($h); } unset($h);
 fputcsv($ok, $hdr, $del, '"', '\\'); fputcsv($er, $hdr, $del, '"', '\\');
 
 // índice flexible
@@ -96,11 +124,29 @@ while(($row=fgetcsv($in, 0, $del, '"', '\\'))!==false){ $ln++; $t=[];
   if($idx['Tel']!==null){  $p=$telFix($get('Tel'),$t,$ln);   if($p!==$get('Tel'))  $set('Tel',$p); }
 
   // Tipo / Titular
-  $titWhy=null; $tit= $idx['Tit']!==null ? $normRUN($get('Tit'),$titWhy,$t,$ln) : null;
-  $tipo=strtolower(trim((string)$get('Tipo')));
-  if(!in_array($tipo,['titular','beneficiario'])) $tipo = ($tit===null||$tit===$run)? 'titular':'beneficiario';
-  if($tipo==='titular'){ if($tit===null||$tit!==$run){ $set('Tit',$run); } }
-  else { if($tit===null){ $set('Tit',$run); } else if($tit!==$get('Tit')) $set('Tit',$tit); }
+  $titWhy=null; $tit = $idx['Tit']!==null ? $normRUN($get('Tit'),$titWhy,$t,$ln) : null;
+  $tipoRaw=strtolower(trim((string)$get('Tipo')));
+  if(!in_array($tipoRaw,['titular','beneficiario'])){
+    $tipo = ($tit===null||$tit===$run)? 'titular':'beneficiario';
+  } else {
+    $tipo = $tipoRaw;
+  }
+  if($tipo==='titular'){
+    if($tit!==null && $tit!==$run){ $t[]="L$ln titular '$tit' -> '$run'"; }
+    $set('Tit',$run);
+  } else {
+    if($tit===null){
+      $t[]="L$ln beneficiario sin titular -> ERR";
+      fputcsv($er, $row, $del, '"', '\\'); $log($lg,implode(' | ',$t));
+      continue;
+    }
+    if($tit===$run){
+      $t[]="L$ln beneficiario con titular propio $run -> ERR";
+      fputcsv($er, $row, $del, '"', '\\'); $log($lg,implode(' | ',$t));
+      continue;
+    }
+    if($idx['Tit']!==null && $get('Tit')!==$tit) $set('Tit',$tit);
+  }
   if($idx['Tipo']!==null && $get('Tipo')!==$tipo) $set('Tipo',$tipo);
 
   // Rol / Prof / Esp
@@ -109,7 +155,10 @@ while(($row=fgetcsv($in, 0, $del, '"', '\\'))!==false){ $ln++; $t=[];
     if(!isset($rolesOK[$rol])) $rol='Paciente';
     if($rol!==$get('Rol')) $set('Rol',$rol);
     $clin=isset($rolesClin[$rol]);
-    if($idx['Prof']!==null){ $pr=$cap($get('Prof')); if(!$clin) $pr=''; if($pr!==$get('Prof')) $set('Prof',$pr); }
+    if($idx['Prof']!==null){
+      $pr = $clin ? $profCanon($get('Prof')) : '';
+      if($pr!==$get('Prof')) $set('Prof',$pr);
+    }
     if($idx['Esp']!==null){  $es=$cap($get('Esp'));  if(!$clin) $es=''; if($es!==$get('Esp'))  $set('Esp',$es); }
   }
 

@@ -1,4 +1,5 @@
-﻿ID;RUN;Nombre;Apellidos;Dirección;"Correo Electrónico";Teléfono;tipo;titular;rol;profesión;especialidad;firma;"institucion previsional de salud";
+ID;RUN;Nombre;Apellidos;Dirección;"Correo Electrónico";Teléfono;tipo;titular;rol;profesión;especialidad;firma;"institucion previsional de salud";
+848;802322-0;Marta;"Torres Rojas";"Av. Apoquindo 116";marta.torres@mailficticio.cl;905732510;beneficiario;;paciente;;;;"Salud Ltda.";
 1319;434078-7;Isabel;Torres;"Av. Los Leones 11480";isabel.torres@prueba.org;966158049;;;;;;;;
 2865;650859-6;"Pedro Luis";Silva;"Av. Matta 1926";pedro.silva@correoexample.com;927436570;titular;650859-6;administrativo;;;;"Menos vida S.A.";
 2919;516200-9;Carmen;"Hernández Torres";"Av. Apoquindo 1220";carmen.hernández@prueba.org;936340075;titular;516200-9;paciente;;;;"Fundación e imperio";
