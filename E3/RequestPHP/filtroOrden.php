@@ -31,14 +31,20 @@ $stripBom = function ($s) {
     }
     return $s;
 };
-$log = fn($h,$m)=>fwrite($h,'['.date('Y-m-d H:i:s')."] $m\n");
+$log = function($h, $m) {
+    fwrite($h, '['.date('Y-m-d H:i:s')."] $m\n");
+};
 $trimRow = function (&$row) {
     foreach ($row as &$c) {
         $c = trim((string)$c);
     }
 };
-$onlyDigits = fn($s)=>preg_replace('/\D/','', (string)$s);
-$collapseSpaces = fn($s)=>preg_replace('/\s+/u',' ', trim((string)$s));
+$onlyDigits = function ($s) {
+    return preg_replace('/\D/', '', (string)$s);
+};
+$collapseSpaces = function ($s) {
+    return preg_replace('/\s+/u',' ', trim((string)$s));
+};
 $fixMojibake = function ($s) {
     $map = [
         '√©'=>'é','√á'=>'á','√í'=>'í','√ó'=>'ó','√ú'=>'ú','√±'=>'ñ','√¨'=>'ü',
@@ -79,7 +85,7 @@ while (($row = fgetcsv($in, 0, $sep, $enc, $esc)) !== false) {
     if (isset($row[$IDX_ATEN])) {
         $row[$IDX_ATEN] = $stripBom($row[$IDX_ATEN]);
     }
-    if (!array_filter($row, fn($c)=>$c!=='')) {
+    if (!array_filter($row, function($c){ return $c !== ''; })) {
         fputcsv($er, ['', '', ''], $sep, $enc, $esc);
         $log($lg, "L$line fila vacía -> ERR");
         continue;
