@@ -35,7 +35,8 @@
 | 12 | 2025-10-29 | `filtroInstituciones.php`: limpia encabezado, normaliza tipo/enlace, evita warnings PHP | `E3/RequestPHP/filtroInstituciones.php`, `E3/Depurado/Instituciones previsionales de salud_OK.csv`, `E3/Eliminado/Instituciones previsionales de salud_ERR.csv` | `ajuste instituciones` |
 | 13 | 2025-10-29 | `filtroFarmacia.php`: canasta {0,1}, catálogo de tipos en título; regeneración de CSV y log | `E3/RequestPHP/filtroFarmacia.php`, `E3/Depurado/Farmacia_OK.csv`, `E3/Logs/Farmacia_LOG.txt`, `E3/Codex.md` | `ajuste farmacia` |
 | 14 | 2025-10-29 | `filtroArancel_DCColita.php`: normaliza encabezado (sin espacios), regeneración de CSV/log | `E3/RequestPHP/filtroArancel_DCColita.php`, `E3/Depurado/Arancel_DCColita_OK.csv`, `E3/Logs/Arancel_DCColita_LOG.txt` | `ajuste arancel dcc` |
-| 15 | 2025-10-29 | `filtroArancelFonasa.php`: encabezados saneados, regeneración de CSV/log | `E3/RequestPHP/filtroArancelFonasa.php`, `E3/Depurado/Arancel_Fonasa_OK.csv`, `E3/Logs/Arancel_Fonasa_LOG.txt` | _pendiente de commit_ |
+| 15 | 2025-10-29 | `filtroArancelFonasa.php`: encabezados saneados, regeneración de CSV/log | `E3/RequestPHP/filtroArancelFonasa.php`, `E3/Depurado/Arancel_Fonasa_OK.csv`, `E3/Logs/Arancel_Fonasa_LOG.txt` | `ajuste arancel fonasa` |
+| 16 | 2025-10-29 | Revisión `filtroAtencion.php`: sin cambios requeridos; verificación de RUN referenciados y diagnósticos | `E3/RequestPHP/filtroAtencion.php`, `E3/Depurado/Atencion_OK.csv`, `E3/Eliminado/Atencion_ERR.csv`, `E3/Logs/Atencion_LOG.txt` | _sin commit_ |
 
 > **Estado actual:** Todo lo anterior está en `origin/main`. La bitácora actual todavía no se ha commiteado (ver Sección 6).
 
