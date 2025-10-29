@@ -1,18 +1,16 @@
 #!/usr/bin/env php
 <?php
-// E3/RequestPHP/filtroOrden.php — depuración de Orden.csv
-// Reglas:
-// - IDAtencion e IDArancel deben ser enteros (sin validar contra otros catálogos).
-// - consulta (ConsAtMedica) normalizada (mojibake, espacios) y truncada a 100 caracteres.
-// - Otras columnas del CSV original (vacías) se descartan.
+// E3/RequestPHP/filtroOrden.php — depura Orden.csv con FK válidas hacia Atencion y Arancel DCColita.
 
 mb_internal_encoding('UTF-8');
 
 $BASE = realpath(__DIR__.'/..');
-$IN   = "$BASE/Old/Orden.csv";
-$OK   = "$BASE/Depurado/Orden_OK.csv";
-$ERR  = "$BASE/Eliminado/Orden_ERR.csv";
-$LOG  = "$BASE/Logs/Orden_LOG.txt";
+$IN  = "$BASE/Old/Orden.csv";
+$OK  = "$BASE/Depurado/Orden_OK.csv";
+$ERR = "$BASE/Eliminado/Orden_ERR.csv";
+$LOG = "$BASE/Logs/Orden_LOG.txt";
+$ATENC = "$BASE/Depurado/Atencion_OK.csv";
+$ARANCEL = "$BASE/Depurado/Arancel_DCColita_OK.csv";
 
 @mkdir("$BASE/Depurado",0777,true);
 @mkdir("$BASE/Eliminado",0777,true);
@@ -23,7 +21,6 @@ if (!is_readable($IN)) {
     exit(1);
 }
 
-// Utilidades
 $stripBom = function ($s) {
     $s = (string)$s;
     if (strncmp($s, "\xEF\xBB\xBF", 3) === 0) {
@@ -31,20 +28,8 @@ $stripBom = function ($s) {
     }
     return $s;
 };
-$log = function($h, $m) {
-    fwrite($h, '['.date('Y-m-d H:i:s')."] $m\n");
-};
-$trimRow = function (&$row) {
-    foreach ($row as &$c) {
-        $c = trim((string)$c);
-    }
-};
-$onlyDigits = function ($s) {
-    return preg_replace('/\D/', '', (string)$s);
-};
-$collapseSpaces = function ($s) {
-    return preg_replace('/\s+/u',' ', trim((string)$s));
-};
+$collapseSpaces = fn($s) => preg_replace('/\s+/u', ' ', trim((string)$s));
+$onlyDigits = fn($s) => preg_replace('/\D/', '', (string)$s);
 $fixMojibake = function ($s) {
     $map = [
         '√©'=>'é','√á'=>'á','√í'=>'í','√ó'=>'ó','√ú'=>'ú','√±'=>'ñ','√¨'=>'ü',
@@ -54,90 +39,155 @@ $fixMojibake = function ($s) {
     ];
     return strtr($s, $map);
 };
+$normalizeKey = function ($s) use ($collapseSpaces, $fixMojibake) {
+    $s = mb_strtolower($collapseSpaces($fixMojibake($s)), 'UTF-8');
+    $s = preg_replace('/[^a-z0-9áéíóúñü ]/u', '', $s);
+    return preg_replace('/\s+/u', ' ', trim($s));
+};
 
-// Preparar IO
+// --- Precarga catálogos ---
+$atencionValid = [];
+if (($fh = fopen($ATENC, 'r')) !== false) {
+    $hdr = fgetcsv($fh, 0, ';', '"', '\\');
+    if ($hdr !== false) {
+        $hdr[0] = $stripBom($hdr[0]);
+        $idx = array_search('ID', $hdr);
+        if ($idx !== false) {
+            while (($row = fgetcsv($fh, 0, ';', '"', '\\')) !== false) {
+                if (isset($row[$idx]) && $row[$idx] !== '') {
+                    $atencionValid[(int)$row[$idx]] = true;
+                }
+            }
+        }
+    }
+    fclose($fh);
+}
+
+$arancelValid = [];
+$mapDesc = [];
+$ambiguous = [];
+if (($fh = fopen($ARANCEL, 'r')) !== false) {
+    $hdr = fgetcsv($fh, 0, ';', '"', '\\');
+    if ($hdr !== false) {
+        $hdr[0] = $stripBom($hdr[0]);
+        $idxCod = array_search('Codigo interno', $hdr);
+        $idxDesc = array_search('CONSULTAS Y ATENCION MEDICA', $hdr);
+        if ($idxCod !== false && $idxDesc !== false) {
+            while (($row = fgetcsv($fh, 0, ';', '"', '\\')) !== false) {
+                if (!isset($row[$idxCod]) || $row[$idxCod] === '') continue;
+                $codigo = (int)$row[$idxCod];
+                $arancelValid[$codigo] = true;
+                $key = $normalizeKey($row[$idxDesc]);
+                if ($key === '') continue;
+                if (isset($ambiguous[$key])) continue;
+                if (!isset($mapDesc[$key])) {
+                    $mapDesc[$key] = $codigo;
+                } elseif ($mapDesc[$key] !== $codigo) {
+                    unset($mapDesc[$key]);
+                    $ambiguous[$key] = true;
+                }
+            }
+        }
+    }
+    fclose($fh);
+}
+
 $in  = fopen($IN, 'r');
 $ok  = fopen($OK, 'w');
-$er  = fopen($ERR, 'w');
-$lg  = fopen($LOG, 'w');
+$err = fopen($ERR, 'w');
+$log = fopen($LOG, 'w');
 
-$sep=';'; $enc='"'; $esc='\\';
-$header = fgetcsv($in, 0, $sep, $enc, $esc);
-if ($header === false) {
-    fclose($in); fclose($ok); fclose($er); fclose($lg);
-    exit(0);
-}
-// conservar sólo primeras 3 columnas
-$header[0] = $stripBom($header[0]);
-$header = array_slice($header, 0, 3);
-fputcsv($ok, $header, $sep, $enc, $esc);
-fputcsv($er, $header, $sep, $enc, $esc);
-
-$IDX_ATEN = 0;
-$IDX_ARAN = 1;
-$IDX_CONS = 2;
+$header = ['IDAtencion','IDArancel','ConsAtMedica'];
+fputcsv($ok, $header, ';', '"', '\\');
+fputcsv($err, $header, ';', '"', '\\');
 
 $line = 1;
-while (($row = fgetcsv($in, 0, $sep, $enc, $esc)) !== false) {
+$okCount = 0;
+$errCount = 0;
+$reasonCount = [];
+
+while (($row = fgetcsv($in, 0, ';', '"', '\\')) !== false) {
     $line++;
-    $raw = $row;
-    $trimRow($row);
-    if (isset($row[$IDX_ATEN])) {
-        $row[$IDX_ATEN] = $stripBom($row[$IDX_ATEN]);
-    }
-    if (!array_filter($row, function($c){ return $c !== ''; })) {
-        fputcsv($er, ['', '', ''], $sep, $enc, $esc);
-        $log($lg, "L$line fila vacía -> ERR");
-        continue;
-    }
+    $rawIdA = $stripBom($row[0] ?? '');
+    $rawIdB = $row[1] ?? '';
+    $rawDesc = $row[2] ?? '';
 
     $notes = [];
 
-    // ID Atencion
-    $idARaw = $row[$IDX_ATEN] ?? '';
-    $idADigits = $onlyDigits($idARaw);
-    if ($idADigits === '') {
-        fputcsv($er, array_slice($raw,0,3), $sep, $enc, $esc);
-        $log($lg, "L$line sin IDAtencion -> ERR");
-        continue;
-    }
-    $idA = (int)$idADigits;
-    if ((string)$idA !== $idARaw) {
-        $notes[] = "IDAtencion:'$idARaw'->$idA";
+    $digitsA = $onlyDigits($rawIdA);
+    $idA = $digitsA === '' ? null : (int)$digitsA;
+    if ($digitsA !== '' && (string)$idA !== $rawIdA) {
+        $notes[] = "IDAtencion:'$rawIdA'->$idA";
     }
 
-    // ID Arancel
-    $idBRaw = $row[$IDX_ARAN] ?? '';
-    $idBDigits = $onlyDigits($idBRaw);
-    if ($idBDigits === '') {
-        fputcsv($er, array_slice($raw,0,3), $sep, $enc, $esc);
-        $log($lg, "L$line sin IDArancel -> ERR");
-        continue;
-    }
-    $idB = (int)$idBDigits;
-    if ((string)$idB !== $idBRaw) {
-        $notes[] = "IDArancel:'$idBRaw'->$idB";
+    $digitsB = $onlyDigits($rawIdB);
+    $idB = $digitsB === '' ? null : (int)$digitsB;
+    if ($digitsB !== '' && (string)$idB !== $rawIdB) {
+        $notes[] = "IDArancel:'$rawIdB'->$idB";
     }
 
-    // Consulta
-    $consRaw = $row[$IDX_CONS] ?? '';
-    $cons = $collapseSpaces($fixMojibake($consRaw));
-    if ($cons === '' || strtoupper($cons) === 'NULL') {
-        $cons = 'Sin descripción';
+    $desc = $collapseSpaces($fixMojibake($rawDesc));
+    if ($desc === '' || strcasecmp($desc, 'NULL') === 0) {
         $notes[] = "consulta vacía -> 'Sin descripción'";
+        $desc = 'Sin descripción';
     }
-    if (mb_strlen($cons, 'UTF-8') > 100) {
-        $cons = mb_substr($cons, 0, 100, 'UTF-8');
+    if (mb_strlen($desc, 'UTF-8') > 100) {
+        $desc = mb_substr($desc, 0, 100, 'UTF-8');
         $notes[] = "consulta:>100 -> trunc";
     }
-    if ($cons !== $consRaw && stripos($consRaw, 'Sin descripción') === false && stripos($consRaw, 'Sin descripcion') === false) {
-        $notes[] = "consulta normalizada";
+
+    $out = [
+        $idA !== null ? (string)$idA : '',
+        $idB !== null ? (string)$idB : '',
+        $desc
+    ];
+
+    $reason = null;
+    if ($idA === null) {
+        $reason = 'IDAtencion vacío';
+    } elseif (!isset($atencionValid[$idA])) {
+        $reason = "IDAtencion $idA sin referencia";
+    } elseif ($idB === null) {
+        $reason = 'IDArancel vacío';
+    } elseif (isset($arancelValid[$idB])) {
+        // válido sin cambios
+    } else {
+        $key = $normalizeKey($desc);
+        if ($key !== '' && isset($mapDesc[$key])) {
+            $mapped = $mapDesc[$key];
+            $notes[] = "IDArancel '$idB' -> $mapped por descripción";
+            $idB = $mapped;
+            $out[1] = (string)$mapped;
+        } else {
+            $reason = "IDArancel $idB sin referencia";
+        }
     }
 
-    fputcsv($ok, [$idA, $idB, $cons], $sep, $enc, $esc);
+    if ($reason === null) {
+        fputcsv($ok, $out, ';', '"', '\\');
+        $okCount++;
+    } else {
+        fputcsv($err, $out, ';', '"', '\\');
+        $errCount++;
+        $reasonCount[$reason] = ($reasonCount[$reason] ?? 0) + 1;
+        $notes[] = "ERR: $reason";
+    }
+
     if ($notes) {
-        $log($lg, "L$line ".implode(' | ', $notes));
+        fwrite($log, '['.date('Y-m-d H:i:s')."] L$line ".implode(' | ', $notes).PHP_EOL);
     }
 }
 
-fclose($in); fclose($ok); fclose($er); fclose($lg);
+fwrite($log, "TOTAL OK: $okCount".PHP_EOL);
+fwrite($log, "TOTAL ERR: $errCount".PHP_EOL);
+if ($reasonCount) {
+    arsort($reasonCount);
+    fwrite($log, "Top 5 motivos ERR:".PHP_EOL);
+    $i = 0;
+    foreach ($reasonCount as $reason => $count) {
+        fwrite($log, " - $reason: $count".PHP_EOL);
+        if (++$i === 5) break;
+    }
+}
+
+fclose($in); fclose($ok); fclose($err); fclose($log);

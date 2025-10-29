@@ -37,6 +37,7 @@
 | 14 | 2025-10-29 | `filtroArancel_DCColita.php`: normaliza encabezado (sin espacios), regeneración de CSV/log | `E3/RequestPHP/filtroArancel_DCColita.php`, `E3/Depurado/Arancel_DCColita_OK.csv`, `E3/Logs/Arancel_DCColita_LOG.txt` | `ajuste arancel dcc` |
 | 15 | 2025-10-29 | `filtroArancelFonasa.php`: encabezados saneados, regeneración de CSV/log | `E3/RequestPHP/filtroArancelFonasa.php`, `E3/Depurado/Arancel_Fonasa_OK.csv`, `E3/Logs/Arancel_Fonasa_LOG.txt` | `ajuste arancel fonasa` |
 | 16 | 2025-10-29 | Revisión `filtroAtencion.php`: sin cambios requeridos; verificación de RUN referenciados y diagnósticos | `E3/RequestPHP/filtroAtencion.php`, `E3/Depurado/Atencion_OK.csv`, `E3/Eliminado/Atencion_ERR.csv`, `E3/Logs/Atencion_LOG.txt` | _sin commit_ |
+| 17 | 2025-10-29 | `filtroOrden.php`: FK Atencion/Arancel, mapeo por descripción y métricas de errores | `E3/RequestPHP/filtroOrden.php`, `E3/Depurado/Orden_OK.csv`, `E3/Eliminado/Orden_ERR.csv`, `E3/Logs/Orden_LOG.txt` | _pendiente de commit_ |
 
 > **Estado actual:** Todo lo anterior está en `origin/main`. La bitácora actual todavía no se ha commiteado (ver Sección 6).
 
@@ -53,7 +54,7 @@
 | `filtroArancelFonasa.php` | `Old/Arancel fonasa.csv` | `Arancel_Fonasa_OK/ERR/LOG` | `codF` único sin ceros a la izquierda, `codA` opcional, encabezados normalizados, `grupo`/`tipo` ≤30 chars, valor entero. |
 | `filtroAtencion.php` | `Old/Atencion.csv` | `Atencion_OK/ERR/LOG` | ID único, fecha ISO, RUN validados contra personas, diagnóstico limpio (mojibake), `efectuada` consistente. |
 | `filtroMedicamento.php` | `Old/Medicamento.csv` | `Medicamento_OK/ERR/LOG` | ID de atención limpiado a entero, textos ≤100 caracteres, boolean normalizado, posología por defecto cuando falta. |
-| `filtroOrden.php` | `Old/Orden.csv` | `Orden_OK/ERR/LOG` | IDs numéricos limpios, descripciones normalizadas/truncadas, columnas extra removidas. |
+| `filtroOrden.php` | `Old/Orden.csv` | `Orden_OK/ERR/LOG` | IDs numéricos limpios, descripciones normalizadas/truncadas, columnas extra removidas, FK validadas contra `Atencion_OK` y `Arancel_DCColita_OK`. |
 | `filtroPlanes.php` | `Old/planes/*.csv` | `Depurado/planes/*_OK`, `Eliminado/planes/*_ERR`, `Logs/planes/*_LOG` | Bonificación (0–100) y grupos normalizados por plan, se recorren todos los archivos de la carpeta. |
 | `main.php` | Orquestador | — | Ejecuta en cadena todos los `filtro*.php` para regenerar las carpetas Depurado/Eliminado/Logs. |
 
@@ -68,11 +69,11 @@
 | `Persona_OK.csv` | Cabecera sin BOM; teléfonos normalizados a 9 dígitos (con fallback 111111111); instituciones validadas contra catálogo; beneficiarios sin titular se van a `_ERR`; profesiones clínicas canonizadas. |
 | `Instituciones previsionales de salud_OK.csv` | Cabecera sin BOM; RUT normalizados; enlaces normalizados (sin protocolo, minúsculas). |
 | `Farmacia_OK.csv` | Encabezados entre comillas por espacios; códigos únicos; `tipo` en catálogo; estado `activo/inactivo`; canasta `{0,1}`; log documenta duplicados y ajustes. |
-| `Arancel_DCColita_OK.csv` | Sin BOM; encabezados saneados (sin espacios extra); descripciones truncadas (log indica líneas afectadas); duplicados van a `_ERR`. |
+| `Arancel_DCColita_OK.csv` | Sin BOM; encabezados saneados; por código se conserva la mejor fila (sin prefijos `**`, Fonasa válido) y los duplicados descartados quedan trazados en `_ERR`. |
 | `Arancel_Fonasa_OK.csv` | Encabezado sin BOM ni espacios extra; valores sin puntos; grupos/tipos truncados si exceden 30 caracteres; `_ERR` solo con encabezado. |
 | `Atencion_OK.csv` | Fechas en formato ISO, RUN validados contra personas, diagnósticos depurados (sin mojibake) y vacíos cuando la atención no se efectuó. |
 | `Medicamento_OK.csv` | IDs válidos según atenciones, nombres y posologías normalizados (máx. 100 caracteres), marcador psicotrópico en dominio `TRUE/FALSE`. |
-| `Orden_OK.csv` | Identificadores numéricos listos para usar como FK y descripciones sanitizadas (truncadas a 100) sin columnas residuales. |
+| `Orden_OK.csv` | 15 970 filas con FK válidas (`Atencion`/`Arancel DCColita`); IDs sanitizados, consultas ≤100 caracteres y mapeos por descripción registrados en el log. |
 | `Depurado/planes/*_OK.csv` | Bonificaciones enteras (0–100) por plan e isapre, grupos normalizados sin mojibake ni filas en blanco. |
 
 ---

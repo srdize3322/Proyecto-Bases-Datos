@@ -1,12 +1,7 @@
 #!/usr/bin/env php
 <?php
-// E3/RequestPHP/filtroArancel_DCColita.php — depura Arancel DCColita de rana
-// Reglas principales:
-// - codigo interno: dígitos únicamente, obligatorio y único.
-// - codFonasa: dígitos con opcional sufijo "-dígitos".
-// - atencion: texto obligatorio, se compactan espacios y se trunca a 100 chars.
-// - valor: dígitos únicamente, obligatorio.
-// Filas a las que no se les puede corregir el error se envían a _ERR y se deja traza en el log.
+// E3/RequestPHP/filtroArancel_DCColita.php — depuración basada en selección “mejor fila” por código.
+// Mantiene un único registro por código interno priorizando descripciones limpias y códigos Fonasa válidos.
 
 mb_internal_encoding('UTF-8');
 
@@ -25,143 +20,169 @@ if (!is_readable($IN)) {
     exit(1);
 }
 
-$logLine = fn($handle, $msg) => fwrite($handle, '['.date('Y-m-d H:i:s')."] $msg\n");
-$trimRow = function (&$row) {
-    foreach ($row as &$col) {
-        $col = trim((string)$col);
-    }
+$log = fn($h,$m)=>fwrite($h,'['.date('Y-m-d H:i:s')."] $m\n");
+$trimRow = function (&$row) { foreach ($row as &$c) { $c = trim((string)$c); } };
+$collapseSpaces = fn($s)=>preg_replace('/\s+/u',' ',trim((string)$s));
+$onlyDigits = fn($s)=>preg_replace('/\D/','',(string)$s);
+$stripBom = function($s){
+    $s=(string)$s;
+    if(strncmp($s,"\xEF\xBB\xBF",3)===0) return substr($s,3);
+    return $s;
 };
-$collapseSpaces = fn($s) => preg_replace('/\s+/u', ' ', trim((string)$s));
-$onlyDigits     = fn($s) => preg_replace('/\D/', '', (string)$s);
-
-$stripBom = function ($s) {
-    $s = (string)$s;
-    if (strncmp($s, "\xEF\xBB\xBF", 3) === 0) {
-        return substr($s, 3);
-    }
-    if ($s !== '' && $s[0] === "\xEF") { // fallback for multibyte operations
-        return preg_replace('/^\xEF\xBB\xBF/u', '', $s);
-    }
+$normalizeKey = function($s) use ($collapseSpaces){
+    $s=$collapseSpaces($s);
+    $s=mb_strtolower($s,'UTF-8');
+    $s=preg_replace('/[^a-z0-9áéíóúñü ]/u','',$s);
+    $s=preg_replace('/\s+/u',' ',trim($s));
     return $s;
 };
 
-$in  = fopen($IN, 'r');
-$ok  = fopen($OK, 'w');
-$er  = fopen($ERR, 'w');
-$lg  = fopen($LOG, 'w');
-
-$sep = ';'; $enc = '"'; $esc = '\\';
-$header = fgetcsv($in, 0, $sep, $enc, $esc);
-if ($header === false) {
-    fclose($in); fclose($ok); fclose($er); fclose($lg);
-    exit(0);
+$in=fopen($IN,'r');
+$sep=';'; $enc='"'; $esc='\\';
+$header=fgetcsv($in,0,$sep,$enc,$esc);
+if($header===false){
+    fclose($in); exit(0);
 }
-foreach ($header as &$col) {
-    $col = $stripBom($col);
-    $col = preg_replace('/\s+/u', ' ', $col);
-    $col = trim($col);
+foreach($header as &$h){
+    $h=$stripBom($h);
+    $h=preg_replace('/\s+/u',' ',trim($h));
 }
-unset($col);
-fputcsv($ok, $header, $sep, $enc, $esc);
-fputcsv($er, $header, $sep, $enc, $esc);
+unset($h);
 
-$idxCodigo   = 0;
-$idxFonasa   = 1;
-$idxAtencion = 2;
-$idxValor    = 3;
+$idxCod=0; $idxFonasa=1; $idxDesc=2; $idxValor=3;
+$line=1;
+$groups=[]; $errors=[];
 
-$seenCodigo = [];
-$line = 1;
-
-while (($row = fgetcsv($in, 0, $sep, $enc, $esc)) !== false) {
+while(($row=fgetcsv($in,0,$sep,$enc,$esc))!==false){
     $line++;
-    $raw = $row;
+    $orig=$row;
     $trimRow($row);
-    if (isset($row[$idxCodigo])) {
-        $row[$idxCodigo] = $stripBom($row[$idxCodigo]);
-    }
-    $notes = [];
-
-    if (!array_filter($row, fn($c) => $c !== '')) {
-        fputcsv($er, $raw, $sep, $enc, $esc);
-        $logLine($lg, "L$line fila vacía -> ERR");
+    if(isset($row[$idxCod])) $row[$idxCod]=$stripBom($row[$idxCod]);
+    if(!array_filter($row,fn($c)=>$c!=='')){
+        $errors[]=['row'=>$orig,'reason'=>"L$line fila vacía"];
         continue;
     }
 
-    // codigo interno
-    $codigoRaw = $row[$idxCodigo] ?? '';
-    $codigo = $onlyDigits($codigoRaw);
-    if ($codigo === '') {
-        fputcsv($er, $raw, $sep, $enc, $esc);
-        $logLine($lg, "L$line sin código interno -> ERR");
+    $notes=[];
+    // código interno
+    $codRaw=$row[$idxCod]??'';
+    $codDigits=$onlyDigits($codRaw);
+    if($codDigits===''){
+        $errors[]=['row'=>$orig,'reason'=>"L$line sin código interno"];
         continue;
     }
-    $codigo = (string)intval($codigo, 10);
-    if ($codigo !== $codigoRaw) {
-        $notes[] = "codigo:'$codigoRaw'->$codigo";
-    }
-    if (isset($seenCodigo[$codigo])) {
-        fputcsv($er, $raw, $sep, $enc, $esc);
-        $logLine($lg, "L$line código duplicado $codigo -> ERR");
-        continue;
-    }
-    $seenCodigo[$codigo] = true;
-
-    // Código FONASA
-    $fonasaRaw = $row[$idxFonasa] ?? '';
-    $fonasa = str_replace([' ', '.'], '', $fonasaRaw);
-    if ($fonasa === '') {
-        fputcsv($er, $raw, $sep, $enc, $esc);
-        $logLine($lg, "L$line sin código FONASA -> ERR");
-        unset($seenCodigo[$codigo]);
-        continue;
-    }
-    if (!preg_match('/^\d+(?:-\d+)?$/', $fonasa)) {
-        fputcsv($er, $raw, $sep, $enc, $esc);
-        $logLine($lg, "L$line Código FONASA inválido '$fonasaRaw' -> ERR");
-        unset($seenCodigo[$codigo]);
-        continue;
-    }
-    if ($fonasa !== $fonasaRaw) {
-        $notes[] = "codFonasa:'$fonasaRaw'->$fonasa";
+    $codigo=(int)$codDigits;
+    if((string)$codigo!==$codRaw){
+        $notes[]="codigo:'$codRaw'->$codigo";
     }
 
-    // Descripción de atención
-    $atencionRaw = $row[$idxAtencion] ?? '';
-    $atencion = $collapseSpaces($atencionRaw);
-    if ($atencion === '') {
-        fputcsv($er, $raw, $sep, $enc, $esc);
-        $logLine($lg, "L$line atención vacía -> ERR");
-        unset($seenCodigo[$codigo]);
+    // cod Fonasa
+    $fonasaRaw=$row[$idxFonasa]??'';
+    $fonasa=str_replace([' ','.'],'',$fonasaRaw);
+    if($fonasa===''){
+        $errors[]=['row'=>$orig,'reason'=>"L$line sin código FONASA"];
         continue;
     }
-    if ($atencion !== $atencionRaw) {
-        $notes[] = "atencion:Normalizada";
-    }
-    if (mb_strlen($atencion, 'UTF-8') > 100) {
-        $cortada = mb_substr($atencion, 0, 100, 'UTF-8');
-        $notes[] = "atencion:>100 -> trunc";
-        $atencion = $cortada;
-    }
-
-    // Valor DCColita
-    $valorRaw = $row[$idxValor] ?? '';
-    $valor = $onlyDigits($valorRaw);
-    if ($valor === '') {
-        fputcsv($er, $raw, $sep, $enc, $esc);
-        $logLine($lg, "L$line valor vacío -> ERR");
-        unset($seenCodigo[$codigo]);
+    if(!preg_match('/^\d+(?:-\d+)?$/',$fonasa)){
+        $errors[]=['row'=>$orig,'reason'=>"L$line Código FONASA inválido '$fonasaRaw'"];
         continue;
     }
-    if ($valor !== $valorRaw) {
-        $notes[] = "valor:'$valorRaw'->$valor";
+    if($fonasa!==$fonasaRaw){
+        $notes[]="codFonasa:'$fonasaRaw'->$fonasa";
     }
-    $valor = (string)intval($valor, 10);
 
-    fputcsv($ok, [$codigo, $fonasa, $atencion, $valor], $sep, $enc, $esc);
-    if ($notes) {
-        $logLine($lg, "L$line ".implode(' | ', $notes));
+    // descripción
+    $descRaw=$row[$idxDesc]??'';
+    $desc=$collapseSpaces($descRaw);
+    if($desc===''){
+        $errors[]=['row'=>$orig,'reason'=>"L$line atención vacía"];
+        continue;
+    }
+    if($desc!==$descRaw){
+        $notes[]="atencion:Normalizada";
+    }
+    if(mb_strlen($desc,'UTF-8')>100){
+        $desc=mb_substr($desc,0,100,'UTF-8');
+        $notes[]="atencion:>100 -> trunc";
+    }
+
+    // valor
+    $valorRaw=$row[$idxValor]??'';
+    $valorDigits=$onlyDigits($valorRaw);
+    if($valorDigits===''){
+        $errors[]=['row'=>$orig,'reason'=>"L$line valor vacío"];
+        continue;
+    }
+    $valor=(int)$valorDigits;
+    if((string)$valor!==$valorRaw){
+        $notes[]="valor:'$valorRaw'->$valor";
+    }
+
+    $groups[$codigo][]=[
+        'line'=>$line,
+        'clean'=>[$codigo,$fonasa,$desc,$valor],
+        'notes'=>$notes,
+        'raw'=>$orig
+    ];
+}
+fclose($in);
+
+$scoreEntry=function($entry){
+    [$codigo,$fonasa,$desc,$valor]=$entry['clean'];
+    $score=0;
+    if(strpos($desc,'**')===0) $score-=100;
+    if(stripos($desc,'**')!==false) $score-=50;
+    $score-=count($entry['notes'])*5;
+    $score+=min($valor/1000000,10);
+    return [$score,$entry['line']];
+};
+
+$okEntries=[];
+foreach($groups as $code=>$list){
+    usort($list,function($a,$b) use ($scoreEntry){
+        [$sa,$la]=$scoreEntry($a);
+        [$sb,$lb]=$scoreEntry($b);
+        if($sa==$sb) return $la<=>$lb;
+        return $sb<=>$sa;
+    });
+    $best=array_shift($list);
+    $okEntries[]=$best;
+    foreach($list as $dup){
+        $errors[]=[
+            'row'=>$dup['raw'],
+            'reason'=>"L{$dup['line']} duplicado $code (se mantiene mejor versión)",
+            'notes'=>$dup['notes']
+        ];
     }
 }
 
-fclose($in); fclose($ok); fclose($er); fclose($lg);
+usort($okEntries,fn($a,$b)=>$a['line']<=>$b['line']);
+
+$ok=fopen($OK,'w');
+$er=fopen($ERR,'w');
+$lg=fopen($LOG,'w');
+fputcsv($ok,$header,$sep,$enc,$esc);
+fputcsv($er,$header,$sep,$enc,$esc);
+
+foreach($okEntries as $entry){
+    fputcsv($ok,$entry['clean'],$sep,$enc,$esc);
+    if($entry['notes']){
+        $log($lg,"L{$entry['line']} ".implode(' | ',$entry['notes']));
+    }
+}
+
+foreach($errors as $err){
+    $row=$err['row'];
+    if(is_array($row) && count($row)>=4){
+        fputcsv($er,$row,$sep,$enc,$esc);
+    } else {
+        fputcsv($er,$header,$sep,$enc,$esc); // fallback
+    }
+    $msg=$err['reason'];
+    if(isset($err['notes']) && $err['notes']){
+        $msg.=" | ".implode(' | ',$err['notes']);
+    }
+    $log($lg,$msg);
+}
+
+fclose($ok); fclose($er); fclose($lg);
