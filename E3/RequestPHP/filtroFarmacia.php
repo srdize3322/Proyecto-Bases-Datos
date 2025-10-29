@@ -31,8 +31,8 @@ $TIPOS = [
   'alimentos'=>'Alimentos',
   'equipamiento'=>'Equipamiento',
   'fármacos'=>'Fármacos', 'farmacos'=>'Fármacos',
-  'insumos'=>'insumos',
-  'psicotrópicos'=>'psicotrópicos', 'psicotropicos'=>'psicotrópicos',
+  'insumos'=>'Insumos',
+  'psicotrópicos'=>'Psicotrópicos', 'psicotropicos'=>'Psicotrópicos',
   'refrigerados'=>'Refrigerados',
   'sueros'=>'Sueros'
 ];
@@ -117,7 +117,7 @@ while(($r=fgetcsv($I,0,$SEP,$ENC,$ESC))!==false){
   $est = $normEstado($r[$C_EST]);
   if($est!==$r[$C_EST]){ $t[]="estado:'{$r[$C_EST]}'->$est"; $r[$C_EST]=$est; }
   $esVal = mb_strtolower(trim((string)$r[$C_ESEN]),'UTF-8');
-  $esencial = in_array($esVal, ['1','si','sí','true','activo'], true) ? 'activo' : 'inactivo';
+  $esencial = in_array($esVal, ['1','si','sí','true','activo'], true) ? '1' : '0';
   if($esencial!==$r[$C_ESEN]){ $t[]="esencial:'{$r[$C_ESEN]}'->$esencial"; $r[$C_ESEN]=$esencial; }
 
   /* 4.7) Precio */

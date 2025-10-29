@@ -31,7 +31,9 @@
 | 8 | 2025-10-24 | Implementación `filtroOrden.php` + salidas y README | `E3/RequestPHP/filtroOrden.php`, `E3/Depurado/Orden_OK.csv`, `E3/Eliminado/Orden_ERR.csv`, `E3/Logs/Orden_LOG.txt`, `E3/README.md` | `orden` |
 | 9 | 2025-10-24 | Implementación `filtroPlanes.php` + salidas y README | `E3/RequestPHP/filtroPlanes.php`, `E3/Depurado/planes/*_OK.csv`, `E3/Eliminado/planes/*_ERR.csv`, `E3/Logs/planes/*_LOG.txt`, `E3/README.md` | `planes` |
 | 10 | 2025-10-24 | Agregado `main.php` (orquestador de filtros) | `E3/main.php`, README/Codex | _pendiente de commit_ |
-| 11 | 2025-10-29 | `filtroPersona.php`: elimina BOM, valida titular de beneficiarios, normaliza profesiones; regeneración de CSV y log | `E3/RequestPHP/filtroPersona.php`, `E3/Depurado/Persona_OK.csv`, `E3/Eliminado/Persona_ERR.csv`, `E3/Logs/Persona_LOG.txt` | _pendiente de commit_ |
+| 11 | 2025-10-29 | `filtroPersona.php`: elimina BOM, valida titular de beneficiarios, normaliza profesiones; regeneración de CSV y log | `E3/RequestPHP/filtroPersona.php`, `E3/Depurado/Persona_OK.csv`, `E3/Eliminado/Persona_ERR.csv`, `E3/Logs/Persona_LOG.txt` | `ajuste filtro persona` |
+| 12 | 2025-10-29 | `filtroInstituciones.php`: limpia encabezado, normaliza tipo/enlace, evita warnings PHP | `E3/RequestPHP/filtroInstituciones.php`, `E3/Depurado/Instituciones previsionales de salud_OK.csv`, `E3/Eliminado/Instituciones previsionales de salud_ERR.csv` | `ajuste instituciones` |
+| 13 | 2025-10-29 | `filtroFarmacia.php`: canasta {0,1}, catálogo de tipos en título; regeneración de CSV y log | `E3/RequestPHP/filtroFarmacia.php`, `E3/Depurado/Farmacia_OK.csv`, `E3/Logs/Farmacia_LOG.txt` | _pendiente de commit_ |
 
 > **Estado actual:** Todo lo anterior está en `origin/main`. La bitácora actual todavía no se ha commiteado (ver Sección 6).
 
@@ -42,8 +44,8 @@
 | Script | Dataset | Salidas generadas | Notas clave |
 |--------|---------|-------------------|-------------|
 | `filtroPersona.php` | `Old/Persona.csv` | `Persona_OK/ERR/LOG` | Normaliza RUN, correos, teléfonos, roles e instituciones (FONASA por defecto); elimina BOM; descarta beneficiarios sin titular válido y canoniza profesiones clínicas (Tens→Tens, Médico, etc.). |
-| `filtroInstituciones.php` | `Old/Instituciones previsionales de salud.csv` | `Instituciones previsionales de salud_OK/ERR/LOG` | Limpia nombres, enlaces, valida RUT (módulo 11). Hay BOM en CSV generado. |
-| `filtroFarmacia.php` | `Old/Farmacia.csv` | `Farmacia_OK/ERR/LOG` | Códigos únicos, normaliza campos, estado y canasta → `activo/inactivo`. |
+| `filtroInstituciones.php` | `Old/Instituciones previsionales de salud.csv` | `Instituciones previsionales de salud_OK/ERR/LOG` | Limpia nombres, enlaces (sin protocolo), valida RUT (módulo 11); cabecera sin BOM. |
+| `filtroFarmacia.php` | `Old/Farmacia.csv` | `Farmacia_OK/ERR/LOG` | Códigos únicos, normaliza campos; `tipo` en catálogo ({Fármacos, Insumos,…}); estado `activo/inactivo`; canasta → `{0,1}`. |
 | `filtroArancel_DCColita.php` | `Old/Arancel DCColita de rana.csv` | `Arancel_DCColita_OK/ERR/LOG` | `codigo` único, `codFonasa` patrón `entero`/`entero-entero`, truncado atenciones 100 caracteres, valor entero. |
 | `filtroArancelFonasa.php` | `Old/Arancel fonasa.csv` | `Arancel_Fonasa_OK/ERR/LOG` | `codF` único sin ceros a la izquierda, `codA` opcional, `grupo`/`tipo` ≤30 chars, valor entero. |
 | `filtroAtencion.php` | `Old/Atencion.csv` | `Atencion_OK/ERR/LOG` | ID único, fecha ISO, RUN validados contra personas, diagnóstico limpio (mojibake), `efectuada` consistente. |
@@ -61,8 +63,8 @@
 | CSV depurado | Observaciones |
 |--------------|---------------|
 | `Persona_OK.csv` | Cabecera sin BOM; teléfonos normalizados a 9 dígitos (con fallback 111111111); instituciones validadas contra catálogo; beneficiarios sin titular se van a `_ERR`; profesiones clínicas canonizadas. |
-| `Instituciones previsionales de salud_OK.csv` | Cabecera con BOM; RUT normalizados; enlaces sin protocolo. |
-| `Farmacia_OK.csv` | Encabezados entre comillas por espacios; códigos únicos; estado/canasta `activo/inactivo`; log documenta duplicados removidos. |
+| `Instituciones previsionales de salud_OK.csv` | Cabecera sin BOM; RUT normalizados; enlaces normalizados (sin protocolo, minúsculas). |
+| `Farmacia_OK.csv` | Encabezados entre comillas por espacios; códigos únicos; `tipo` en catálogo; estado `activo/inactivo`; canasta `{0,1}`; log documenta duplicados y ajustes. |
 | `Arancel_DCColita_OK.csv` | Sin BOM; descripciones truncadas (log indica líneas afectadas); duplicados van a `_ERR`. |
 | `Arancel_Fonasa_OK.csv` | Encabezado sin BOM; valores sin puntos; grupos/tipos truncados si exceden 30 caracteres; `_ERR` solo con encabezado. |
 | `Atencion_OK.csv` | Fechas en formato ISO, RUN validados contra personas, diagnósticos depurados (sin mojibake) y vacíos cuando la atención no se efectuó. |
@@ -75,7 +77,7 @@
 ## 5. Pending / To-Do
 
 1. **Scripts pendientes:** Validaciones cruzadas (FOREIGN KEY), utilidades comunes, `main.php`, `validador.php`.
-2. **BOM residual:** Eliminar BOM restante en `Instituciones previsionales de salud_OK.csv` replicando la lógica usada en aranceles/personas.
+2. **BOM residual:** Revisar si quedan cabeceras con BOM en otros CSV (p.ej. `Instituciones...` ERR, logs heredados) y sanitizarlas al ajustar cada filtro.
 3. **Referencias cruzadas:** Validar:
    - RUN en `Atencion` y `Orden` contra `Persona_OK`.
    - Códigos de aranceles (Fonasa/DC) y medicamentos contra sus catálogos depurados.
