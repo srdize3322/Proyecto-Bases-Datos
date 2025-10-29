@@ -34,7 +34,8 @@
 | 11 | 2025-10-29 | `filtroPersona.php`: elimina BOM, valida titular de beneficiarios, normaliza profesiones; regeneración de CSV y log | `E3/RequestPHP/filtroPersona.php`, `E3/Depurado/Persona_OK.csv`, `E3/Eliminado/Persona_ERR.csv`, `E3/Logs/Persona_LOG.txt` | `ajuste filtro persona` |
 | 12 | 2025-10-29 | `filtroInstituciones.php`: limpia encabezado, normaliza tipo/enlace, evita warnings PHP | `E3/RequestPHP/filtroInstituciones.php`, `E3/Depurado/Instituciones previsionales de salud_OK.csv`, `E3/Eliminado/Instituciones previsionales de salud_ERR.csv` | `ajuste instituciones` |
 | 13 | 2025-10-29 | `filtroFarmacia.php`: canasta {0,1}, catálogo de tipos en título; regeneración de CSV y log | `E3/RequestPHP/filtroFarmacia.php`, `E3/Depurado/Farmacia_OK.csv`, `E3/Logs/Farmacia_LOG.txt`, `E3/Codex.md` | `ajuste farmacia` |
-| 14 | 2025-10-29 | `filtroArancel_DCColita.php`: normaliza encabezado (sin espacios), regeneración de CSV/log | `E3/RequestPHP/filtroArancel_DCColita.php`, `E3/Depurado/Arancel_DCColita_OK.csv`, `E3/Logs/Arancel_DCColita_LOG.txt` | _pendiente de commit_ |
+| 14 | 2025-10-29 | `filtroArancel_DCColita.php`: normaliza encabezado (sin espacios), regeneración de CSV/log | `E3/RequestPHP/filtroArancel_DCColita.php`, `E3/Depurado/Arancel_DCColita_OK.csv`, `E3/Logs/Arancel_DCColita_LOG.txt` | `ajuste arancel dcc` |
+| 15 | 2025-10-29 | `filtroArancelFonasa.php`: encabezados saneados, regeneración de CSV/log | `E3/RequestPHP/filtroArancelFonasa.php`, `E3/Depurado/Arancel_Fonasa_OK.csv`, `E3/Logs/Arancel_Fonasa_LOG.txt` | _pendiente de commit_ |
 
 > **Estado actual:** Todo lo anterior está en `origin/main`. La bitácora actual todavía no se ha commiteado (ver Sección 6).
 
@@ -48,7 +49,7 @@
 | `filtroInstituciones.php` | `Old/Instituciones previsionales de salud.csv` | `Instituciones previsionales de salud_OK/ERR/LOG` | Limpia nombres, enlaces (sin protocolo), valida RUT (módulo 11); cabecera sin BOM. |
 | `filtroFarmacia.php` | `Old/Farmacia.csv` | `Farmacia_OK/ERR/LOG` | Códigos únicos, normaliza campos; `tipo` en catálogo ({Fármacos, Insumos,…}); estado `activo/inactivo`; canasta → `{0,1}`. |
 | `filtroArancel_DCColita.php` | `Old/Arancel DCColita de rana.csv` | `Arancel_DCColita_OK/ERR/LOG` | `codigo` único, `codFonasa` patrón `entero`/`entero-entero`, encabezados sin espacios extra, atenciones truncadas a 100, valor entero. |
-| `filtroArancelFonasa.php` | `Old/Arancel fonasa.csv` | `Arancel_Fonasa_OK/ERR/LOG` | `codF` único sin ceros a la izquierda, `codA` opcional, `grupo`/`tipo` ≤30 chars, valor entero. |
+| `filtroArancelFonasa.php` | `Old/Arancel fonasa.csv` | `Arancel_Fonasa_OK/ERR/LOG` | `codF` único sin ceros a la izquierda, `codA` opcional, encabezados normalizados, `grupo`/`tipo` ≤30 chars, valor entero. |
 | `filtroAtencion.php` | `Old/Atencion.csv` | `Atencion_OK/ERR/LOG` | ID único, fecha ISO, RUN validados contra personas, diagnóstico limpio (mojibake), `efectuada` consistente. |
 | `filtroMedicamento.php` | `Old/Medicamento.csv` | `Medicamento_OK/ERR/LOG` | ID de atención limpiado a entero, textos ≤100 caracteres, boolean normalizado, posología por defecto cuando falta. |
 | `filtroOrden.php` | `Old/Orden.csv` | `Orden_OK/ERR/LOG` | IDs numéricos limpios, descripciones normalizadas/truncadas, columnas extra removidas. |
@@ -67,7 +68,7 @@
 | `Instituciones previsionales de salud_OK.csv` | Cabecera sin BOM; RUT normalizados; enlaces normalizados (sin protocolo, minúsculas). |
 | `Farmacia_OK.csv` | Encabezados entre comillas por espacios; códigos únicos; `tipo` en catálogo; estado `activo/inactivo`; canasta `{0,1}`; log documenta duplicados y ajustes. |
 | `Arancel_DCColita_OK.csv` | Sin BOM; encabezados saneados (sin espacios extra); descripciones truncadas (log indica líneas afectadas); duplicados van a `_ERR`. |
-| `Arancel_Fonasa_OK.csv` | Encabezado sin BOM; valores sin puntos; grupos/tipos truncados si exceden 30 caracteres; `_ERR` solo con encabezado. |
+| `Arancel_Fonasa_OK.csv` | Encabezado sin BOM ni espacios extra; valores sin puntos; grupos/tipos truncados si exceden 30 caracteres; `_ERR` solo con encabezado. |
 | `Atencion_OK.csv` | Fechas en formato ISO, RUN validados contra personas, diagnósticos depurados (sin mojibake) y vacíos cuando la atención no se efectuó. |
 | `Medicamento_OK.csv` | IDs válidos según atenciones, nombres y posologías normalizados (máx. 100 caracteres), marcador psicotrópico en dominio `TRUE/FALSE`. |
 | `Orden_OK.csv` | Identificadores numéricos listos para usar como FK y descripciones sanitizadas (truncadas a 100) sin columnas residuales. |

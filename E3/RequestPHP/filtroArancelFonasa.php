@@ -58,6 +58,8 @@ if ($header === false) {
 }
 foreach ($header as &$col) {
     $col = $stripBom($col);
+    $col = preg_replace('/\s+/u',' ', $col);
+    $col = trim($col);
 }
 unset($col);
 fputcsv($ok, $header, $sep, $enc, $esc);
