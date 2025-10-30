@@ -1,0 +1,86 @@
+BEGIN
+psql:RequestSQL/levantamiento_BD.sql:9: NOTICE:  drop cascades to 11 other objects
+DETAIL:  drop cascades to table dccolita.institucion_previsional
+drop cascades to table dccolita.firma
+drop cascades to table dccolita.plan_salud
+drop cascades to table dccolita.persona
+drop cascades to table dccolita.persona_plan
+drop cascades to table dccolita.prestacion
+drop cascades to table dccolita.arancel_dc
+drop cascades to table dccolita.farmaco
+drop cascades to table dccolita.atencion
+drop cascades to table dccolita.orden
+drop cascades to table dccolita.medicamento_prescrito
+DROP SCHEMA
+CREATE SCHEMA
+SET
+CREATE TABLE
+CREATE TABLE
+CREATE TABLE
+CREATE INDEX
+CREATE TABLE
+CREATE INDEX
+CREATE INDEX
+CREATE TABLE
+CREATE INDEX
+CREATE TABLE
+CREATE INDEX
+CREATE TABLE
+CREATE INDEX
+CREATE TABLE
+CREATE INDEX
+CREATE TABLE
+CREATE INDEX
+CREATE INDEX
+CREATE INDEX
+CREATE TABLE
+CREATE INDEX
+CREATE INDEX
+CREATE TABLE
+CREATE INDEX
+CREATE INDEX
+CREATE TABLE
+INSERT 0 1
+CREATE TABLE
+COPY 11
+INSERT 0 11
+INSERT 0 1
+CREATE TABLE
+COPY 400
+INSERT 0 150
+INSERT 0 1
+CREATE TABLE
+COPY 2996
+INSERT 0 112
+INSERT 0 1
+INSERT 0 2996
+INSERT 0 1
+CREATE TABLE
+COPY 2662
+INSERT 0 2662
+INSERT 0 1
+CREATE TABLE
+COPY 2304
+INSERT 0 2304
+INSERT 0 1
+CREATE TABLE
+COPY 5256
+INSERT 0 5256
+INSERT 0 1
+CREATE TABLE
+COPY 4872
+INSERT 0 4869
+INSERT 0 1
+CREATE TABLE
+COPY 15970
+INSERT 0 15960
+INSERT 0 1
+CREATE TABLE
+COPY 3930
+INSERT 0 3929
+INSERT 0 1
+INSERT 0 11
+INSERT 0 65
+INSERT 0 1
+COPY 88
+COMMIT
