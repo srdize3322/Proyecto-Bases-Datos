@@ -16,10 +16,15 @@ $SCRIPTS = [
     'filtroMedicamento.php',
     'filtroOrden.php',
     'filtroPlanes.php',
+    'filtroMaestroPlanes.php',
 ];
 
 $phpBinary = PHP_BINARY ?: 'php';
+$BASE = rtrim($BASE, DIRECTORY_SEPARATOR);
+$oldDir = $BASE . '/Old/firmas';
+$destDir = $BASE . '/Depurado/firmas';
 
+$status = 0;
 foreach ($SCRIPTS as $script) {
     $path = $BASE . '/RequestPHP/' . $script;
     if (!is_file($path)) {
@@ -50,4 +55,42 @@ foreach ($SCRIPTS as $script) {
     }
 }
 
+if ($status === 0) {
+    fwrite(STDOUT, "[INFO] Copiando carpeta de firmas...\n");
+    copyDir($oldDir, $destDir);
+}
+
 fwrite(STDOUT, "[INFO] Proceso completado.\n");
+
+function copyDir(string $src, string $dst): void
+{
+    if (!is_dir($src)) {
+        fwrite(STDERR, "[WARN] No se encontró el directorio de firmas en $src; se omite la copia.\n");
+        return;
+    }
+    if (!is_dir($dst) && !mkdir($dst, 0777, true) && !is_dir($dst)) {
+        fwrite(STDERR, "[ERROR] No se pudo crear el directorio destino $dst.\n");
+        return;
+    }
+
+    $iterator = new \RecursiveIteratorIterator(
+        new \RecursiveDirectoryIterator($src, \FilesystemIterator::SKIP_DOTS),
+        \RecursiveIteratorIterator::SELF_FIRST
+    );
+
+    foreach ($iterator as $item) {
+        $targetPath = $dst . DIRECTORY_SEPARATOR . $iterator->getSubPathName();
+        if ($item->isDir()) {
+            if (!is_dir($targetPath) && !mkdir($targetPath, 0777, true) && !is_dir($targetPath)) {
+                fwrite(STDERR, "[ERROR] No se pudo crear subdirectorio $targetPath.\n");
+                return;
+            }
+        } else {
+            if (!copy($item->getPathname(), $targetPath)) {
+                fwrite(STDERR, "[ERROR] No se pudo copiar {$item->getPathname()} a $targetPath.\n");
+                return;
+            }
+        }
+    }
+    fwrite(STDOUT, "[INFO] Firmas copiadas a $dst\n");
+}

@@ -1,0 +1,20 @@
+[2025-10-30 01:06:57] Procesando Colmena de avispas S.A._OK.csv
+[2025-10-30 01:06:57]   filas copiadas: 25
+[2025-10-30 01:06:57] Procesando Cruz de Malta S.A._OK.csv
+[2025-10-30 01:06:57]   filas copiadas: 25
+[2025-10-30 01:06:57] Procesando Cruz pal cielo Ltda._OK.csv
+[2025-10-30 01:06:57]   filas copiadas: 25
+[2025-10-30 01:06:57] Procesando Fundación e imperio_OK.csv
+[2025-10-30 01:06:57]   filas copiadas: 25
+[2025-10-30 01:06:57] Procesando MaestroPlanes_OK.csv
+[2025-10-30 01:06:57]   filas copiadas: 200
+[2025-10-30 01:06:57] Procesando Menos vida S.A._OK.csv
+[2025-10-30 01:06:57]   filas copiadas: 25
+[2025-10-30 01:06:57] Procesando Vida uno S.A._OK.csv
+[2025-10-30 01:06:57]   filas copiadas: 25
+[2025-10-30 01:06:57] Procesando medibanc_OK.csv
+[2025-10-30 01:06:57]   filas copiadas: 25
+[2025-10-30 01:06:57] Procesando salud_OK.csv
+[2025-10-30 01:06:57]   filas copiadas: 25
+[2025-10-30 01:06:57] TOTAL archivos procesados: 9
+[2025-10-30 01:06:57] TOTAL filas maestro: 400
