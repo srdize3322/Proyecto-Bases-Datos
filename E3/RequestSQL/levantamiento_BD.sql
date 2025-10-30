@@ -99,11 +99,12 @@ CREATE TABLE prestacion (
     prestacion_id SERIAL PRIMARY KEY,
     codigo_fonasa VARCHAR(15) NOT NULL,
     codigo_adicional VARCHAR(15),
+    codigo_fonasa_full VARCHAR(30) NOT NULL,
     descripcion VARCHAR(150) NOT NULL,
     grupo VARCHAR(100) NOT NULL,
     tipo VARCHAR(100),
     valor_fonasa INTEGER NOT NULL,
-    CONSTRAINT prestacion_codigo_uk UNIQUE (codigo_fonasa),
+    CONSTRAINT prestacion_codigo_full_uk UNIQUE (codigo_fonasa_full),
     CONSTRAINT prestacion_valor_ck CHECK (valor_fonasa >= 0)
 );
 CREATE INDEX prestacion_grupo_idx ON prestacion (grupo);
@@ -111,10 +112,12 @@ CREATE INDEX prestacion_grupo_idx ON prestacion (grupo);
 -- Valores propios del arancel DCColita.
 CREATE TABLE arancel_dc (
     codigo_interno INTEGER PRIMARY KEY,
-    codigo_fonasa VARCHAR(15),
+    codigo_fonasa VARCHAR(30),
     descripcion VARCHAR(150) NOT NULL,
     valor_dc INTEGER NOT NULL,
-    CONSTRAINT arancel_dc_valor_ck CHECK (valor_dc >= 0)
+    CONSTRAINT arancel_dc_valor_ck CHECK (valor_dc >= 0),
+    CONSTRAINT arancel_dc_prestacion_fk FOREIGN KEY (codigo_fonasa)
+        REFERENCES prestacion (codigo_fonasa_full) ON UPDATE CASCADE
 );
 CREATE INDEX arancel_dc_fonasa_idx ON arancel_dc (codigo_fonasa);
 
@@ -324,10 +327,15 @@ CREATE TEMP TABLE stg_prestacion (
 
 \copy stg_prestacion FROM 'Depurado/Arancel_Fonasa_OK.csv' WITH (FORMAT csv, HEADER true, DELIMITER ';');
 
-INSERT INTO prestacion (codigo_fonasa, codigo_adicional, descripcion, grupo, tipo, valor_fonasa)
+INSERT INTO prestacion (codigo_fonasa, codigo_adicional, codigo_fonasa_full, descripcion, grupo, tipo, valor_fonasa)
 SELECT
     trim(codigo),
     NULLIF(trim(codigo_adicional), ''),
+    CASE
+        WHEN COALESCE(NULLIF(trim(codigo_adicional), ''), '') = ''
+            THEN trim(codigo)
+        ELSE trim(codigo) || '-' || trim(codigo_adicional)
+    END,
     trim(descripcion),
     trim(grupo),
     NULLIF(trim(tipo), ''),
@@ -361,6 +369,13 @@ INSERT INTO carga_log (mensaje)
 SELECT format('[arancel_dc] staging=%s → insertadas=%s',
               (SELECT count(*) FROM stg_arancel_dc),
               (SELECT count(*) FROM arancel_dc));
+
+INSERT INTO carga_log (mensaje)
+SELECT format('[prestacion_vs_arancel] coincidencias=%s discrepancias=%s',
+              (SELECT count(*) FROM arancel_dc adc WHERE adc.codigo_fonasa IS NULL
+                     OR EXISTS (SELECT 1 FROM prestacion p WHERE p.codigo_fonasa_full = adc.codigo_fonasa)),
+              (SELECT count(*) FROM arancel_dc adc WHERE adc.codigo_fonasa IS NOT NULL
+                     AND NOT EXISTS (SELECT 1 FROM prestacion p WHERE p.codigo_fonasa_full = adc.codigo_fonasa)));
 
 -- Catálogo de farmacia.
 CREATE TEMP TABLE stg_farmaco (

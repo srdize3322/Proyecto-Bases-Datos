@@ -5,6 +5,7 @@
 [persona] staging=2996 → insertadas=2996
 [prestacion] staging=2662 → insertadas=2662
 [arancel_dc] staging=2304 → insertadas=2304
+[prestacion_vs_arancel] coincidencias=2304 discrepancias=0
 [farmaco] staging=5256 → insertadas=5256
 [atencion] staging=4872 → insertadas=4869 (descartadas=3)
 [orden] staging=15970 → insertadas=15960
@@ -21,7 +22,7 @@
 [tabla] plan_salud
 [tabla] prestacion
 [estructura] arancel_dc.codigo_interno integer(32,0) NOT NULL
-[estructura] arancel_dc.codigo_fonasa character varying(15) NULL
+[estructura] arancel_dc.codigo_fonasa character varying(30) NULL
 [estructura] arancel_dc.descripcion character varying(150) NOT NULL
 [estructura] arancel_dc.valor_dc integer(32,0) NOT NULL
 [estructura] atencion.atencion_id integer(32,0) NOT NULL
@@ -81,6 +82,7 @@
 [estructura] prestacion.prestacion_id integer(32,0) NOT NULL
 [estructura] prestacion.codigo_fonasa character varying(15) NOT NULL
 [estructura] prestacion.codigo_adicional character varying(15) NULL
+[estructura] prestacion.codigo_fonasa_full character varying(30) NOT NULL
 [estructura] prestacion.descripcion character varying(150) NOT NULL
 [estructura] prestacion.grupo character varying(100) NOT NULL
 [estructura] prestacion.tipo character varying(100) NULL
