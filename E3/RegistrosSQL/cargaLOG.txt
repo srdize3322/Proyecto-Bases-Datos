@@ -3,13 +3,14 @@
 [plan_salud] staging=400 → insertadas=150
 [firma] rutas válidas=112
 [persona] staging=2996 → insertadas=2996
+[persona_plan] relaciones=37100
 [prestacion] staging=2662 → insertadas=2662
 [arancel_dc] staging=2304 → insertadas=2304
 [prestacion_vs_arancel] coincidencias=2304 discrepancias=0
 [farmaco] staging=5256 → insertadas=5256
 [atencion] staging=4872 → insertadas=4869 (descartadas=3)
 [orden] staging=15970 → insertadas=15960
-[medicamento_prescrito] staging=3930 → insertadas=3929
+[medicamento_prescrito] staging=3930 → insertadas=3929 (sin_atencion=1, sin_catalogo=0)
 [tabla] arancel_dc
 [tabla] atencion
 [tabla] farmaco

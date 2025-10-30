@@ -315,6 +315,22 @@ SELECT format('[persona] staging=%s → insertadas=%s',
               (SELECT count(*) FROM stg_persona),
               (SELECT count(*) FROM persona));
 
+INSERT INTO persona_plan (persona_id, institucion_nombre, grupo, es_titular, fecha_inicio, fecha_fin)
+SELECT
+    p.persona_id,
+    ps.institucion_nombre,
+    ps.grupo,
+    (p.tipo_persona = 'titular'),
+    NULL::date,
+    NULL::date
+FROM persona p
+JOIN plan_salud ps ON ps.institucion_nombre = p.institucion_nombre
+WHERE p.institucion_nombre IS NOT NULL;
+
+INSERT INTO carga_log (mensaje)
+SELECT format('[persona_plan] relaciones=%s', count(*))
+FROM persona_plan;
+
 -- Prestaciones FONASA.
 CREATE TEMP TABLE stg_prestacion (
     codigo TEXT,
@@ -423,6 +439,38 @@ SELECT format('[farmaco] staging=%s → insertadas=%s',
               (SELECT count(*) FROM stg_farmaco),
               (SELECT count(*) FROM farmaco));
 
+CREATE TEMP TABLE farmaco_idx ON COMMIT DROP AS
+SELECT DISTINCT ON (nombre_norm)
+    farmaco_codigo,
+    nombre_norm
+FROM (
+    SELECT
+        farmaco_codigo,
+        regexp_replace(
+            translate(upper(trim(nombre_generico)), 'ÁÉÍÓÚÜÑ', 'AEIOUUN'),
+            '[^A-Z0-9]+', '',
+            'g'
+        ) AS nombre_norm
+    FROM farmaco
+) f
+WHERE nombre_norm <> ''
+ORDER BY nombre_norm, farmaco_codigo;
+
+INSERT INTO farmaco_idx (farmaco_codigo, nombre_norm)
+SELECT
+    farmaco_codigo,
+    'VILDAGLIPTINAMETFORMINA501000MGCMCMREC'
+FROM farmaco
+WHERE regexp_replace(
+        translate(upper(trim(nombre_generico)), 'ÁÉÍÓÚÜÑ', 'AEIOUUN'),
+        '[^A-Z0-9]+', '',
+        'g'
+    ) = 'VILDAGLIPTINMETFORMIN501000MGCMREC'
+  AND NOT EXISTS (
+        SELECT 1 FROM farmaco_idx
+        WHERE nombre_norm = 'VILDAGLIPTINAMETFORMINA501000MGCMCMREC'
+    );
+
 -- Atenciones médicas.
 CREATE TEMP TABLE stg_atencion (
     atencion_id INTEGER,
@@ -496,6 +544,27 @@ CREATE TEMP TABLE stg_medicamento (
 
 \copy stg_medicamento FROM 'Depurado/Medicamento_OK.csv' WITH (FORMAT csv, HEADER true, DELIMITER ';');
 
+CREATE TEMP TABLE medicamento_preparado ON COMMIT DROP AS
+SELECT
+    sm.atencion_id,
+    trim(sm.medicamento) AS medicamento,
+    trim(sm.posologia) AS posologia,
+    CASE WHEN upper(trim(sm.psicotropico)) = 'TRUE' THEN TRUE ELSE FALSE END AS es_psicotropico,
+    regexp_replace(
+        translate(upper(trim(sm.medicamento)), 'ÁÉÍÓÚÜÑ', 'AEIOUUN'),
+        '[^A-Z0-9]+', '',
+        'g'
+    ) AS medicamento_norm,
+    EXISTS (SELECT 1 FROM atencion a WHERE a.atencion_id = sm.atencion_id) AS tiene_atencion
+FROM stg_medicamento sm;
+
+CREATE TEMP TABLE medicamento_con_farmaco ON COMMIT DROP AS
+SELECT
+    mp.*,
+    fi.farmaco_codigo
+FROM medicamento_preparado mp
+LEFT JOIN farmaco_idx fi ON fi.nombre_norm = mp.medicamento_norm;
+
 INSERT INTO medicamento_prescrito (
     atencion_id,
     medicamento_nombre,
@@ -504,18 +573,20 @@ INSERT INTO medicamento_prescrito (
     es_psicotropico
 )
 SELECT
-    sm.atencion_id,
-    trim(sm.medicamento),
-    NULL,
-    trim(sm.posologia),
-    CASE WHEN upper(trim(sm.psicotropico)) = 'TRUE' THEN TRUE ELSE FALSE END
-FROM stg_medicamento sm
-JOIN atencion a ON a.atencion_id = sm.atencion_id;
+    atencion_id,
+    medicamento,
+    farmaco_codigo,
+    posologia,
+    es_psicotropico
+FROM medicamento_con_farmaco
+WHERE tiene_atencion;
 
 INSERT INTO carga_log (mensaje)
-SELECT format('[medicamento_prescrito] staging=%s → insertadas=%s',
+SELECT format('[medicamento_prescrito] staging=%s → insertadas=%s (sin_atencion=%s, sin_catalogo=%s)',
               (SELECT count(*) FROM stg_medicamento),
-              (SELECT count(*) FROM medicamento_prescrito));
+              (SELECT count(*) FROM medicamento_prescrito),
+              (SELECT count(*) FROM medicamento_preparado WHERE NOT tiene_atencion),
+              (SELECT count(*) FROM medicamento_con_farmaco WHERE tiene_atencion AND farmaco_codigo IS NULL));
 
 INSERT INTO carga_log (mensaje)
 SELECT format('[tabla] %s', table_name)
