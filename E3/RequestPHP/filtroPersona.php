@@ -89,7 +89,7 @@ $stripBom = function($s){
 };
 
 // ---------- IO ----------
-$in=fopen($IN,'r'); $ok=fopen($OK,'w'); $er=fopen($ERR,'w'); $lg=fopen($LOG,'w');
+ $in=fopen($IN,'r'); $ok=fopen($OK,'w'); $er=fopen($ERR,'w'); $lg=fopen($LOG,'w');
 $del=';'; $hdr=fgetcsv($in, 0, $del, '"', '\\'); if($hdr===false) exit(0);
 foreach($hdr as &$h){ $h=$stripBom($h); } unset($h);
 fputcsv($ok, $hdr, $del, '"', '\\'); fputcsv($er, $hdr, $del, '"', '\\');
@@ -162,8 +162,24 @@ while(($row=fgetcsv($in, 0, $del, '"', '\\'))!==false){ $ln++; $t=[];
     if($idx['Esp']!==null){  $es=$cap($get('Esp'));  if(!$clin) $es=''; if($es!==$get('Esp'))  $set('Esp',$es); }
   }
 
-  // Firma (sólo trim)
-  if($idx['Fir']!==null){ $f=trim((string)$get('Fir')); if($f!==$get('Fir')) $set('Fir',$f); }
+  // Firma (ajuste ruta / existencia)
+  if($idx['Fir']!==null){
+    $f=trim((string)$get('Fir'));
+    if($f===''){
+      $set('Fir','sin firma');
+      $t[]="L$ln firma vacía -> 'sin firma'";
+    } else {
+      $normalized = preg_replace('#^\\./#','',$f);
+      $normalized = preg_replace('#^firma/#','firmas/',$normalized);
+      $full = $R.'/Old/'.ltrim($normalized,'/');
+      if(!file_exists($full)){
+        $set('Fir','no existe');
+        $t[]="L$ln firma '$f' no encontrada -> 'no existe'";
+      } else {
+        if($f!==$get('Fir')) $set('Fir',$f);
+      }
+    }
+  }
 
   // Institución
   if($idx['Inst']!==null){
