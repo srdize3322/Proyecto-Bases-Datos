@@ -3,5 +3,8 @@ ID;fecha;runpaciente;runmedico;Diagnostico;Efectuada
 46;;501736-K;285376-0;"Diabetes tipo 1";TRUE
 ;26-09-24;218618-7;699028-2;Linfoma;TRUE
 404;06-08-24;621187-9;325621-9;"Infecci√≥n urinaria";TRUE
+556;28-01-25;802322-0;557142-1;NULL;FALSE
 2030;21-08-25;621187-9;954073-3;Demencia;TRUE
+2182;01-04-25;802322-0;436747-2;"Endocrinolog√≠a Adulto";TRUE
 3656;16-01-24;621187-9;497313-5;Cardiolog√≠a;TRUE
+3808;02-10-24;802322-0;732489-8;"Neurolog√≠a Adultos";TRUE

@@ -1,5 +1,6 @@
+=== Ejecutando levantamiento_BD.sql ===
 BEGIN
-psql:RequestSQL/levantamiento_BD.sql:9: NOTICE:  drop cascades to 11 other objects
+psql:RequestSQL/levantamiento_BD.sql:10: NOTICE:  drop cascades to 11 other objects
 DETAIL:  drop cascades to table dccolita.institucion_previsional
 drop cascades to table dccolita.firma
 drop cascades to table dccolita.plan_salud
@@ -46,7 +47,7 @@ COPY 11
 INSERT 0 11
 INSERT 0 1
 CREATE TABLE
-COPY 400
+COPY 200
 INSERT 0 150
 INSERT 0 1
 CREATE TABLE
@@ -54,6 +55,8 @@ COPY 2996
 INSERT 0 112
 INSERT 0 1
 INSERT 0 2996
+INSERT 0 1
+INSERT 0 37100
 INSERT 0 1
 CREATE TABLE
 COPY 2662
@@ -63,24 +66,30 @@ CREATE TABLE
 COPY 2304
 INSERT 0 2304
 INSERT 0 1
+INSERT 0 1
 CREATE TABLE
 COPY 5256
 INSERT 0 5256
 INSERT 0 1
+SELECT 5252
+INSERT 0 1
 CREATE TABLE
-COPY 4872
+COPY 4869
 INSERT 0 4869
 INSERT 0 1
 CREATE TABLE
-COPY 15970
+COPY 15960
 INSERT 0 15960
 INSERT 0 1
 CREATE TABLE
-COPY 3930
+COPY 3929
+SELECT 3929
+SELECT 3929
 INSERT 0 3929
 INSERT 0 1
 INSERT 0 11
-INSERT 0 65
+INSERT 0 66
 INSERT 0 1
-COPY 88
+COPY 91
 COMMIT
+=== Carga completada ===

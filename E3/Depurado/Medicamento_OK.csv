@@ -3192,7 +3192,6 @@ IDAtencion;Medicamento;Posologia;Psicotropico
 3802;"GENTAMICINA 0 3 % SOL. OFT. FRA 5 ML";"1 comprimido una vez al día.";FALSE
 3803;"FENTANILO 0 5 MG/10 ML SOL. INY. AM/FAM";"1 comprimido cada 6 horas";TRUE
 3805;"GENTAMICINA 0 3% UNGÜEN OFT TU/PM 3 A 5G";"1 cápsula en ayunas cada mañana por 4 semanas.";FALSE
-3808;"SALES REHIDRATACION ORAL 90 MEQ/L SO";"1 comprimido cada 12 horas con comida.";FALSE
 3809;"LOSARTAN 100 MG CM/CM REC";"1 a 2 inhalaciones cada 6 horas si es necesario.";FALSE
 3810;"ELEXA/TEZA/IVAC 100/50/75MG - IVAC 150MG";"1 comprimido una vez al día.";FALSE
 3810;"METADONA 10 MG CP/CM/CM REC";"1 cápsula en ayunas cada mañana por 4 semanas.";TRUE

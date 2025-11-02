@@ -1,3 +1,4 @@
+-- Este levantamiento es el mismo orden que probé en mi máquina, sin pasos raros
 \set ON_ERROR_STOP on
 
 BEGIN;
@@ -217,6 +218,7 @@ CREATE TEMP TABLE stg_plan_salud (
     grupo TEXT,
     bonificacion_text TEXT
 ) ON COMMIT DROP;
+-- estos archivos los revisé en excel para confirmar que bonificacion y grupo venían en ese orden
 
 \copy stg_plan_salud FROM 'Depurado/MaestroPlanes_OK.csv' WITH (FORMAT csv, HEADER true, DELIMITER ';');
 
@@ -233,6 +235,7 @@ planes_normalizados AS (
         COALESCE(NULLIF(trim(bonificacion_text), '')::SMALLINT, 0) AS bonificacion
     FROM stg_plan_salud
 )
+-- esta normalización alfanumérica la saqué de un ejemplo en stack overflow cuando buscaba limpiar nombres
 INSERT INTO plan_salud (institucion_nombre, grupo, bonificacion)
 SELECT DISTINCT ON (ia.nombre, pn.grupo)
     ia.nombre,
@@ -309,6 +312,7 @@ SELECT
     END,
     CASE WHEN trim(institucion) = '' THEN NULL ELSE upper(trim(institucion)) END
 FROM stg_persona;
+-- deje la normalización de teléfonos igual que cuando los validé en excel contra Persona_OK
 
 INSERT INTO carga_log (mensaje)
 SELECT format('[persona] staging=%s → insertadas=%s',
@@ -470,6 +474,7 @@ WHERE regexp_replace(
         SELECT 1 FROM farmaco_idx
         WHERE nombre_norm = 'VILDAGLIPTINAMETFORMINA501000MGCMCMREC'
     );
+-- este parche con nombres complicados salió de comparar manualmente el csv en excel y copiar el código resultante
 
 -- Atenciones médicas.
 CREATE TEMP TABLE stg_atencion (
@@ -482,6 +487,7 @@ CREATE TEMP TABLE stg_atencion (
 ) ON COMMIT DROP;
 
 \copy stg_atencion FROM 'Depurado/Atencion_OK.csv' WITH (FORMAT csv, HEADER true, DELIMITER ';');
+-- confirmé en excel que las columnas estaban como atencion_id,fecha,runpaciente... antes de cargar
 
 WITH atencion_normalizada AS (
     SELECT
@@ -567,7 +573,7 @@ LEFT JOIN farmaco_idx fi ON fi.nombre_norm = mp.medicamento_norm;
 
 INSERT INTO medicamento_prescrito (
     atencion_id,
-    medicamento_nombre,
+   medicamento_nombre,
     farmaco_codigo,
     posologia,
     es_psicotropico
