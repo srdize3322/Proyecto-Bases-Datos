@@ -1,0 +1,91 @@
+[inicio] Levantamiento y carga de datos depurados
+[institucion_previsional] staging=11 → insertadas=11
+[plan_salud] staging=200 → insertadas=150
+[firma] rutas válidas=112
+[persona] staging=2996 → insertadas=2996
+[persona_plan] relaciones=37100
+[prestacion] staging=2662 → insertadas=2662
+[arancel_dc] staging=2304 → insertadas=2304
+[prestacion_vs_arancel] coincidencias=2304 discrepancias=0
+[farmaco] staging=5256 → insertadas=5256
+[atencion] staging=4869 → insertadas=4869 (descartadas=0)
+[orden] staging=15960 → insertadas=15960
+[medicamento_prescrito] staging=3929 → insertadas=3929 (sin_atencion=0, sin_catalogo=0)
+[tabla] arancel_dc
+[tabla] atencion
+[tabla] farmaco
+[tabla] firma
+[tabla] institucion_previsional
+[tabla] medicamento_prescrito
+[tabla] orden
+[tabla] persona
+[tabla] persona_plan
+[tabla] plan_salud
+[tabla] prestacion
+[estructura] arancel_dc.codigo_interno integer(32,0) NOT NULL
+[estructura] arancel_dc.codigo_fonasa character varying(30) NULL
+[estructura] arancel_dc.descripcion character varying(150) NOT NULL
+[estructura] arancel_dc.valor_dc integer(32,0) NOT NULL
+[estructura] atencion.atencion_id integer(32,0) NOT NULL
+[estructura] atencion.fecha date NOT NULL
+[estructura] atencion.paciente_run character varying(10) NOT NULL
+[estructura] atencion.profesional_run character varying(10) NOT NULL
+[estructura] atencion.diagnostico character varying(100) NULL
+[estructura] atencion.efectuada boolean NOT NULL
+[estructura] farmaco.farmaco_codigo integer(32,0) NOT NULL
+[estructura] farmaco.nombre_generico character varying(200) NOT NULL
+[estructura] farmaco.descripcion text NOT NULL
+[estructura] farmaco.tipo character varying(200) NOT NULL
+[estructura] farmaco.codigo_onu integer(32,0) NULL
+[estructura] farmaco.clasificacion_onu character varying(200) NULL
+[estructura] farmaco.clasificacion_interna character varying(150) NOT NULL
+[estructura] farmaco.estado character varying(10) NOT NULL
+[estructura] farmaco.es_canasta_esencial boolean NOT NULL
+[estructura] farmaco.precio integer(32,0) NULL
+[estructura] firma.firma_id integer(32,0) NOT NULL
+[estructura] firma.ruta text NOT NULL
+[estructura] institucion_previsional.codigo integer(32,0) NOT NULL
+[estructura] institucion_previsional.nombre character varying(150) NOT NULL
+[estructura] institucion_previsional.tipo character varying(10) NOT NULL
+[estructura] institucion_previsional.rut character varying(12) NOT NULL
+[estructura] institucion_previsional.enlace character varying(200) NULL
+[estructura] medicamento_prescrito.atencion_id integer(32,0) NOT NULL
+[estructura] medicamento_prescrito.medicamento_nombre character varying(200) NOT NULL
+[estructura] medicamento_prescrito.farmaco_codigo integer(32,0) NULL
+[estructura] medicamento_prescrito.posologia character varying(200) NOT NULL
+[estructura] medicamento_prescrito.es_psicotropico boolean NOT NULL
+[estructura] orden.atencion_id integer(32,0) NOT NULL
+[estructura] orden.codigo_arancel integer(32,0) NOT NULL
+[estructura] orden.descripcion character varying(150) NOT NULL
+[estructura] persona.persona_id integer(32,0) NOT NULL
+[estructura] persona.run character varying(10) NOT NULL
+[estructura] persona.nombre character varying(50) NOT NULL
+[estructura] persona.apellidos character varying(100) NOT NULL
+[estructura] persona.direccion character varying(200) NULL
+[estructura] persona.correo character varying(254) NULL
+[estructura] persona.telefono character varying(20) NULL
+[estructura] persona.tipo_persona character varying(12) NULL
+[estructura] persona.titular_run character varying(10) NULL
+[estructura] persona.rol character varying(30) NULL
+[estructura] persona.profesion character varying(30) NULL
+[estructura] persona.especialidad character varying(100) NULL
+[estructura] persona.firma_id integer(32,0) NULL
+[estructura] persona.institucion_nombre character varying(150) NULL
+[estructura] persona_plan.persona_id integer(32,0) NOT NULL
+[estructura] persona_plan.institucion_nombre character varying(150) NOT NULL
+[estructura] persona_plan.grupo character varying(150) NOT NULL
+[estructura] persona_plan.es_titular boolean NOT NULL
+[estructura] persona_plan.fecha_inicio date NULL
+[estructura] persona_plan.fecha_fin date NULL
+[estructura] plan_salud.institucion_nombre character varying(150) NOT NULL
+[estructura] plan_salud.grupo character varying(150) NOT NULL
+[estructura] plan_salud.bonificacion smallint(16,0) NOT NULL
+[estructura] prestacion.prestacion_id integer(32,0) NOT NULL
+[estructura] prestacion.codigo_fonasa character varying(15) NOT NULL
+[estructura] prestacion.codigo_adicional character varying(15) NULL
+[estructura] prestacion.codigo_fonasa_full character varying(30) NOT NULL
+[estructura] prestacion.descripcion character varying(150) NOT NULL
+[estructura] prestacion.grupo character varying(100) NOT NULL
+[estructura] prestacion.tipo character varying(100) NULL
+[estructura] prestacion.valor_fonasa integer(32,0) NOT NULL
+[fin] Exportando bitácora a RegistrosSQL/cargaLOG.txt
