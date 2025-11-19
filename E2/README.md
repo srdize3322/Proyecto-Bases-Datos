@@ -5,7 +5,7 @@
 ---
 
 ## Descripción General  
-Este documento corresponde a la **Entrega N°2** del curso *Bases de Datos*.  
+Este documento corresponde a la Entrega N°2 del curso *Bases de Datos*.  
 Aquí se registrarán los pasos realizados, comandos ejecutados, configuraciones y resultados obtenidos durante el desarrollo del proyecto, incluyendo la importación del DUMP, la generación del esquema relacional y las consultas posteriores.
 
 ---
@@ -14,7 +14,7 @@ Aquí se registrarán los pasos realizados, comandos ejecutados, configuraciones
 
 ### Esquema Relacional Extraído
 
-El siguiente diagrama corresponde al **modelo Entidad-Relación (E/R)** generado a partir de la base de datos `dc_colita` utilizando la herramienta **ERD Tool de pgAdmin 4** como se solicitó en el enunciado.  
+El siguiente diagrama corresponde al modelo Entidad-Relación (E/R) generado a partir de la base de datos `dc_colita` utilizando la herramienta ERD Tool de pgAdmin 4 como se solicitó en el enunciado.  
 Incluye todas las tablas, atributos, llaves primarias y foráneas definidas en la instancia.
 Ambos son imágenes del mismo diagrama, pero en diferentes distribuciones para poder verse/entenderse mejor.
 
@@ -75,7 +75,7 @@ Informe que presenta tres partes:
 2. **Top 5 médicos** con mayor promedio mensual de atenciones perdidas,  
 3. **Top 5 pacientes** con mayor promedio mensual de atenciones perdidas.  
 **Lógica aplicada:**  
-- Se consolidaron las atenciones por `ID`, aplicando `BOOL_OR("Efectuada")` para considerar **realizada** cualquier atención que tuviera al menos un registro con `true`.  
+- Se consolidaron las atenciones por `ID`, aplicando `BOOL_OR("Efectuada")` para considerar realizada cualquier atención que tuviera al menos un registro con `true`.  
 - Luego se calcularon los promedios mensuales de ausencias para cada médico y paciente, utilizando `RANK()` para incluir empates.  
 
 Los resultados se encuentran en:  
@@ -87,8 +87,8 @@ Los resultados se encuentran en:
 Entrega los **5 medicamentos más recetados** a nivel general, agrupando por el nombre del medicamento en la tabla `medicamentos`.  
 
 **b)** `top5orden.sql`  
-Intenta reportar los **5 exámenes más solicitados**.  
-Sin embargo, se detectó un **problema grave de diseño** en la base de datos: la tabla `Arancel` no distingue claramente entre **exámenes, procedimientos, consultas y cirugías**. 
+Intenta reportar los 5 exámenes más solicitados.  
+Sin embargo, se detectó un problema grave de diseño en la base de datos: la tabla `Arancel` no distingue claramente entre exámenes, procedimientos, consultas y cirugías. 
 
 - El campo `"Tipo"` contiene valores inconsistentes, incompletos o vacíos (69 categorías distintas).  
 - Algunos exámenes solo pueden identificarse por el **prefijo del código** (`03`, `04`) o por palabras como *“examen”* en `ConsAtMedica`.  
@@ -131,23 +131,23 @@ Los ingresos y número de atenciones por mes e institución se encuentran en:
 ### Pregunta 6 — Generación de Recetas y Órdenes Médicas  (use id arbitrarios en cada caso )
 
 **a)** `recetas.sql`  
-Genera automáticamente una **receta médica electrónica** a partir de una atención específica (`att_id`).  
+Genera automáticamente una receta médica electrónica a partir de una atención específica (`att_id`).  
 Incluye:
 - Nombre y RUN del paciente,  
-- Edad (campo vacío, ya que la base de datos **no contiene la fecha de nacimiento** del paciente),  
+- Edad (campo vacío, ya que la base de datos no contiene la fecha de nacimiento del paciente),  
 - Diagnóstico,  
-- Medicamentos recetados, diferenciando entre **psicotrópicos** y **no psicotrópicos**.  
+- Medicamentos recetados, diferenciando entre psicotrópicos y no psicotrópicos.  
 
-Si existen medicamentos psicotrópicos, se genera una **receta separada** con el título “Receta Médica Electrónica Psicotrópicos”.  
+Si existen medicamentos psicotrópicos, se genera una receta separada con el título “Receta Médica Electrónica Psicotrópicos”.  
 Esto permite mantener el formato solicitado, cumpliendo con la separación reglamentaria de este tipo de fármacos.
 
 **Observación importante:**  
-La tabla `"Persona"` **no posee un campo de fecha de nacimiento**, lo cual impide calcular la edad del paciente de forma precisa.  
-Este es un **error de diseño del modelo**, ya que la edad o fecha de nacimiento es un dato esencial en contextos médicos y debería haberse incluido para garantizar la integridad de la información clínica.  
+La tabla `"Persona"` no posee un campo de fecha de nacimiento, lo cual impide calcular la edad del paciente de forma precisa.  
+Este es un error de diseño del modelo, ya que la edad o fecha de nacimiento es un dato esencial en contextos médicos y debería haberse incluido para garantizar la integridad de la información clínica.  
 
 
 **b)** `ordenes.sql`  
-Genera una **orden de examen** a partir de una atención específica.  
+Genera una orden de examen a partir de una atención específica.  
 Incluye:
 - Nombre y RUN del paciente,  
 - Edad (vacía, por la misma razón mencionada),  
@@ -157,7 +157,7 @@ Incluye:
 **Notas adicionales:**  
 - El ID de atención utilizado está definido directamente en el script como `\set att_id 144`, pero puede modificarse fácilmente para probar otras atenciones.  
 - Ambas consultas (`recetas.sql` y `ordenes.sql`) generan el formato solicitado con estructura textual legible.  
-- La falta de normalización en ciertos datos (como la inexistencia de fecha de nacimiento y la falta de etiquetas consistentes para los exámenes) afecta la completitud del resultado y será discutida en la sección **2.3 Mejoras al esquema**.
+- La falta de normalización en ciertos datos (como la inexistencia de fecha de nacimiento y la falta de etiquetas consistentes para los exámenes) afecta la completitud del resultado y será discutida en la sección 2.3 Mejoras al esquema.
 
 Los resultados se encuentran en:  
 - `Consultas-SQL/Pregunta-6/recetas.txt`  
@@ -166,7 +166,7 @@ Los resultados se encuentran en:
 ### Pregunta 7 — Valoración de una Atención
 
 **Archivo:** `valor_atencion.sql`
-Esta consulta calcula el **valor total de una atención médica específica**, desglosando los montos por tipo de ítem (atención, órdenes y medicamentos), **antes de la bonificación**.
+Esta consulta calcula el valor total de una atención médica específica, desglosando los montos por tipo de ítem (atención, órdenes y medicamentos), antes de la bonificación.
 
 **Lógica aplicada:**  
 1. Se selecciona una atención mediante `\set att_id`, consolidando los registros duplicados con `BOOL_OR("Efectuada")`.  
@@ -200,28 +200,35 @@ Esta atención no tuvo ítems de consulta ni medicamentos asociados, solo proced
 
 ## 2.3 Mejoras al Esquema  
 
-Durante el desarrollo de las consultas y el análisis de la base de datos `dc_colita`, se identificaron diversos **problemas de diseño y normalización** que afectan la integridad y utilidad del modelo.  
+Durante el desarrollo de las consultas y el análisis de la base de datos `dc_colita`, se identificaron diversos problemas de diseño y normalización que afectan la integridad y utilidad del modelo.  
 A continuación, se resumen los principales hallazgos.
 
 ### Falta de atributos esenciales
-- **Ausencia de fecha de nacimiento** en la tabla `Persona`, lo que impide calcular la edad del paciente.  
+- Ausencia de fecha de nacimiento en la tabla `Persona`, lo que impide calcular la edad del paciente.  
   Este es un dato fundamental para la emisión de recetas, órdenes médicas y estadísticas demográficas, por lo que debería incluirse un campo `FechaNacimiento DATE`.  
 
 ### Inconsistencia semántica en `Arancel`
 - El campo `"Tipo"` contiene **69 valores distintos**, muchos de ellos incompletos, redundantes o irrelevantes (por ejemplo: “”, “CIRUGIA ABDOMINAL”, “VEJIGA”).  
-- No existe una distinción clara entre **consultas, exámenes, procedimientos o cirugías**.  
-  > Esto me obligó a usar heurísticas —como el prefijo del código (`03`, `04`) o palabras clave— para filtrar correctamente los exámenes en la **Pregunta 4**.
+- No existe una distinción clara entre consultas, exámenes, procedimientos o cirugías.  
+  > Esto me obligó a usar heurísticas —como el prefijo del código (`03`, `04`) o palabras clave— para filtrar correctamente los exámenes en la Pregunta 4.
 
 ### Falta de normalización
-- Las recetas y órdenes se registran de forma dependiente de `Atencion`, pero los medicamentos están enlazados a `Farmacia` **solo por el nombre del medicamento**, no por una clave foránea.  
+- Las recetas y órdenes se registran de forma dependiente de `Atencion`, pero los medicamentos están enlazados a `Farmacia` solo por el nombre del medicamento, no por una clave foránea.  
 - El campo `Tipo` en `Arancel` debería normalizarse en una tabla separada (`TipoArancel`), con identificadores únicos para garantizar consistencia y evitar duplicaciones semánticas.
 
 ### Otros aspectos observados
-- Existen pacientes **sin institución de salud asociada** (`InstSalud IS NULL`), interpretados como *“Particulares”*.  
-  
+- Existen pacientes sin institución de salud asociada (`InstSalud IS NULL`), interpretados como *“Particulares”*.  
+
 
 ---
 
-**Conclusión general:**  
-La base de datos cumple con los requisitos funcionales mínimos, pero presenta **falta de integridad referencial, redundancia semántica y omisión de datos clave**.  
-Estas deficiencias motivaron el uso de **filtros heurísticos**, **supuestos adicionales** y validaciones manuales para resolver correctamente varias de las consultas solicitadas en esta entrega.
+## Bibliografia
+
+Aqui acalaro que parte del codigo usado en las consultas fue condigo que se obuvo de las siguientes fuentes ademas de lo que se vio en el curso:
+
+- **Stack Overflow** — Ejemplos concretos de funciones de ventana (`ROW_NUMBER`, `RANK`, `DENSE_RANK`) y top-N con empates tal como se usa en `top5dx.sql` y `top5farma.sql`. De allí provienen los patrones para calcular el umbral del quinto lugar y repetir los empates (consulta [17162310](https://stackoverflow.com/questions/17162310/postgresql-select-top-n-rows-per-group)), la forma correcta de aplicar `COUNT(DISTINCT)` dentro de particiones y la técnica para consolidar duplicados con `BOOL_OR` antes de agrupar resultados ([41215267](https://stackoverflow.com/questions/41215267/postgresql-bool-or-in-aggregate-query)). Estas guías sustentan directamente las Preguntas 2, 3, 5 y 7.
+- **Documentación oficial de PostgreSQL** — Capítulos *Aggregate Functions*, *Window Functions* y *Pattern Matching* (https://www.postgresql.org/docs/current/functions-window.html, https://www.postgresql.org/docs/current/functions-aggregate.html y https://www.postgresql.org/docs/current/functions-matching.html). Sirvieron para justificar la sintaxis exacta de `COUNT(DISTINCT ...) OVER ()`, cláusulas `FILTER (WHERE ...)` en agregados, `STRING_AGG` para armar las recetas/órdenes, usos avanzados de `CASE`/`COALESCE`, `ILIKE` con comodines y expresiones regulares empleadas en `ingresos.sql`, `valor_atencion.sql`, `recetas.sql`, `ordenes.sql` y `asistenciasperdidas.sql`.
+- **PostgreSQLTutorial.com / pgSQLTutorial.com** — Tutoriales detallados sobre CTEs recursivos y no recursivos, `CASE` anidado y `JOIN` complejos (https://www.postgresqltutorial.com/postgresql-cte/, https://www.postgresqltutorial.com/postgresql-window-function/ y https://www.postgresqltutorial.com/postgresql-case/). Esas notas sustentan el uso de varias CTEs encadenadas para descomponer el cálculo de ingresos mensuales (Pregunta 5), separar recetas por psicotrópicos/no psicotrópicos (Pregunta 6) y aplicar filtros previos antes de las funciones de ventana en Pregunta 3.
+- **Mode Analytics SQL Window Functions Guide** (https://mode.com/sql-tutorial/sql-window-functions/) y **freeCodeCamp SQL Tutorials** (https://www.freecodecamp.org/news/tag/sql/) — Material de apoyo para repasar patrones de ranking con particiones, acumulados mensuales mediante `SUM() OVER (PARTITION BY ... ORDER BY ...)`, formatos textuales con `CASE` y `STRING_AGG`, y ver ejemplos completos de reportes top-N que luego apliqué en los `.txt` entregados.
+
+Estas referencias explican cada uso de SQL (funciones de ventana, agregaciones condicionales, heurísticas sobre códigos de arancel y consolidación con `BOOL_OR`).
