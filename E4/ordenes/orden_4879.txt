@@ -1,0 +1,8 @@
+Orden de examen
+Paciente: Marta Javier Silva Rodríguez RUN 370333-9
+Diagnostico: Pendiente
+Fecha: 15/11/2025
+Dr. Daniel Antonio Díaz Rodríguez
+RUN 737881-5
+
+0101001 Consulta Medicina General
