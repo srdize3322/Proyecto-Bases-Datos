@@ -18,7 +18,7 @@ begin
     for update;
 
     if not found then
-        raise exception 'ERROR-PACIENTE-NO-EXISTE', p_run;
+        raise exception 'ERROR-PACIENTE-NO-EXISTE';
     end if;
 
     -- asegura que la hora siga disponible en agenda de https://stackoverflow.com/questions/19423235/perform-vs-perform-1

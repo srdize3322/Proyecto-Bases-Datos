@@ -1,9 +1,0 @@
-Receta Medica Electronica
-Paciente: Marta Javier Silva Rodríguez RUN 370333-9
-Diagnostico: Pendiente
-Fecha: 15/11/2025
-
-RIFAMPICINA/ISONIAZIDA 150/150 MG CM/CP - 2 capsulas cada 8 horas por 30 dias
-
-Dr. Daniel Antonio Díaz Rodríguez
-RUN 737881-5
