@@ -34,14 +34,13 @@ psql -h localhost -p 5432 -U santiago -d entrega_numero_4_srde -f DumpE4.sql
 Esto es especifico para mi caso.
 
 ## Carpeta `Encargos (14pts)`
-Para documentar el avance de la sección 1 del enunciado (14 pts) se creó la carpeta `Encargos (14pts)/`, donde quedarán los SQL:
+Para documentar el avance de la sección 1 del enunciado cree la carpeta `Encargos (14pts)/`, donde quedarán los SQL. 
 
-1. Scripts para los índices secundarios sobre todos los campos `RUN` y ejemplos de uso en consultas.
-2. El índice primario compuesto sobre `Agenda(IDMedico, dia, hora)`.
-3. Bloques `BEGIN; ... COMMIT;` que demuestran las transacciones exigidas para inserciones/actualizaciones críticas.
-4. El stored procedure que genera recetas/órdenes con los textos fijos y variables definidos por el enunciado.
-5. El trigger que invoca ese SP cada vez que se cierre una atención (diagnóstico + recetas + órdenes).
-6. La vista `Ficha` con las atenciones ordenadas de más reciente a más antigua, incluyendo fecha, médico, especialidad y diagnóstico.
-7. Ejemplos de validación de formato/dominio y mitigación de SQL Injection para todos los formularios de ingreso.
+(a) ya esta resuelto en `a_indice2RUN.sql`, que crea:
 
-Cada archivo incluirá comentarios explicando las decisiones tomadas para que la sección de desarrollo posterior referencie directamente el script asociado.
+- `idx_persona_run` sobre `"Persona"."RUN"`
+- `idx_institucion_salud_rut` sobre `"InstituciondeSalud"."RUT"`
+ambos mediante `CREATE INDEX ...`.
+
+
+
